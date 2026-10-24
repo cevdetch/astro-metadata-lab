@@ -1,0 +1,896 @@
+[
+  {
+    "group": "metadata",
+    "id": "html-only",
+    "question": "Which consumers use HTML title, description and canonical without Open Graph?",
+    "options": {
+      "og": false
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "html-plus-og-image",
+    "question": "Does adding only og:image preserve the desired preview?",
+    "options": {
+      "og": "image-only"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "explicit-og",
+    "question": "Reference: explicit Open Graph values equal HTML metadata.",
+    "options": {}
+  },
+  {
+    "group": "metadata",
+    "id": "no-og-type",
+    "question": "Does removing og:type affect the chosen clients?",
+    "options": {
+      "omit": [
+        "og:type"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "no-og-url",
+    "question": "Does canonical substitute for og:url on each client?",
+    "options": {
+      "omit": [
+        "og:url"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "no-og-title",
+    "question": "Does HTML title substitute for og:title on each client?",
+    "options": {
+      "omit": [
+        "og:title"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "no-og-description",
+    "question": "Does HTML description substitute for og:description on each client?",
+    "options": {
+      "omit": [
+        "og:description"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "no-description",
+    "question": "How does an absent description behave?",
+    "options": {
+      "description": null,
+      "omit": [
+        "og:description"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "no-image",
+    "question": "What remains without any image metadata?",
+    "options": {
+      "omit": [
+        "og:image",
+        "og:image:alt",
+        "og:image:width",
+        "og:image:height"
+      ],
+      "card": null
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "empty-og-title",
+    "question": "Does empty OG title prevent HTML title fallback?",
+    "options": {
+      "ogTitle": ""
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "whitespace-og-title",
+    "question": "Does whitespace OG title prevent fallback?",
+    "options": {
+      "ogTitle": "   "
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "conflicting-titles",
+    "question": "Which distinct HTML and OG title is selected?",
+    "options": {
+      "ogTitle": "OG TITLE SENTINEL"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "duplicate-og-title",
+    "question": "Which duplicate OG title is selected?",
+    "options": {
+      "extra": "<meta property=\"og:title\" content=\"SECOND OG TITLE SENTINEL\">"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "twitter-before-og",
+    "question": "Does a conflicting Twitter title before OG change selection?",
+    "options": {
+      "beforeOg": "<meta name=\"twitter:title\" content=\"TWITTER TITLE SENTINEL\">"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "twitter-after-og",
+    "question": "Does a conflicting Twitter title after OG change selection?",
+    "options": {
+      "extra": "<meta name=\"twitter:title\" content=\"TWITTER TITLE SENTINEL\">"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "duplicate-twitter-values",
+    "question": "Can identical Twitter fields be omitted?",
+    "options": {
+      "duplicateTwitter": true
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "no-twitter-card",
+    "question": "What layout results without twitter:card?",
+    "options": {
+      "card": null
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "summary-card",
+    "question": "How does summary differ from summary_large_image?",
+    "options": {
+      "card": "summary"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-without-dimensions",
+    "question": "Can image dimensions be omitted without changing the result?",
+    "options": {
+      "omit": [
+        "og:image:width",
+        "og:image:height"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-relative",
+    "question": "Which clients accept root-relative OG images?",
+    "options": {
+      "relativeImage": true
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-svg",
+    "question": "Which clients accept an SVG social image?",
+    "options": {
+      "socialImage": "icon-blue.svg",
+      "omit": [
+        "og:image:width",
+        "og:image:height"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-missing",
+    "question": "How does an unavailable social image fail?",
+    "options": {
+      "socialImage": "missing.png"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "escaped-text",
+    "question": "Are literal entities, quotes and angle brackets preserved?",
+    "options": {
+      "title": "A & B < C > D \"quoted\" &copy;",
+      "description": "Café — \"quoted\" <text> & literal &copy;"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "unicode-text",
+    "question": "Are accented, Greek, Cyrillic, CJK, Arabic and emoji text preserved?",
+    "options": {
+      "title": "Café Ελληνικά Русский 日本語 العربية 👩🏽‍💻",
+      "description": "Mixed-script metadata — no renderer/font claim."
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "long-title",
+    "question": "What is truncated by each client, without an arbitrary build limit?",
+    "options": {
+      "title": "A long but valid descriptive title A long but valid descriptive title A long but valid descriptive title A long but valid descriptive title A long but valid descriptive title A long but valid descriptive title A long but valid descriptive title A long but valid descriptive title "
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-without-alt",
+    "question": "Is image alternative text exposed by the chosen clients?",
+    "options": {
+      "omit": [
+        "og:image:alt"
+      ]
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-alt-twitter",
+    "question": "Does Twitter image alternative text change accessibility in the X client?",
+    "options": {
+      "extra": "<meta name=\"twitter:image:alt\" content=\"Twitter image alternative text sentinel\">"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-secure-url-duplicate",
+    "question": "Does repeating an HTTPS image as secure_url change anything?",
+    "options": {
+      "duplicateSecureImage": true
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-two-candidates",
+    "question": "Which image is chosen when two different OG images are advertised?",
+    "options": {
+      "secondImage": true
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "image-fallback-candidate",
+    "question": "Does a valid second image rescue a missing first image?",
+    "options": {
+      "socialImage": "missing.png",
+      "secondImage": true
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "title-with-site-suffix",
+    "question": "Can a page title and a document title intentionally differ?",
+    "options": {
+      "title": "Page title | Site name",
+      "ogTitle": "Page title"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "og-locale-fr",
+    "question": "Does og:locale add useful client behavior beyond an explicit French document language?",
+    "options": {
+      "lang": "fr",
+      "extra": "<meta property=\"og:locale\" content=\"fr_FR\">"
+    }
+  },
+  {
+    "group": "metadata",
+    "id": "redundant-index-follow",
+    "question": "Does explicitly advertising the default index,follow change anything?",
+    "options": {
+      "extra": "<meta name=\"robots\" content=\"index,follow\">"
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "canonical-absent",
+    "question": "Does a missing canonical affect social previews?",
+    "options": {
+      "canonical": null
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "canonical-relative",
+    "question": "How is a relative canonical resolved?",
+    "options": {
+      "relativeCanonical": true
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "canonical-cross-origin",
+    "question": "Does a different canonical origin affect card identity or click target?",
+    "options": {
+      "canonical": "https://canonical.invalid/intentional-alias/"
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "canonical-duplicate",
+    "question": "How do consumers resolve conflicting canonical links?",
+    "options": {
+      "extra": "<link rel=\"canonical\" href=\"https://second.invalid/intentional-alias/\">"
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "base-element",
+    "question": "How does an HTML base element affect relative metadata URLs?",
+    "options": {
+      "before": "<base href=\"https://base.invalid/sub/\">",
+      "relativeCanonical": true,
+      "relativeImage": true
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "tracking-query",
+    "question": "Does a tracking query reuse the canonical preview?",
+    "options": {
+      "sharedQuery": "?utm_source=research",
+      "canonicalAlias": "canonical-clean"
+    }
+  },
+  {
+    "group": "canonical",
+    "id": "canonical-clean",
+    "question": "Reference for the intentional tracking-query alias.",
+    "options": {}
+  },
+  {
+    "group": "icons",
+    "id": "icon-none",
+    "question": "Is an implicit origin-root favicon requested?",
+    "options": {
+      "icons": []
+    }
+  },
+  {
+    "group": "icons",
+    "id": "icon-svg-only",
+    "question": "Does SVG alone work in tabs and bookmarks?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "icon-ico-only",
+    "question": "Does a real single-entry ICO work alone?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": ""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "ico-svg-no-sizes",
+    "question": "ICO before SVG without sizes.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": ""
+        },
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "svg-ico-no-sizes",
+    "question": "SVG before ICO without sizes.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        },
+        {
+          "name": "icon-red.ico",
+          "extra": ""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "ico32-svg",
+    "question": "Accurate ICO sizes before SVG.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"32x32\""
+        },
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "svg-ico32",
+    "question": "Accurate ICO sizes after SVG.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        },
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"32x32\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "ico-any-svg",
+    "question": "Negative conformance control: bitmap ICO advertised as scalable.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"any\""
+        },
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ],
+      "invalidSizes": true
+    }
+  },
+  {
+    "group": "icons",
+    "id": "ico-false-size",
+    "question": "Negative conformance control: single 32px ICO advertised as 16px.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"16x16\""
+        }
+      ],
+      "invalidSizes": true
+    }
+  },
+  {
+    "group": "icons",
+    "id": "ico-multiple",
+    "question": "Real 16, 32 and 48px ICO entries with accurate sizes.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-multi.ico",
+          "extra": " sizes=\"16x16 32x32 48x48\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "png-named-ico",
+    "question": "PNG bytes with an .ico name, as found in the scaffold.",
+    "options": {
+      "icons": [
+        {
+          "name": "png-named.ico",
+          "extra": " sizes=\"32x32\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "svg-responsive",
+    "question": "Does an SVG favicon change with system light/dark preference?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-responsive.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "svg-missing-fallback",
+    "question": "Does an unavailable preferred SVG fall back to ICO?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"32x32\""
+        },
+        {
+          "name": "missing.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "png32-png64",
+    "question": "Which bitmap size is used at different display densities?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-green.png",
+          "extra": " sizes=\"32x32\" type=\"image/png\""
+        },
+        {
+          "name": "icon-blue64.png",
+          "extra": " sizes=\"64x64\" type=\"image/png\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "svg-any",
+    "question": "Does an accurate sizes=any on SVG change selection?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"32x32\""
+        },
+        {
+          "name": "icon-blue.svg",
+          "extra": " sizes=\"any\" type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "svg-type-omitted",
+    "question": "Does omitting the correct SVG type hint change selection?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"32x32\""
+        },
+        {
+          "name": "icon-blue.svg",
+          "extra": ""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "ico-type-explicit",
+    "question": "Does adding the ICO type hint change selection?",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.ico",
+          "extra": " sizes=\"32x32\" type=\"image/x-icon\""
+        },
+        {
+          "name": "icon-blue.svg",
+          "extra": " type=\"image/svg+xml\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "png-equal-red-green",
+    "question": "Tie control: two accurately described 32px PNGs, red then green.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-red.png",
+          "extra": " sizes=\"32x32\" type=\"image/png\""
+        },
+        {
+          "name": "icon-green.png",
+          "extra": " sizes=\"32x32\" type=\"image/png\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "png-equal-green-red",
+    "question": "Tie control: the same equally suitable PNGs in reverse order.",
+    "options": {
+      "icons": [
+        {
+          "name": "icon-green.png",
+          "extra": " sizes=\"32x32\" type=\"image/png\""
+        },
+        {
+          "name": "icon-red.png",
+          "extra": " sizes=\"32x32\" type=\"image/png\""
+        }
+      ]
+    }
+  },
+  {
+    "group": "icons",
+    "id": "apple-touch-icon",
+    "question": "Which image is used when explicitly adding this page to an Apple home screen?",
+    "options": {
+      "apple": true
+    }
+  },
+  {
+    "group": "head",
+    "id": "charset-first",
+    "question": "Reference: charset is serialized first.",
+    "options": {}
+  },
+  {
+    "group": "head",
+    "id": "charset-after-ascii-padding",
+    "question": "Negative control: charset after the first 1024 bytes.",
+    "options": {
+      "padding": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "lateCharset": true
+    }
+  },
+  {
+    "group": "head",
+    "id": "charset-after-unicode-padding",
+    "question": "Negative control: character count under 1024 but byte count over it.",
+    "options": {
+      "padding": "界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界界",
+      "lateCharset": true
+    }
+  },
+  {
+    "group": "head",
+    "id": "metadata-after-invalid-head-element",
+    "question": "Does invalid head content move following metadata into body?",
+    "options": {
+      "before": "<div>Invalid head element</div>"
+    }
+  },
+  {
+    "group": "head",
+    "id": "metadata-in-noscript",
+    "question": "How do scripting-enabled and scripting-disabled HTML parsers differ?",
+    "options": {
+      "noscriptMetadata": true
+    }
+  },
+  {
+    "group": "head",
+    "id": "viewport-absent",
+    "question": "What layout viewport results on a mobile browser?",
+    "options": {
+      "viewport": false
+    }
+  },
+  {
+    "group": "head",
+    "id": "viewport-with-initial-scale",
+    "question": "Is initial-scale=1 observably different from width=device-width alone?",
+    "options": {
+      "viewport": "width=device-width, initial-scale=1"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-absent",
+    "question": "Reference browser defaults without color-scheme.",
+    "options": {
+      "scheme": null
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-meta-only",
+    "question": "Does the meta declaration suffice for browser-native colors?",
+    "options": {}
+  },
+  {
+    "group": "theming",
+    "id": "scheme-meta-and-css",
+    "question": "Does repeating the declaration in CSS add useful behavior?",
+    "options": {
+      "style": ":root{color-scheme:light dark}"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-hardcoded-light",
+    "question": "Negative control: meta does not adapt hardcoded light CSS.",
+    "options": {
+      "style": "body{background:#fff;color:#000}"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-system-colors",
+    "question": "Do Canvas and CanvasText follow system preference?",
+    "options": {
+      "style": "body{background:Canvas;color:CanvasText}"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-duplicate",
+    "question": "Negative conformance control: duplicate color-scheme metadata.",
+    "options": {
+      "extra": "<meta name=\"color-scheme\" content=\"dark\">"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "theme-color-media",
+    "question": "Do browser selection and social-preview accent selection differ?",
+    "options": {
+      "extra": "<meta name=\"theme-color\" content=\"#eeeeee\" media=\"(prefers-color-scheme: light)\"><meta name=\"theme-color\" content=\"#222222\" media=\"(prefers-color-scheme: dark)\">"
+    }
+  },
+  {
+    "group": "manifest",
+    "id": "manifest-disabled",
+    "question": "No manifest link, despite static icon assets being available.",
+    "options": {}
+  },
+  {
+    "group": "manifest",
+    "id": "manifest-enabled",
+    "question": "Online-only manifest discovery and launch settings.",
+    "options": {
+      "manifest": "app.webmanifest"
+    }
+  },
+  {
+    "group": "manifest",
+    "id": "manifest-relative",
+    "question": "Does a path-relative manifest resolve incorrectly on nested pages?",
+    "options": {
+      "manifest": "../app.webmanifest"
+    }
+  },
+  {
+    "group": "manifest",
+    "id": "manifest-duplicate",
+    "question": "Negative conformance control: multiple manifest links.",
+    "options": {
+      "manifest": "app.webmanifest",
+      "extraManifest": true
+    }
+  },
+  {
+    "group": "json-ld",
+    "id": "jsonld-unsafe",
+    "question": "Negative control: literal script end tag terminates raw JSON-LD.",
+    "options": {
+      "json": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"</script><img src='/unintended-request.png' onerror='window.fixtureInjection=true'>\"}"
+    }
+  },
+  {
+    "group": "json-ld",
+    "id": "jsonld-escaped",
+    "question": "Does escaping less-than preserve JSON while preventing extra HTML?",
+    "options": {
+      "json": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"\\u003c/script>\\u003cimg src='/unintended-request.png' onerror='window.fixtureInjection=true'>\"}"
+    }
+  },
+  {
+    "group": "language",
+    "id": "lang-en",
+    "question": "Reference explicit document language.",
+    "options": {}
+  },
+  {
+    "group": "language",
+    "id": "lang-fr-no-og-locale",
+    "question": "French document without an extra og:locale declaration.",
+    "options": {
+      "lang": "fr"
+    }
+  },
+  {
+    "group": "language",
+    "id": "lang-ar-rtl",
+    "question": "Explicit Arabic document language and direction.",
+    "options": {
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "صفحة اختبار",
+      "description": "بيانات وصفية للاختبار"
+    }
+  },
+  {
+    "group": "language",
+    "id": "lang-mixed-content",
+    "question": "Does an explicit language on an untranslated passage remain in the DOM?",
+    "options": {
+      "mixedLanguage": true
+    }
+  },
+  {
+    "group": "indexing",
+    "id": "noindex-with-preview",
+    "question": "Search exclusion and social metadata are separate inputs.",
+    "options": {
+      "noindex": true
+    }
+  },
+  {
+    "group": "indexing",
+    "id": "noindex-no-image",
+    "question": "Noindex page without auto-generated image metadata.",
+    "options": {
+      "noindex": true,
+      "omit": [
+        "og:image",
+        "og:image:alt",
+        "og:image:width",
+        "og:image:height"
+      ],
+      "card": null
+    }
+  },
+  {
+    "group": "indexing",
+    "id": "http-noindex",
+    "question": "Can indexing protection be delivered as an HTTP header?",
+    "options": {
+      "headers": {
+        "X-Robots-Tag": "noindex"
+      }
+    }
+  },
+  {
+    "group": "indexing",
+    "id": "error-404",
+    "question": "Real 404 response without canonical or social image identity.",
+    "options": {
+      "status": 404,
+      "noindex": true,
+      "canonical": null,
+      "og": false,
+      "card": null
+    }
+  },
+  {
+    "group": "indexing",
+    "id": "redirect",
+    "question": "Real redirect rather than a 200 HTML page.",
+    "options": {
+      "status": 302,
+      "redirect": "metadata/explicit-og"
+    }
+  }
+]

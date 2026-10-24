@@ -1,0 +1,56 @@
+---
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{fullTitle}</title>
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href={styleURL} />
+    <link rel="icon" href="/favicon.ico" />
+    <!-- sizes="32x32" -->
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/app.webmanifest" />
+
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && (
+      <>
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        {ogType === "article" && publishedTime && (
+          <meta
+            property="article:published_time"
+            content={publishedTime.toISOString()}
+          />
+        )}
+        {ogType === "article" && modifiedTime && (
+          <meta
+            property="article:modified_time"
+            content={modifiedTime.toISOString()}
+          />
+        )}
+      </>
+    )}
+    {jsonLd && (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+      />
+    )}
+    <slot name="head" />
+  </head>
+  <body>
+    <h1>Astro</h1>
+  </body>
+</html>

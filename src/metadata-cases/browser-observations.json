@@ -1,0 +1,26 @@
+{
+  "observations": [
+    {
+      "reportedDate": "2026-10-23",
+      "browser": "Brave",
+      "version": null,
+      "operatingSystem": null,
+      "cases": ["icons/ico32-svg", "icons/svg-ico32"],
+      "surface": "browser tab icon",
+      "observedColor": "blue in both cases",
+      "evidence": "User reported observation; not an automated test or screenshot.",
+      "limits": "No conclusion about all icon size/type combinations or other browser versions."
+    },
+    {
+      "reportedDate": "2026-10-23",
+      "browser": "Firefox",
+      "version": null,
+      "operatingSystem": null,
+      "cases": ["icons/ico32-svg", "icons/svg-ico32"],
+      "surface": "browser tab icon",
+      "observedColor": "blue in both cases",
+      "evidence": "User reported observation; not an automated test or screenshot.",
+      "limits": "No conclusion about all icon size/type combinations or other browser versions."
+    }
+  ]
+}

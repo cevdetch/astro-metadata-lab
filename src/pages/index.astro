@@ -1,0 +1,72 @@
+---
+// Local sample values make this existing draft renderable for comparison.
+// The original source is preserved in metadata-cases/original-index.astro.txt.
+import { assetHref, normalizeBase } from '../metadata-cases/cases';
+const base = import.meta.env.BASE_URL;
+const fullTitle = 'Current metadata draft';
+const description = 'The existing head structure with local sample values for comparison.';
+const styleURL = assetHref('reference.css', base);
+const SITE_NAME = 'Metadata research';
+const noindex = false;
+const canonical = new URL(normalizeBase(base), Astro.url.origin).href;
+const ogType = 'website' as 'website' | 'article';
+const ogImage = new URL(assetHref('social-red.png', base), Astro.url.origin).href;
+const publishedTime = undefined as Date | undefined;
+const modifiedTime = undefined as Date | undefined;
+const jsonLd = undefined as Record<string, unknown> | undefined;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{fullTitle}</title>
+    <meta name="color-scheme" content="dark light" />
+    <link rel="stylesheet" href={styleURL} />
+    <link rel="icon" href={`${normalizeBase(base)}favicon.ico`} />
+    <!-- sizes="32x32" -->
+    <link rel="icon" type="image/svg+xml" href={assetHref('icon-blue.svg', base)} />
+
+    <link rel="apple-touch-icon" href={assetHref('apple-touch-icon.png', base)} />
+    <link rel="manifest" href={assetHref('app.webmanifest', base)} />
+
+    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {!noindex && (
+      <>
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:type" content={ogType} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={fullTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        {ogType === "article" && publishedTime && (
+          <meta
+            property="article:published_time"
+            content={publishedTime.toISOString()}
+          />
+        )}
+        {ogType === "article" && modifiedTime && (
+          <meta
+            property="article:modified_time"
+            content={modifiedTime.toISOString()}
+          />
+        )}
+      </>
+    )}
+    {jsonLd && (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+      />
+    )}
+    <slot name="head" />
+  </head>
+  <body>
+    <h1>Astro</h1>
+    <p><a href={`${normalizeBase(base)}cases/`}>Compare metadata cases</a></p>
+  </body>
+</html>

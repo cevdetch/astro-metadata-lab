@@ -1,0 +1,8 @@
+---
+import { cases, renderCase } from '../metadata-cases/cases';
+
+const definition = cases.find(c => c.group === 'indexing' && c.id === 'error-404')!;
+const fixture = renderCase(definition, Astro.url.origin, import.meta.env.BASE_URL);
+Astro.response.status = 404;
+---
+<Fragment set:html={fixture.html} />

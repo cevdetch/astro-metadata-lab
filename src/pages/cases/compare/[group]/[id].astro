@@ -1,0 +1,51 @@
+---
+import { cases, openHref, sourceHref, normalizeBase, renderCase } from '../../../../metadata-cases/cases';
+import currentSource from '../../../index.astro?raw';
+import '../../../../metadata-cases/ui.css';
+
+export function getStaticPaths() {
+  return cases.map(definition => ({ params: { group: definition.group, id: definition.id }, props: { definition } }));
+}
+const { definition } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const home = normalizeBase(base);
+const fixture = renderCase(definition, Astro.url.origin, base);
+const shownHead = fixture.head.replaceAll('><', '>\n<');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>{definition.id} — metadata comparison</title>
+  </head>
+  <body>
+    <main class="comparison">
+      <p><a href={`${home}cases/`}>All cases</a></p>
+      <h1>{definition.group} / {definition.id}</h1>
+      <p>{definition.question}</p>
+      <p>Use the separate page tabs for favicon, initial paint, mobile viewport and installation checks. Embedded views do not reproduce browser tab UI.</p>
+      {definition.options.status && <p>Requested HTTP status: {definition.options.status}. The build includes Cloudflare Pages host configuration; generic static servers may return a different status or use an HTML redirect.</p>}
+      {definition.options.headers && <p>Requested response headers: <code>{JSON.stringify(definition.options.headers)}</code>.</p>}
+      <div class="comparison-grid">
+        <section aria-labelledby="current-title">
+          <h2 id="current-title">Your current page</h2>
+          <p><a href={home} target="_blank" rel="noopener">Open current page</a></p>
+          <iframe src={home} title="Your current page" loading="lazy"></iframe>
+          <details><summary>Current Astro source</summary><pre><code>{currentSource}</code></pre></details>
+        </section>
+        <section aria-labelledby="case-title">
+          <h2 id="case-title">{definition.id}</h2>
+          <p><a href={openHref(definition, base)} target="_blank" rel="noopener">Open case</a>{' · '}<a href={sourceHref(definition, base)}>Complete fixture HTML</a></p>
+          <p>Share URL: <code>{new URL(openHref(definition, base), Astro.url.origin).href}</code></p>
+          <iframe src={openHref(definition, base)} title={`Case: ${definition.id}`} loading="lazy"></iframe>
+          <h3>Fixture head</h3>
+          <pre><code>{shownHead}</code></pre>
+          <details><summary>Case options</summary><pre><code>{JSON.stringify(definition.options, null, 2)}</code></pre></details>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

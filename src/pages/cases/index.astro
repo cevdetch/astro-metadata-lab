@@ -1,0 +1,49 @@
+---
+import { cases, openHref, compareHref, sourceHref, normalizeBase } from '../../metadata-cases/cases';
+import { observations } from '../../metadata-cases/browser-observations.json';
+import '../../metadata-cases/ui.css';
+const base = import.meta.env.BASE_URL;
+const groups = [...new Set(cases.map(c => c.group))];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>Metadata comparisons</title>
+  </head>
+  <body>
+    <main>
+      <h1>Metadata comparisons</h1>
+      <p><a href={normalizeBase(base)}>Your current page</a> · {cases.length} experimental cases</p>
+      <p>Open a case in its own tab to check favicons. Compare shows it beside your current page and displays the fixture head. HTML opens the complete fixture as plain text.</p>
+      <p>These include deliberately invalid controls. Automated checks verify the fixtures; browser and social-app behavior needs observation. The build includes Cloudflare Pages rules for HTTP headers, redirects and a real 404.</p>
+      <p>Use the production deployment URL when comparing indexing headers: Cloudflare adds its own noindex header to preview deployments. Share each case's own URL when testing link previews.</p>
+      <details>
+        <summary>Observations recorded so far</summary>
+        <ul>{observations.map(o => <li>{o.browser}: {o.observedColor} for <code>{o.cases.join(', ')}</code>. {o.evidence} Browser version and operating system were not recorded.</li>)}</ul>
+        <p>Mobile browser icons and previews in LinkedIn, Discord, X, WhatsApp, Instagram and Facebook direct messages still need testing. Record the browser or app version, OS, exact URL, date and screenshot separately for each client.</p>
+      </details>
+      <nav aria-label="Case groups">
+        <ul class="group-links">{groups.map(group => <li><a href={`#${group}`}>{group}</a></li>)}</ul>
+      </nav>
+      {groups.map(group => (
+        <section aria-labelledby={group}>
+          <h2 id={group}>{group}</h2>
+          <ul class="case-list">
+            {cases.filter(c => c.group === group).map(c => (
+              <li>
+                <a href={openHref(c, base)}>{c.id}</a>
+                {' · '}<a href={compareHref(c, base)} aria-label={`Compare ${c.id} with the current page`}>Compare</a>
+                {' · '}<a href={sourceHref(c, base)} aria-label={`Read HTML for ${c.id}`}>HTML</a>
+                <p>{c.question}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </main>
+  </body>
+</html>
