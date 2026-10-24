@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { parseArgs } from 'node:util';
-import { cases, caseHref, compareHref, sourceHref, openHref, normalizeBase, renderCase } from '../src/metadata-cases/cases.ts';
+import { cases, caseHref, compareHref, sourceHref, resultsHref, openHref, normalizeBase, renderCase } from '../src/metadata-cases/cases.ts';
 import { buildOrigin } from '../src/metadata-cases/build-origin.mjs';
 import { hostFiles } from '../src/metadata-cases/host-files.ts';
 
@@ -22,6 +22,15 @@ const observedUrl = referenceHtml.match(/property="og:url" content="([^"]+)"/)?.
 assert.ok(observedUrl, 'Reference fixture must expose its built absolute URL');
 const origin = values.origin ?? buildOrigin(process.env) ?? new URL(observedUrl).origin;
 const index = await read(join(output, 'cases/index.html'));
+const resultsIndex = await read(join(output, 'cases/results/index.html'));
+assert.ok(resultsIndex.includes('name="robots" content="noindex"'), 'Results are observations, not indexable fixtures');
+
+const guide = await read(join(output, 'cases/testing/index.html'));
+assert.ok(index.includes(`href="${base}cases/testing/"`), 'The catalogue must expose the device-testing guide');
+assert.ok(guide.includes('name="robots" content="noindex"'), 'The guide must not act as an indexable fixture');
+for (const id of ['html-only', 'og-vs-html', 'twitter-vs-html', 'all-fields', 'twitter-first']) {
+  assert.ok(guide.includes(`href="${base}cases/precedence/${id}/"`), `The guide must link to ${id} under the configured base`);
+}
 
 for (const definition of cases) {
   const label = `${definition.group}/${definition.id}`;
@@ -29,6 +38,14 @@ for (const definition of cases) {
   const source = await read(file(sourceHref(definition, base)));
   assert.equal(source, fixture.html, `${label}: source must retain the intended origin, base and exact negative controls`);
   const comparison = await read(file(compareHref(definition, base)) + 'index.html');
+  const results = await read(file(resultsHref(definition, base)) + 'index.html');
+  assert.ok(results.includes(`>${label.replace('/', ' / ')}</h1>`), `${label}: the result table must belong to this case`);
+  assert.ok(results.includes('<table>'), `${label}: a result table is missing`);
+  assert.ok(results.includes('name="robots" content="noindex"'), `${label}: result pages must stay noindex`);
+  assert.ok(results.includes(`href="${openHref(definition, base)}"`), `${label}: results must link to the actual test URL`);
+  for (const page of [index, comparison, resultsIndex]) {
+    assert.ok(page.includes(`href="${resultsHref(definition, base)}"`), `${label}: results must be discoverable`);
+  }
   assert.ok(comparison.includes('Fixture head'), `${label}: comparison view is missing`);
   assert.ok(index.includes(`href="${openHref(definition, base)}"`), `${label}: index must link to the test URL`);
   if (definition.options.redirect) {
@@ -75,5 +92,5 @@ async function outputFiles(directory) {
 const files = await outputFiles(output);
 assert.ok(!files.some(path => /\.(?:js|mjs|cjs)$/.test(path)), 'The research build must not ship a client JS bundle or service worker');
 assert.ok(!files.some(path => path.endsWith('/_worker.js')), 'This lab deploys static assets without an adapter');
-console.log(`Verified ${cases.length} fixtures, ${cases.length} comparison views, ${assets.length} source assets, manifests and Cloudflare files.`);
+console.log(`Verified ${cases.length} fixtures, ${cases.length} comparison views, ${cases.length} result pages, ${assets.length} source assets, manifests and Cloudflare files.`);
 console.log(`Base: ${base} · Origin: ${origin} · No client JS bundle.`);

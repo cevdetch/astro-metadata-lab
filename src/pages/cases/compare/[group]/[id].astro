@@ -1,5 +1,5 @@
 ---
-import { cases, openHref, sourceHref, normalizeBase, renderCase } from '../../../../metadata-cases/cases';
+import { cases, openHref, sourceHref, resultsHref, normalizeBase, renderCase } from '../../../../metadata-cases/cases';
 import currentSource from '../../../index.astro?raw';
 import '../../../../metadata-cases/ui.css';
 
@@ -38,7 +38,7 @@ const shownHead = fixture.head.replaceAll('><', '>\n<');
         </section>
         <section aria-labelledby="case-title">
           <h2 id="case-title">{definition.id}</h2>
-          <p><a href={openHref(definition, base)} target="_blank" rel="noopener">Open case</a>{' · '}<a href={sourceHref(definition, base)}>Complete fixture HTML</a></p>
+          <p><a href={openHref(definition, base)} target="_blank" rel="noopener">Open case</a>{' · '}<a href={sourceHref(definition, base)}>Complete fixture HTML</a>{' · '}<a href={resultsHref(definition, base)}>Result tables</a></p>
           <p>Share URL: <code>{new URL(openHref(definition, base), Astro.url.origin).href}</code></p>
           <iframe src={openHref(definition, base)} title={`Case: ${definition.id}`} loading="lazy"></iframe>
           <h3>Fixture head</h3>

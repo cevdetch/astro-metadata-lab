@@ -1,0 +1,42 @@
+---
+import { Content } from '../../metadata-cases/manual-tests.md';
+import { Content as Reporting } from '../../metadata-cases/results/reporting.md';
+import { caseHref, normalizeBase } from '../../metadata-cases/cases';
+import '../../metadata-cases/ui.css';
+
+const base = import.meta.env.BASE_URL;
+const groups = [
+  { label: 'First social-DM round', group: 'precedence', ids: ['html-only', 'og-vs-html', 'twitter-vs-html', 'all-fields', 'twitter-first'] },
+  { label: 'First browser icon round', group: 'icons', ids: ['icon-svg-only', 'icon-ico-only', 'ico32-svg', 'svg-ico32', 'svg-responsive'] },
+  { label: 'First light/dark round', group: 'theming', ids: ['scheme-absent', 'scheme-meta-only', 'scheme-meta-and-css'] },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>Device and messaging tests — Metadata Lab</title>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Testing guide">
+        <p><a href={`${normalizeBase(base)}cases/`}>All cases</a>{' · '}<a href="#case-links">Open the first cases</a>{' · '}<a href="#reporting-shortcuts">Reporting labels and formats</a>{' · '}<a href={`${normalizeBase(base)}cases/results/`}>Result tables</a></p>
+      </nav>
+      <Content />
+      <section aria-labelledby="case-links">
+        <h2 id="case-links">Open the first cases</h2>
+        <p>For messaging tests, copy each case link and send that URL. This guide has its own noindex metadata and is not a preview test.</p>
+        {groups.map(({ label, group, ids }) => (
+          <section>
+            <h3>{label}</h3>
+            <ul>{ids.map(id => <li><a href={caseHref({ group, id }, base)}>{group}/{id}</a></li>)}</ul>
+          </section>
+        ))}
+      </section>
+      <Reporting />
+    </main>
+  </body>
+</html>

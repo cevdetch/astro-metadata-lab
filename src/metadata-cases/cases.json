@@ -293,6 +293,518 @@
     }
   },
   {
+    "group": "precedence",
+    "id": "html-only",
+    "question": "HTML reference: A metadata and D body, without OG or Twitter tags.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "og": false
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "og-vs-html",
+    "question": "Do clients choose OG B or HTML A? Red OG image; Twitter card type only.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "og-without-twitter",
+    "question": "Same OG B versus HTML A control, with no Twitter tags at all.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "card": null
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "twitter-vs-html",
+    "question": "Do clients use Twitter C and its green image without any OG tags?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "og": false,
+      "card": "summary_large_image"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "all-fields",
+    "question": "Which title, description and image win: HTML A, OG B/red, Twitter C/green, or body D?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "twitter-first",
+    "question": "Same conflicting fields as all-fields, with the complete Twitter block before OG.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "twitterFirst": true
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-twitter-title",
+    "question": "Remove only Twitter title from all-fields. Does OG B or HTML A replace it?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "twitter:title"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-twitter-description",
+    "question": "Remove only Twitter description from all-fields. Does OG B, HTML A or body D replace it?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "twitter:description"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-twitter-image",
+    "question": "Remove only Twitter image from all-fields. Does the red OG image replace green?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "twitter:image"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-og-title",
+    "question": "Remove only OG title from all-fields; Twitter C and HTML A remain distinct.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "og:title"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-og-description",
+    "question": "Remove only OG description from all-fields; Twitter C, HTML A and body D remain distinct.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "og:description"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-og-image",
+    "question": "Remove the OG image and its structured properties; the green Twitter image remains.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "og:image",
+        "og:image:alt",
+        "og:image:width",
+        "og:image:height"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-social-title",
+    "question": "Remove both social titles. Does the client use HTML A, body D or no title?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "og:title",
+        "twitter:title"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-social-description",
+    "question": "Remove both social descriptions. Does the client use HTML A, body D or no description?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "og:description",
+        "twitter:description"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-social-image",
+    "question": "Remove both social images and OG image properties; this page has no body image.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "omit": [
+        "og:image",
+        "og:image:alt",
+        "og:image:width",
+        "og:image:height",
+        "twitter:image"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "og-no-title",
+    "question": "Remove OG title from og-vs-html, without a competing Twitter title.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "omit": [
+        "og:title"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "og-no-description",
+    "question": "Remove OG description from og-vs-html, without a competing Twitter description.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "omit": [
+        "og:description"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "og-no-image",
+    "question": "Remove the OG image and its properties from og-vs-html, without a Twitter image.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "omit": [
+        "og:image",
+        "og:image:alt",
+        "og:image:width",
+        "og:image:height"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "twitter-no-title",
+    "question": "Remove Twitter title from twitter-vs-html. OG is absent; HTML A and body D remain.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "og": false,
+      "card": "summary_large_image",
+      "omit": [
+        "twitter:title"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "twitter-no-description",
+    "question": "Remove Twitter description from twitter-vs-html. OG is absent; HTML A and body D remain.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "og": false,
+      "card": "summary_large_image",
+      "omit": [
+        "twitter:description"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "twitter-no-image",
+    "question": "Remove Twitter image from twitter-vs-html. No OG or body image remains.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "og": false,
+      "card": "summary_large_image",
+      "omit": [
+        "twitter:image"
+      ]
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "empty-twitter-title",
+    "question": "Is an empty Twitter title treated differently from an absent one?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "empty-twitter-description",
+    "question": "Is an empty Twitter description treated differently from an absent one?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "",
+      "twitterImage": "social-green.png"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "empty-twitter-image",
+    "question": "Is an empty Twitter image treated differently from an absent one?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": ""
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "missing-twitter-image",
+    "question": "Does a Twitter image returning 404 fall back to the valid red OG image?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "missing.png"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "missing-og-image",
+    "question": "Does a missing OG image fall back to the valid green Twitter image?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "socialImage": "missing.png"
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "empty-og-description",
+    "question": "An empty OG description, without a Twitter description: HTML A, body D or empty?",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": ""
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "no-card",
+    "question": "All conflicting fields remain; only twitter:card is absent.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "card": null
+    }
+  },
+  {
+    "group": "precedence",
+    "id": "summary-card",
+    "question": "All conflicting fields remain; only the card type changes to summary.",
+    "options": {
+      "title": "HTML TITLE A",
+      "description": "HTML DESCRIPTION A",
+      "bodyTitle": "BODY HEADING D",
+      "bodyDescription": "BODY TEXT D",
+      "ogTitle": "OG TITLE B",
+      "ogDescription": "OG DESCRIPTION B",
+      "twitterTitle": "TWITTER TITLE C",
+      "twitterDescription": "TWITTER DESCRIPTION C",
+      "twitterImage": "social-green.png",
+      "card": "summary"
+    }
+  },
+  {
     "group": "canonical",
     "id": "canonical-absent",
     "question": "Does a missing canonical affect social previews?",

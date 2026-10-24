@@ -8,6 +8,13 @@ interface Options {
   description?: string | null;
   title?: string;
   ogTitle?: string;
+  ogDescription?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+  twitterFirst?: boolean;
+  bodyTitle?: string;
+  bodyDescription?: string;
   beforeOg?: string;
   before?: string;
   extra?: string;
@@ -50,6 +57,7 @@ export const caseHref = (c: Pick<MetadataCase, 'group' | 'id'>, base = '/') => `
 export const openHref = (c: MetadataCase, base = '/') => caseHref(c, base) + (c.options.sharedQuery ?? '');
 export const compareHref = (c: Pick<MetadataCase, 'group' | 'id'>, base = '/') => `${normalizeBase(base)}cases/compare/${c.group}/${c.id}/`;
 export const sourceHref = (c: Pick<MetadataCase, 'group' | 'id'>, base = '/') => `${normalizeBase(base)}cases/source/${c.group}/${c.id}.txt`;
+export const resultsHref = (c: Pick<MetadataCase, 'group' | 'id'>, base = '/') => `${normalizeBase(base)}cases/results/${c.group}/${c.id}/`;
 export const assetHref = (name: string, base = '/') => `${normalizeBase(base)}cases/assets/${name}`;
 
 const text = (value: string) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
@@ -67,7 +75,7 @@ export function renderCase(c: MetadataCase, origin: string, base = '/') {
   const image = o.relativeImage ? imagePath : new URL(imagePath, origin).href;
   const fields: Record<string, string | null> = {
     'og:type': 'website', 'og:url': url, 'og:title': o.ogTitle ?? title,
-    'og:description': description, 'og:image': image, 'og:image:alt': 'Red research image',
+    'og:description': o.ogDescription ?? description, 'og:image': image, 'og:image:alt': 'Red research image',
     'og:image:width': '1200', 'og:image:height': '630',
   };
   // Keep the serialized order, including deliberately invalid controls.
@@ -81,15 +89,26 @@ export function renderCase(c: MetadataCase, origin: string, base = '/') {
   head += o.noscriptMetadata ? `<noscript>${ordinary}</noscript>` : ordinary;
   if (o.noindex) head += meta('robots', 'noindex');
   head += o.beforeOg ?? '';
+  let og = '';
   if (o.og !== false) for (const [key, value] of Object.entries(fields)) {
     if (o.og === 'image-only' && key !== 'og:image') continue;
-    if (!o.omit?.includes(key)) head += meta(key, value, true);
+    if (!o.omit?.includes(key)) og += meta(key, value, true);
   }
-  if (o.duplicateSecureImage) head += meta('og:image:secure_url', image, true);
-  if (o.secondImage) head += meta('og:image', new URL(assetHref('social-green.png', base), origin).href, true) + meta('og:image:alt', 'Green second image', true);
+  if (o.duplicateSecureImage) og += meta('og:image:secure_url', image, true);
+  if (o.secondImage) og += meta('og:image', new URL(assetHref('social-green.png', base), origin).href, true) + meta('og:image:alt', 'Green second image', true);
   const card = 'card' in o ? o.card! : 'summary_large_image';
-  if (card !== null && o.og !== false) head += meta('twitter:card', card);
-  if (o.duplicateTwitter) head += meta('twitter:title', title) + meta('twitter:description', description) + meta('twitter:image', image);
+  const twitterImage = o.twitterImage ? new URL(assetHref(o.twitterImage, base), origin).href : o.twitterImage;
+  const twitterFields: Record<string, string | null | undefined> = {
+    'twitter:card': o.og !== false || 'card' in o ? card : null,
+    'twitter:title': o.twitterTitle ?? (o.duplicateTwitter ? title : undefined),
+    'twitter:description': o.twitterDescription ?? (o.duplicateTwitter ? description : undefined),
+    'twitter:image': twitterImage ?? (o.duplicateTwitter ? image : undefined),
+  };
+  let twitter = '';
+  for (const [key, value] of Object.entries(twitterFields)) {
+    if (value !== undefined && !o.omit?.includes(key)) twitter += meta(key, value);
+  }
+  head += o.twitterFirst ? twitter + og : og + twitter;
   const icons = o.icons ?? [{ name: 'icon-red.ico', extra: ' sizes="32x32"' }, { name: 'icon-blue.svg', extra: ' type="image/svg+xml"' }];
   for (const i of icons) head += link('icon', assetHref(i.name, base), i.extra);
   if (o.apple) head += link('apple-touch-icon', assetHref('apple-touch-icon.png', base));
@@ -99,7 +118,7 @@ export function renderCase(c: MetadataCase, origin: string, base = '/') {
   head += o.extra ?? '';
   if (o.style) head += `<style>${o.style}</style>`;
   const back = new URL(`${normalizeBase(base)}cases/`, origin).href;
-  const body = `<main id="main"><h1>${text(title)}</h1><p>${text(description ?? '')}</p><p>${text(c.question)}</p><a href="#target">Keyboard target</a><p id="target">Target</p><label>Native input <input value="System colors"></label><button>Native button</button>${o.mixedLanguage ? '<p lang="fr">Texte original en français.</p>' : ''}<p><a href="${attr(back)}">All cases</a></p></main>`;
+  const body = `<main id="main"><h1>${text(o.bodyTitle ?? title)}</h1><p>${text(o.bodyDescription ?? description ?? '')}</p><p>${text(c.question)}</p><a href="#target">Keyboard target</a><p id="target">Target</p><label>Native input <input value="System colors"></label><button>Native button</button>${o.mixedLanguage ? '<p lang="fr">Texte original en français.</p>' : ''}<p><a href="${attr(back)}">All cases</a></p></main>`;
   const html = `<!doctype html><html lang="${o.lang ?? 'en'}"${o.dir ? ` dir="${o.dir}"` : ''}><head>${head}</head><body>${body}</body></html>`;
   return { html, head, title, description, url, path, image, canonical, status: o.status ?? 200, headers: { 'Content-Type': 'text/html; charset=utf-8', ...o.headers } };
 }

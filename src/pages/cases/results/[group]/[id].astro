@@ -1,0 +1,40 @@
+---
+import type { MarkdownInstance } from 'astro';
+import { cases, openHref, compareHref, sourceHref, normalizeBase } from '../../../../metadata-cases/cases';
+import '../../../../metadata-cases/ui.css';
+
+export function getStaticPaths() {
+  const records = import.meta.glob<MarkdownInstance<Record<string, unknown>>>('../../../../metadata-cases/results/cases/**/*.md', { eager: true });
+  return cases.map(definition => {
+    const key = `../../../../metadata-cases/results/cases/${definition.group}/${definition.id}.md`;
+    const record = records[key];
+    if (!record) throw new Error(`Missing result record: ${definition.group}/${definition.id}`);
+    return { params: { group: definition.group, id: definition.id }, props: { definition, Content: record.Content } };
+  });
+}
+
+const { definition, Content } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const label = `${definition.group}/${definition.id}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>{label} — recorded results</title>
+  </head>
+  <body>
+    <main class="results">
+      <nav aria-label="Case results navigation">
+        <p><a href={`${normalizeBase(base)}cases/results/`}>All results and test runs</a>{' · '}<a href={`${normalizeBase(base)}cases/results/#reporting-shortcuts`}>Reporting labels and formats</a>{' · '}<a href={openHref(definition, base)}>Open test case</a>{' · '}<a href={compareHref(definition, base)}>Compare</a>{' · '}<a href={sourceHref(definition, base)}>Fixture HTML</a></p>
+      </nav>
+      <p>Report this case as <code>{label}</code>. These tables record observations; use the test case itself for browser UI and preview tests.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label={`${label} results`}>
+        <Content />
+      </div>
+    </main>
+  </body>
+</html>

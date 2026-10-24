@@ -1,0 +1,48 @@
+---
+import { cases, resultsHref, normalizeBase } from '../../../metadata-cases/cases';
+import { Content as Sessions } from '../../../metadata-cases/results/sessions.md';
+import { Content as Hosting } from '../../../metadata-cases/results/hosting.md';
+import { Content as Reporting } from '../../../metadata-cases/results/reporting.md';
+import '../../../metadata-cases/ui.css';
+
+const base = import.meta.env.BASE_URL;
+const groups = [...new Set(cases.map(c => c.group))];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>Recorded results — Metadata Lab</title>
+  </head>
+  <body>
+    <main class="results">
+      <nav aria-label="Results navigation">
+        <p><a href={`${normalizeBase(base)}cases/`}>All cases</a>{' · '}<a href={`${normalizeBase(base)}cases/testing/`}>Testing guide</a>{' · '}<a href="#reporting-shortcuts">Reporting labels and formats</a></p>
+      </nav>
+      <h1>Recorded test results</h1>
+      <p>Tell me your browser/app, version and device once, then send case IDs and observations. We will record them in the tables and retain unknown details as unknown.</p>
+      <pre><code>Run: B003 | mode=[light/dark] | surface=[tab/tab-switcher]{ '\n' }icons/ico32-svg = [label]{ '\n' }icons/svg-ico32 = [label]</code></pre>
+      <p>This is a reporting example. Start with browser icons, then theming, mobile head/language and online installation. Next, use the five precedence cases in each messaging app before expanding the social matrix.</p>
+      <p>Case records contain the relevant tables. Untested differs from no visible result. These pages display repository records; updates appear after rebuilding and deploying. Share the fixture URL when testing a preview.</p>
+      <nav aria-label="Result groups">
+        <ul class="group-links">{groups.map(group => <li><a href={`#${group}`}>{group}</a></li>)}</ul>
+      </nav>
+      {groups.map(group => (
+        <section aria-labelledby={group}>
+          <h2 id={group}>{group}</h2>
+          <ul>{cases.filter(c => c.group === group).map(c => <li><a href={resultsHref(c, base)}>{c.id}</a></li>)}</ul>
+        </section>
+      ))}
+      <Reporting />
+      <section aria-label="Test run details" class="table-scroll" tabindex="0">
+        <Sessions />
+      </section>
+      <section aria-label="Reported HTTP probes" class="table-scroll" tabindex="0">
+        <Hosting />
+      </section>
+    </main>
+  </body>
+</html>

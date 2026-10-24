@@ -1,5 +1,5 @@
 ---
-import { cases, openHref, compareHref, sourceHref, normalizeBase } from '../../metadata-cases/cases';
+import { cases, openHref, compareHref, sourceHref, resultsHref, normalizeBase } from '../../metadata-cases/cases';
 import { observations } from '../../metadata-cases/browser-observations.json';
 import '../../metadata-cases/ui.css';
 const base = import.meta.env.BASE_URL;
@@ -18,13 +18,15 @@ const groups = [...new Set(cases.map(c => c.group))];
     <main>
       <h1>Metadata comparisons</h1>
       <p><a href={normalizeBase(base)}>Your current page</a> · {cases.length} experimental cases</p>
+      <p><a href={`${normalizeBase(base)}cases/testing/`}>How to test on phones and in messaging apps</a> — start with a small set of cases and copy the result format.</p>
+      <p><a href={`${normalizeBase(base)}cases/results/`}>Result tables for every case</a> — tell me the browser/app once, then the case IDs and what you saw.</p>
       <p>Open a case in its own tab to check favicons. Compare shows it beside your current page and displays the fixture head. HTML opens the complete fixture as plain text.</p>
       <p>These include deliberately invalid controls. Automated checks verify the fixtures; browser and social-app behavior needs observation. The build includes Cloudflare Pages rules for HTTP headers, redirects and a real 404.</p>
       <p>Use the production deployment URL when comparing indexing headers: Cloudflare adds its own noindex header to preview deployments. Share each case's own URL when testing link previews.</p>
       <details>
-        <summary>Observations recorded so far</summary>
+        <summary>Early observations</summary>
         <ul>{observations.map(o => <li>{o.browser}: {o.observedColor} for <code>{o.cases.join(', ')}</code>. {o.evidence} Browser version and operating system were not recorded.</li>)}</ul>
-        <p>Mobile browser icons and previews in LinkedIn, Discord, X, WhatsApp, Instagram and Facebook direct messages still need testing. Record the browser or app version, OS, exact URL, date and screenshot separately for each client.</p>
+        <p>The result tables hold current coverage and later reports. These early reports lack browser versions and OS details.</p>
       </details>
       <nav aria-label="Case groups">
         <ul class="group-links">{groups.map(group => <li><a href={`#${group}`}>{group}</a></li>)}</ul>
@@ -38,6 +40,7 @@ const groups = [...new Set(cases.map(c => c.group))];
                 <a href={openHref(c, base)}>{c.id}</a>
                 {' · '}<a href={compareHref(c, base)} aria-label={`Compare ${c.id} with the current page`}>Compare</a>
                 {' · '}<a href={sourceHref(c, base)} aria-label={`Read HTML for ${c.id}`}>HTML</a>
+                {' · '}<a href={resultsHref(c, base)} aria-label={`Read results for ${c.id}`}>Results</a>
                 <p>{c.question}</p>
               </li>
             ))}

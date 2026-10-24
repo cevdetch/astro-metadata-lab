@@ -1,6 +1,6 @@
 Metadata comparisons
 
-Open /cases/ in this Astro project. Each of the 89 cases has its own page,
+Open /cases/ in this Astro project. Each of the 118 cases has its own page,
 a comparison view beside the current homepage, and a plain-text HTML source.
 Edit cases.json; these options are controlled research inputs, not the starter's
 proposed metadata API. The fixtures include invalid HTML and an injection control.
@@ -24,7 +24,15 @@ The HTML/source panels show the controlled fixture, before dev-server additions.
 The redirect's source panel is its control document, not its redirect response.
 Comparison iframes cannot establish tab icons, first paint or installed-app UI.
 
-manual-tests.md describes actual browser, mobile and social-DM checks.
+manual-tests.md describes actual browser, mobile and social-DM checks and is
+published at /cases/testing/ with links for the first round. The 29 precedence
+cases distinguish HTML A, OG B/red, Twitter C/green and body D values.
 browser-observations.json contains the reported Brave/Firefox observations.
+social-observations.json retains the initial empty snapshot.
+New reports belong in results/cases/<group>/<id>.md, with shared run details in
+results/sessions.md. The older JSON files retain the initial reports. The website
+publishes per-case tables at /cases/results/, linked beside each catalogue case.
+results/reporting.md defines visual labels and reporting formats; the testing
+and results index pages render the same guide under #reporting-shortcuts.
 design-notes.md separates the spike from the future starter design.
 The old research/ and deploy/ archives remain local and are excluded from Git.
