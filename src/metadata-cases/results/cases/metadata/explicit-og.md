@@ -32,3 +32,4 @@ control document and cannot verify this response.
 | Run | Requested URL | Status | Content-Type | Robots / Location | Notes / evidence |
 | --- | --- | --- | --- | --- | --- |
 | H002 | https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | 200 | text/html; charset=utf-8 | not captured by probe | User-pasted curl output, 2026-10-24. |
+| H003 | https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | 200 | text/html; charset=utf-8 | not captured by probe | User-pasted post-push probe, 2026-10-24; reported commit 886fe8b. |

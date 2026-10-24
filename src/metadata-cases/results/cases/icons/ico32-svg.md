@@ -18,7 +18,7 @@ responsive icons; note a fresh profile or cache change.
 | --- | --- | --- | --- | --- | --- | --- |
 | B001 | Brave; device unknown | unknown | browser tab icon | blue | reported | User report, 2026-10-23; versions and OS not supplied. |
 | B002 | Firefox; device unknown | unknown | browser tab icon | blue | reported | User report, 2026-10-23; versions and OS not supplied. |
-| B003 | Brave Origin / Arch Linux | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
-| B004 | Firefox / Arch Linux | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
-| B005 | Vanadium / Android 17 | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
-| B006 | Tor Browser Alpha / Android 17 | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
+| B003 | Brave Origin / Arch Linux | dark environment | tab | blue-circle | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B004 | Firefox / Arch Linux | dark environment | tab | blue-circle | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B005 | Vanadium / Android 17 | dark environment | tab-switcher | red-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B006 | Tor Browser Alpha / Android 17 | dark environment | tab-switcher | red-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |

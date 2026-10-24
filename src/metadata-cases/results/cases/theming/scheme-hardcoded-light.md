@@ -15,7 +15,7 @@ forced-dark extensions or browser overrides in the run conditions.
 
 | Run | Browser / device | Mode | Page background / text | Native controls | Chrome / initial paint | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | unknown | — | — | — | not tested |
-| B004 | Firefox / Arch Linux | unknown | — | — | — | not tested |
-| B005 | Vanadium / Android 17 | unknown | — | — | — | not tested |
-| B006 | Tor Browser Alpha / Android 17 | unknown | — | — | — | not tested |
+| B003 | Brave Origin / Arch Linux | dark environment; no emulation identified | white background; black text | reported as not matching the hardcoded page colors; exact colors unreported | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits |
+| B004 | Firefox / Arch Linux | dark environment; no emulation identified | white background; black text | reported as not matching the hardcoded page colors; exact colors unreported | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits |
+| B005 | Vanadium / Android 17 | dark environment; no emulation identified | white background; black text | reported as not matching the hardcoded page colors; exact colors unreported | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits |
+| B006 | Tor Browser Alpha / Android 17 | dark environment; no emulation identified | white background; black text | not reported separately | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits; user reported Tor as light across these cases |

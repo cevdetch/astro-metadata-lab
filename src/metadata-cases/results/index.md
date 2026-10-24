@@ -103,10 +103,13 @@ open the editable Markdown records in the repository.
 | [head/viewport-with-initial-scale](cases/head/viewport-with-initial-scale.md) | Browser | Is initial-scale=1 observably different from width=device-width alone? |
 | [theming/scheme-absent](cases/theming/scheme-absent.md) | Browser | Reference browser defaults without color-scheme. |
 | [theming/scheme-meta-only](cases/theming/scheme-meta-only.md) | Browser | Does the meta declaration suffice for browser-native colors? |
+| [theming/scheme-meta-dark-first](cases/theming/scheme-meta-dark-first.md) | Browser | Does reversing the supported schemes to dark light change the selected appearance? |
+| [theming/scheme-meta-dark-only](cases/theming/scheme-meta-dark-only.md) | Browser | What happens when the page declares support for dark alone? |
 | [theming/scheme-meta-and-css](cases/theming/scheme-meta-and-css.md) | Browser | Does repeating the declaration in CSS add useful behavior? |
 | [theming/scheme-hardcoded-light](cases/theming/scheme-hardcoded-light.md) | Browser | Negative control: meta does not adapt hardcoded light CSS. |
 | [theming/scheme-system-colors](cases/theming/scheme-system-colors.md) | Browser | Do Canvas and CanvasText follow system preference? |
 | [theming/scheme-duplicate](cases/theming/scheme-duplicate.md) | Browser | Negative conformance control: duplicate color-scheme metadata. |
+| [theming/scheme-duplicate-dark-first](cases/theming/scheme-duplicate-dark-first.md) | Browser | Negative control: reverse the duplicate tags to dark, then light dark. |
 | [theming/theme-color-media](cases/theming/theme-color-media.md) | Browser, Social DM | Do browser selection and social-preview accent selection differ? |
 | [manifest/manifest-disabled](cases/manifest/manifest-disabled.md) | Browser | No manifest link, despite static icon assets being available. |
 | [manifest/manifest-enabled](cases/manifest/manifest-enabled.md) | Browser | Online-only manifest discovery and launch settings. |

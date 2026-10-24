@@ -9,6 +9,8 @@ const groups = [
   { label: 'First social-DM round', group: 'precedence', ids: ['html-only', 'og-vs-html', 'twitter-vs-html', 'all-fields', 'twitter-first'] },
   { label: 'First browser icon round', group: 'icons', ids: ['icon-svg-only', 'icon-ico-only', 'ico32-svg', 'svg-ico32', 'svg-responsive'] },
   { label: 'First light/dark round', group: 'theming', ids: ['scheme-absent', 'scheme-meta-only', 'scheme-meta-and-css'] },
+  { label: 'Color-scheme order and dark-only controls', group: 'theming', ids: ['scheme-meta-only', 'scheme-meta-dark-first', 'scheme-meta-dark-only'] },
+  { label: 'Duplicate color-scheme order (invalid controls)', group: 'theming', ids: ['scheme-duplicate', 'scheme-duplicate-dark-first'] },
 ];
 ---
 <!doctype html>

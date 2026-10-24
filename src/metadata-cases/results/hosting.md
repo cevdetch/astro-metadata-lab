@@ -14,7 +14,25 @@ output. Keep the earlier result when a later probe differs.
 | H002 | /cases/assets/icon-blue.svg | 200 | image/svg+xml | No redirect reported. |
 | H002 | /cases/assets/social-red.png | 200 | image/png | No redirect reported. |
 | H002 | /cases/assets/app.webmanifest | 200 | application/manifest+json | No redirect reported. |
-| H002 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Location: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ |
+| H002 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ |
+| H003 | /cases/metadata/explicit-og/ | 200 | text/html; charset=utf-8 | No redirect reported. |
+| H003 | /cases/source/metadata/explicit-og.txt | 200 | text/plain; charset=utf-8 | Exact source URL succeeds. |
+| H003 | /cases/source/metadata/explicit-og | 404 | text/html; charset=utf-8 | Missing extension control. |
+| H003 | /cases/source/metadata/explicit-og.txt/ | 404 | text/html; charset=utf-8 | Extra trailing-slash control. |
+| H003 | /cases/assets/icon-blue.svg | 200 | image/svg+xml | No redirect reported. |
+| H003 | /cases/assets/social-red.png | 200 | image/png | No redirect reported. |
+| H003 | /cases/assets/app.webmanifest | 200 | application/manifest+json | No redirect reported. |
+| H003 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ |
+
+H003 is the user's post-push probe associated with reported latest commit
+`886fe8b63c31fe1915d1f9d7efbd90a0b50527f0`. It matches the eight H002 outcomes;
+the exact-source H001 404 remains a separate historical observation.
+
+The redirect URLs above come from the probe's `%{redirect_url}` output, rather
+than raw Location headers. The probe did not capture Location or X-Robots-Tag;
+those header values remain unknown for H002 and H003. The
+[HTTP worksheet](https://github.com/cevdetch/astro-metadata-lab/blob/main/src/metadata-cases/results/http-test-table.md)
+keeps raw and resolved redirect values separate.
 
 The HTTP-only noindex fixture, its three URL variants, the dedicated missing-page
 URL and an arbitrary unknown URL still need their own recorded checks. A browser

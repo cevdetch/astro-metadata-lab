@@ -15,9 +15,9 @@ function subject(group, id, base = '/') {
 
 test('every prepared case gets a unique local route', () => {
   assert.ok(api, 'The local case renderer is not implemented yet');
-  assert.equal(api.cases.length, 118);
+  assert.equal(api.cases.length, 121);
   const paths = api.cases.map(c => api.caseHref(c));
-  assert.equal(new Set(paths).size, 118);
+  assert.equal(new Set(paths).size, 121);
   assert.ok(paths.every(path => path.startsWith('/cases/')));
 });
 

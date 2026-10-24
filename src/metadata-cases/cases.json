@@ -1233,6 +1233,22 @@
   },
   {
     "group": "theming",
+    "id": "scheme-meta-dark-first",
+    "question": "Does reversing the supported schemes to dark light change the selected appearance?",
+    "options": {
+      "scheme": "dark light"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-meta-dark-only",
+    "question": "What happens when the page declares support for dark alone?",
+    "options": {
+      "scheme": "dark"
+    }
+  },
+  {
+    "group": "theming",
     "id": "scheme-meta-and-css",
     "question": "Does repeating the declaration in CSS add useful behavior?",
     "options": {
@@ -1261,6 +1277,15 @@
     "question": "Negative conformance control: duplicate color-scheme metadata.",
     "options": {
       "extra": "<meta name=\"color-scheme\" content=\"dark\">"
+    }
+  },
+  {
+    "group": "theming",
+    "id": "scheme-duplicate-dark-first",
+    "question": "Negative control: reverse the duplicate tags to dark, then light dark.",
+    "options": {
+      "scheme": "dark",
+      "extra": "<meta name=\"color-scheme\" content=\"light dark\">"
     }
   },
   {

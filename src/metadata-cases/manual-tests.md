@@ -28,6 +28,26 @@ on every device at once.
    group for those checks after the first round. Record what the UI actually
    offers; the lab makes no offline-support claim.
 
+## Color-scheme follow-up
+
+Compare `theming/scheme-meta-only` (`light dark`),
+`theming/scheme-meta-dark-first` (`dark light`) and
+`theming/scheme-meta-dark-only` (`dark`) as top-level pages. These meta-only
+controls vary the supported list without adding CSS. Record page appearance and
+native controls separately. Use Tor's usual settings for the first observation;
+keep OS/browser mode, exposed media-query values and DevTools emulation distinct.
+The browser worksheet includes the optional media-query inspection command.
+
+Repeat with a real light setting where available. Label a DevTools light/dark
+override as emulation and name the browser; it does not replace a full device
+run. The duplicate case begins with `light dark` and is an invalid authoring
+control, not a supported way to combine declarations.
+
+Compare `scheme-duplicate` with `scheme-duplicate-dark-first` to reverse the two
+actual meta tags, rather than the words in one tag. The reversed case has `dark`
+first and `light dark` second. Compare it with the single-tag dark-only control
+as well; leave earlier results intact when repeating the comparison.
+
 ## First social-DM round
 
 For each of LinkedIn, Discord, X, WhatsApp, Instagram and Facebook Messenger,
@@ -133,6 +153,12 @@ Screenshot or other evidence:
 Start with Brave and Firefox on desktop, Safari on iOS and Chrome on Android.
 Add other available browser/OS combinations and record their versions rather
 than assuming they share behavior.
+
+The current available matrix is Brave Origin and Firefox on Arch Linux, plus
+Vanadium and Tor Browser Alpha on Android 17. Start the next color-scheme batch
+with Tor, then repeat in the other three. Safari/iOS is additional coverage when
+available; do not fill its results from an Android observation. The results
+folder's README lists completed and remaining groups in testing order.
 
 1. Compare `icons/ico32-svg` with `icons/svg-ico32`, then the omitted-size pairs.
    Observe the displayed tab icon, not only a fetched file in the Network panel.

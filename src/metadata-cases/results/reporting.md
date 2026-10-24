@@ -1,8 +1,12 @@
 ## Reporting shortcuts
 
-Give the run ID once per batch, followed by the case and what you saw. We will
-fill the result tables; you do not need to edit files. The snippets below are
-reporting formats, not expected outcomes or recorded observations.
+Give the run ID once per batch, followed by the case and what you saw. Fill the
+browser, link-preview or HTTP worksheet in the
+[results folder](https://github.com/cevdetch/astro-metadata-lab/tree/main/src/metadata-cases/results),
+or send observations directly. Each worksheet proposes fields, values and examples
+beside its groups; you only need to enter a result once. We will update the
+detailed records from your report. The snippets below are reporting formats,
+not expected outcomes or recorded observations.
 
 ### Icon labels
 
@@ -34,6 +38,11 @@ Your registered browsers are B003 (Brave Origin / Arch Linux), B004 (Firefox /
 Arch Linux), B005 (Vanadium / Android 17) and B006 (Tor Browser Alpha / Android 17).
 Versions live in the test-run registry. Use a new run when the client version,
 device or deployment changes.
+
+For a new deployment, you may use a temporary label such as `B006/<short-SHA>`
+to reference the existing client setup; supply the full commit once for the
+batch. We will assign a new registered run ID. Preserve the earlier rows and
+state any settings changes rather than rewriting the earlier deployment context.
 
 ```text
 B003 | mode=[light/dark] | surface=[tab/tab-switcher/bookmark/home-screen]
@@ -73,12 +82,12 @@ other. A downloaded image is a separate observation from a displayed tab icon.
 B003 | mode=[light/dark]
 theming/scheme-meta-only:
 page-bg=[color]; text=[color]; controls=[appearance]
-toolbar=[color/not shown]; flash=[seen/not seen/unknown]
+toolbar=[color/none/unknown]; flash=[seen/not seen/not tested/unknown]
 ```
 
-Use separate light/dark rows. Plain descriptions such as dark background, light
-text or unchanged toolbar are enough. Record initial paint after a reload if you
-observe it; leave it unknown otherwise.
+Use separate light/dark rows. Plain color descriptions are enough. Use unchanged
+only with a named comparison reference. Record initial paint after a reload if
+you observe it; use not tested when unobserved or unknown when inconclusive.
 
 ### Head and viewport reports
 
@@ -86,7 +95,8 @@ observe it; leave it unknown otherwise.
 B005 | orientation=[portrait/landscape] | scripting=[on/off/unknown]
 head/viewport-absent:
 layout=[what changed]; zoom=[what you did or observed]; text=[normal/garbled/...]
-DOM/encoding/HTTP charset=[value if inspected, otherwise unknown]
+encoding=[inspected document encoding, or not tested]
+http-charset=[response charset, or not tested]
 ```
 
 Record visible behavior first. Inspection details are optional. A normal-looking
@@ -99,8 +109,8 @@ it used. Report scripting-on/off tests separately for the noscript case.
 B005
 language/[case]:
 text=[what appears]; direction=[LTR/RTL/mixed]
-document-lang=[if inspected, otherwise unknown]
-keyboard/screen-reader=[action and result, or not tested]
+document-lang=[if inspected, otherwise not tested]
+a11y=[keyboard/screen-reader action and result, or not tested]
 ```
 
 For an accessibility report, name the keyboard action or assistive technology
@@ -113,8 +123,8 @@ than assigning a general accessibility pass/fail.
 B005
 manifest/manifest-enabled:
 action=[bookmark/add-home-screen/install/launch]
-UI-offered=[yes/no]; icon=[label]; name=[visible name]
-launch-URL=[URL]; display=[browser/standalone/unknown]
+offered=[yes/no]; icon=[label]; name=[visible name]
+launch-url=[URL]; display=[browser/standalone/unknown]
 prior-install=[yes/no/unknown]; result=[what happened]
 ```
 
@@ -125,11 +135,11 @@ Use the same format for the apple-touch-icon case where relevant.
 ### JSON-LD checks
 
 ```text
-B003 | scripting=[on/off/unknown]
+B003
 json-ld/[case]:
-JSON-parses=[yes/no/not tested]
-extra-image/request=[what DevTools shows, or not tested]
-window.fixtureInjection=[observed value, or not tested]
+js=[on/off/unknown]; json=[valid/invalid/not tested]
+extra-img=[present/absent/not tested]; request=[seen/not seen/not tested]
+flag=[window.fixtureInjection value, or not tested]
 ```
 
 These are developer inspection cases. Leave checks you did not perform as not
@@ -148,7 +158,8 @@ Surface: [composer/sent/received]
 URL: [exact shared fixture URL]
 Case: precedence/all-fields
 title=[visible text]; description=[visible text/none]
-image=[red/green/none/other/unknown]; layout=[what it looks like]
+image=[red/green/none/other:description/unknown]
+layout=[large-image/thumbnail/text-only/other:description]
 destination=[URL after tapping, or not tested]
 ```
 
@@ -176,16 +187,27 @@ Command or script: [what you ran]
 We will register an H run and extract status, Content-Type, robots headers and
 redirect destination where the output supplies them. Missing headers in a short
 probe stay unknown. HTTP status is a separate observation from the page body.
+The HTTP worksheet keeps raw Location headers separate from the short probe's
+resolved redirect destination; see the
+[curl write-out documentation](https://curl.se/docs/manpage.html#-w).
 
 ### Result words
 
 | Write | Meaning |
 | --- | --- |
+| blank | No result supplied yet; worksheet input/result cells start with two spaces |
 | `none` | You checked the named surface/field and it showed no value |
 | `not tested` | You have not performed that check |
 | `unknown` | The observation does not identify the value |
 | `other: ...` | You saw something outside the suggested labels |
 | `error: ...` | The page, image or action failed; include the visible message/URL |
+| `absent` | A response header is confirmed missing from a complete header capture |
+
+Use `key=value; key=value` for worksheet observations, except a simple icon label
+or an HTTP row's raw value. Omitted fields stay unreported. Keep each cell on one
+line; escape literal pipes as `\|`. Quote visible text containing semicolons or
+reserved words, and use inline code for literal HTML/entity text. Add `note=...`
+or `evidence=<file or reference>` when useful. Keep examples outside result cells.
 
 You can report one case, a batch, a change after reload or a screenshot. Include
 the run/case when it is not already clear. We will ask one focused follow-up if

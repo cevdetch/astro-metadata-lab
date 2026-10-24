@@ -16,7 +16,7 @@ responsive icons; note a fresh profile or cache change.
 
 | Run | Browser / device | Mode | Surface | Icon shown | Status | Notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
-| B004 | Firefox / Arch Linux | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
-| B005 | Vanadium / Android 17 | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
-| B006 | Tor Browser Alpha / Android 17 | unknown | unknown | — | not tested | Planned browser run; see test-run registry. |
+| B003 | Brave Origin / Arch Linux | dark environment | tab | green-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B004 | Firefox / Arch Linux | dark environment | tab | green-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B005 | Vanadium / Android 17 | dark environment | tab-switcher | blue-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B006 | Tor Browser Alpha / Android 17 | dark environment | tab-switcher | blue-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
