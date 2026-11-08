@@ -2,7 +2,7 @@
 # Usage: bash scripts/probe-deployment.sh [origin]
 set -u
 
-origin="${1:-https://astro-metadata-lab.pages.dev}"
+origin="${1:-https://astro-metadata-lab.cevdet.ch}"
 origin="${origin%/}"
 
 paths=(
