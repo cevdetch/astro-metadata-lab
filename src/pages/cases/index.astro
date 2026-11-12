@@ -17,7 +17,7 @@ const groups = [...new Set(cases.map(c => c.group))];
   <body>
     <main>
       <h1>Metadata comparisons</h1>
-      <p><a href={normalizeBase(base)}>Your current page</a> · {cases.length} experimental cases</p>
+      <p><a href={`${normalizeBase(base)}cases/current/`}>Your current page</a> · {cases.length} experimental cases · <a href={normalizeBase(base)}>About the lab</a></p>
       <p><a href={`${normalizeBase(base)}cases/testing/`}>How to test on phones and in messaging apps</a> — start with a small set of cases and copy the result format.</p>
       <p><a href={`${normalizeBase(base)}cases/results/`}>Result tables for every case</a> — tell me the browser/app once, then the case IDs and what you saw.</p>
       <p>Open a case in its own tab to check favicons. Compare shows it beside your current page and displays the fixture head. HTML opens the complete fixture as plain text.</p>

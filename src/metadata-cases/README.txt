@@ -1,7 +1,8 @@
 Metadata comparisons
 
 Open /cases/ in this Astro project. Each of the 121 cases has its own page,
-a comparison view beside the current homepage, and a plain-text HTML source.
+a comparison view beside the current-page baseline at /cases/current/, and a
+plain-text HTML source. The homepage explains the lab and is not a fixture.
 Edit cases.json; these options are controlled research inputs, not the starter's
 proposed metadata API. The fixtures include invalid HTML and an injection control.
 Do not pass external or user-provided HTML into this renderer.
