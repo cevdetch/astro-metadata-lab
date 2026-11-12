@@ -15,7 +15,10 @@ Run pnpm verify for Node tests, the Astro build and output checks. Start a new d
 server only if needed, with pnpm astro dev --background. Do not interrupt an
 existing user-run server. See the root README.md for commands and Pages settings.
 
-The build emits Cloudflare _headers and _redirects. The error case URL stays absent
+The build emits Cloudflare _headers and _redirects. Its robots.txt keeps search
+crawlers out of /cases/ while letting link-preview fetchers in, and sitemap.xml
+lists only the homepage. Production builds on the main branch use the custom
+domain as their origin. The error case URL stays absent
 so the host can serve the fixture through 404.html. Static redirect HTML is the
 fallback on hosts that ignore _redirects. Live HTTP behavior needs verification
 after deployment. Other hosts must configure their own headers/redirects/404s.

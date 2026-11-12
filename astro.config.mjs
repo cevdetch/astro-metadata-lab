@@ -6,6 +6,8 @@ import { hostFiles } from './src/metadata-cases/host-files.ts';
 
 const site = buildOrigin(buildEnvironment);
 let base = '/';
+/** @type {string | undefined} */
+let origin;
 
 export default defineConfig({
   ...(site ? { site } : {}),
@@ -15,11 +17,13 @@ export default defineConfig({
   integrations: [{
     name: 'metadata-case-host-files',
     hooks: {
-      'astro:config:done': ({ config }) => { base = config.base; },
+      'astro:config:done': ({ config }) => { base = config.base; origin = config.site; },
       'astro:build:done': async ({ dir }) => {
-        const files = hostFiles(base);
+        const files = hostFiles(base, origin);
         await writeText(new URL('_headers', dir), files.headers);
         await writeText(new URL('_redirects', dir), files.redirects);
+        await writeText(new URL('robots.txt', dir), files.robots);
+        if (files.sitemap) await writeText(new URL('sitemap.xml', dir), files.sitemap);
       },
     },
   }],
