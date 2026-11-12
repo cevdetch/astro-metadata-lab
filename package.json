@@ -5,18 +5,22 @@
   "type": "module",
   "version": "0.0.1",
   "engines": {
-    "node": ">=22.23.4"
+    "node": ">=24.8.0"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "test:cases": "node src/metadata-cases/cases.test.mjs && node src/metadata-cases/hosting.test.mjs",
     "verify:build": "node scripts/verify-build.mjs",
-    "verify": "pnpm test:cases && pnpm build && pnpm verify:build",
+    "lint:html": "deadhead dist/index.html dist/cases/index.html dist/cases/testing dist/cases/results dist/cases/compare",
+    "verify": "pnpm test:cases && pnpm build && pnpm verify:build && pnpm lint:html",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^7.4.2"
+  },
+  "devDependencies": {
+    "deadhead": "0.3.1"
   }
 }

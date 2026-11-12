@@ -11,9 +11,12 @@ Routes live in src/pages/cases/. Assets live in assets/ and build under
 or offline support. The scaffold's PNG-in-favicon.ico remains the origin-root
 discovery control; explicit ICO cases use real ICO files from assets/.
 
-Run pnpm verify for Node tests, the Astro build and output checks. Start a new dev
-server only if needed, with pnpm astro dev --background. Do not interrupt an
-existing user-run server. See the root README.md for commands and Pages settings.
+Run pnpm verify for Node tests, the Astro build, output checks and deadhead. The
+HTML lint covers the homepage and the catalogue, guide, result and comparison
+pages; the fixtures, 404.html and sources are broken on purpose and skipped.
+Start a new dev server only if needed, with pnpm astro dev --background. Do not
+interrupt an existing user-run server. See the root README.md for commands and
+Pages settings.
 
 The build emits Cloudflare _headers and _redirects. The error case URL stays absent
 so the host can serve the fixture through 404.html. Static redirect HTML is the
