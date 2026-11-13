@@ -1,72 +1,154 @@
 ---
-// Local sample values make this existing draft renderable for comparison.
-// The original source is preserved in metadata-cases/original-index.astro.txt.
-import { assetHref, normalizeBase } from '../metadata-cases/cases';
-const base = import.meta.env.BASE_URL;
-const fullTitle = 'Current metadata draft';
-const description = 'The existing head structure with local sample values for comparison.';
-const styleURL = assetHref('reference.css', base);
-const SITE_NAME = 'Metadata research';
-const noindex = false;
-const canonical = new URL(normalizeBase(base), Astro.url.origin).href;
-const ogType = 'website' as 'website' | 'article';
-const ogImage = new URL(assetHref('social-red.png', base), Astro.url.origin).href;
-const publishedTime = undefined as Date | undefined;
-const modifiedTime = undefined as Date | undefined;
-const jsonLd = undefined as Record<string, unknown> | undefined;
----
+// The lab's only indexable page. The comparison baseline that used to live
+// here is now the /cases/current/ fixture; nothing below is an experiment.
+import { cases, normalizeBase } from '../metadata-cases/cases';
+import '../metadata-cases/ui.css';
 
+const home = normalizeBase(import.meta.env.BASE_URL);
+const url = new URL(home, Astro.url.origin).href;
+const name = 'Astro Metadata Lab';
+const title = `${name}: how real clients read broken head metadata`;
+const description = '121 deliberately broken test pages for titles, Open Graph, favicons, canonicals and colour schemes, with results from four browsers on Linux and Android.';
+const image = new URL(`${home}og-image.png`, Astro.url.origin).href;
+const repository = 'https://github.com/cevdetch/astro-metadata-lab';
+// Replace with the post's own URL once the write-up is published.
+const writeUp = 'https://deadhead.cevdet.ch/blog';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name,
+  url,
+  description,
+  publisher: { '@type': 'Person', '@id': 'https://cevdet.ch/#person', name: 'Cevdet', url: 'https://cevdet.ch/' },
+};
+const groups = [
+  ['metadata', 'Metadata', 'HTML fallbacks, missing or empty Open Graph fields, Twitter card fields and their order, conflicting, escaped and very long text, and missing, relative, SVG or multiple social images.'],
+  ['precedence', 'Precedence', 'HTML, Open Graph, Twitter and body text carry different markers (A, B, C, D) and different image colours, so a preview shows which source each field came from.'],
+  ['canonical', 'Canonical URLs', 'Missing, relative, cross-origin and duplicate canonicals, an HTML base element and a tracking query.'],
+  ['icons', 'Icons', 'SVG and ICO in both orders, with and without sizes and type hints, a multi-size ICO, PNG bytes behind an .ico name, a missing SVG, tied PNGs and an Apple touch icon.'],
+  ['head', 'Head parsing', 'Charset position around byte boundaries, invalid elements and metadata inside noscript, and viewport variants.'],
+  ['theming', 'Theming', 'No colour scheme, a meta declaration, CSS, reversed or dark-only values, hard-coded light colours, system colours, duplicate tags and a media-qualified theme colour.'],
+  ['manifest', 'Manifest', 'Disabled, enabled, relative and duplicate web app manifests.'],
+  ['json-ld', 'JSON-LD', 'A literal script end tag inside structured data, against the escaped version.'],
+  ['language', 'Language', 'English, French, Arabic right-to-left and mixed-language pages.'],
+  ['indexing', 'Indexing and HTTP', 'Noindex with and without a social image, an HTTP-only noindex header, a real 404 and a real 302.'],
+] as const;
+const count = (group: string) => cases.filter(c => c.group === group).length;
+---
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{fullTitle}</title>
-    <meta name="color-scheme" content="dark light" />
-    <link rel="stylesheet" href={styleURL} />
-    <link rel="icon" href={`${normalizeBase(base)}favicon.ico`} />
-    <!-- sizes="32x32" -->
-    <link rel="icon" type="image/svg+xml" href={assetHref('icon-blue.svg', base)} />
-
-    <link rel="apple-touch-icon" href={assetHref('apple-touch-icon.png', base)} />
-    <link rel="manifest" href={assetHref('app.webmanifest', base)} />
-
-    {!noindex && <link rel="canonical" href={canonical} />}
+    <meta name="color-scheme" content="light dark" />
+    <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
-    {!noindex && (
-      <>
-        <meta property="og:site_name" content={SITE_NAME} />
-        <meta property="og:type" content={ogType} />
-        <meta property="og:url" content={canonical} />
-        <meta property="og:title" content={fullTitle} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={ogImage} />
-        <meta name="twitter:card" content="summary_large_image" />
-        {ogType === "article" && publishedTime && (
-          <meta
-            property="article:published_time"
-            content={publishedTime.toISOString()}
-          />
-        )}
-        {ogType === "article" && modifiedTime && (
-          <meta
-            property="article:modified_time"
-            content={modifiedTime.toISOString()}
-          />
-        )}
-      </>
-    )}
-    {jsonLd && (
-      <script
-        type="application/ld+json"
-        is:inline
-        set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
-      />
-    )}
-    <slot name="head" />
+    <link rel="canonical" href={url} />
+    <link rel="icon" href={`${home}favicon.svg`} type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={name} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content="Astro Metadata Lab: 121 test pages with metadata broken on purpose" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
   </head>
   <body>
-    <h1>Astro</h1>
-    <p><a href={`${normalizeBase(base)}cases/`}>Compare metadata cases</a></p>
+    <main>
+      <h1>{name}</h1>
+      <p>
+        The lab is a set of {cases.length} static test pages. Each one changes a single thing in the
+        head of an HTML page: a title, an Open Graph tag, a favicon link, a canonical URL or a colour
+        scheme declaration. Opening them in real browsers, sharing them in messaging apps and requesting
+        them from a real host shows what those clients actually do with the markup. It is built with
+        Astro and deployed on Cloudflare Pages, and its purpose is to decide, with evidence, what a minimal
+        Astro starter should put in every page's head.
+      </p>
+      <p><a href={`${home}cases/`}>Browse all {cases.length} cases</a> · <a href={`${home}cases/results/`}>Read the result tables</a> · <a href={repository}>Source on GitHub</a></p>
+
+      <h2>Why the metadata is broken on purpose</h2>
+      <p>
+        Specifications and platform documentation say what a client should do with a well-formed tag. They
+        rarely say what happens when the tag is missing, empty, relative, duplicated or contradicted by
+        another one, and that is where real pages go wrong. A starter template copies its head into every
+        project built from it, so each tag in it needs a reason, and each omission needs one too.
+      </p>
+      <p>
+        Many cases are negative controls: they are invalid on purpose, such as a bitmap ICO advertised as
+        scalable, two conflicting canonical links or a JSON-LD block that ends its own script element.
+        Don't copy them into a real site. Every page is rendered from a short definition, and the build
+        checks the output byte for byte, so the HTML a client receives is exactly the HTML the case
+        describes.
+      </p>
+
+      <h2>How the cases are organised</h2>
+      <p>
+        The cases fall into ten groups. Each case has its own page to open in a top-level tab or share as a
+        link, a comparison view that places it beside a baseline page and shows its head, the complete HTML
+        as plain text, and a result record. The case pages exist for testing and are kept out of search
+        results, but you can browse all of them from here.
+      </p>
+      <ul>
+        {groups.map(([id, label, summary]) => (
+          <li><a href={`${home}cases/#${id}`}>{label}</a> ({count(id)}): {summary}</li>
+        ))}
+      </ul>
+      <p>The <a href={`${home}cases/testing/`}>testing guide</a> explains how to run a round on a phone or in a messaging app and how to report it.</p>
+
+      <h2>Method</h2>
+      <p>
+        Each result is a hand-made observation, recorded against a test run that names the client, its
+        version, the device and the conditions. Unknown details stay marked as unknown, and a rerun that
+        disagrees is added beside the earlier result rather than replacing it.
+      </p>
+      <ul>
+        <li><strong>Browsers.</strong> Brave Origin 1.97 (Chromium 155) and Firefox 160.0a1 on Arch Linux, and Vanadium 156 and Tor Browser Alpha 16.0a14 on Android 17. All four used private profiles with the system in dark mode. The icon and theming groups have results so far.</li>
+        <li><strong>Link previews.</strong> Signal, WhatsApp, Discord and Instagram have been checked for a theme-colour accent. The precedence and omission cases target LinkedIn, Discord, X, WhatsApp, Instagram and Facebook Messenger; those results are not published here yet.</li>
+        <li><strong>HTTP.</strong> curl requests to the Cloudflare Pages deployment, without following redirects, record the status code, content type and redirect target.</li>
+        <li><strong>Search crawlers.</strong> None. No search engine has been used to test the indexing or canonical cases.</li>
+      </ul>
+
+      <h2>What the results show so far</h2>
+      <ul>
+        <li>An SVG favicon on its own showed in all four browsers.</li>
+        <li>With an ICO marked <code>sizes="32x32"</code> and an SVG, Brave and Firefox on Linux showed the SVG in either order, while Vanadium and Tor on Android showed the ICO. Adding <code>sizes="any"</code> to the SVG made all four show the SVG.</li>
+        <li>With no <code>sizes</code> at all, Brave and Vanadium showed whichever icon was declared last; Firefox showed the SVG in both orders. Given two PNGs of the same declared size, Brave, Firefox and Vanadium also used the last one.</li>
+        <li>Offered a 32px and a 64px PNG, the Linux browsers showed the 32px icon and the Android browsers the 64px one.</li>
+        <li>When the preferred SVG was missing, Brave and Vanadium fell back to the ICO; Firefox showed no icon at all. A page with no icon link still got the root <code>/favicon.ico</code> in Brave, Firefox and Vanadium.</li>
+        <li>In dark mode, a page without a colour scheme stayed light in Brave, Firefox and Vanadium, and <code>&lt;meta name="color-scheme" content="light dark"&gt;</code> alone was enough to turn it dark. The same declaration over a hard-coded white body gave a white page whose native controls did not match it. Tor Browser stayed light in every theming case it was given.</li>
+        <li>A media-qualified <code>theme-color</code> made no visible change to the browser interface, or to the link-preview accent in Signal, WhatsApp, Discord and Instagram.</li>
+        <li>On Cloudflare Pages, the generated <code>_redirects</code> rule returned a real 302, and a case's plain-text source returned 200 as <code>text/plain</code> at its exact <code>.txt</code> URL. Without the extension, or with a trailing slash, it returned 404.</li>
+        <li>With <code>trailingSlash: 'always'</code>, the Astro 7.4.2 dev server rejected asset URLs such as <code>icon-blue.svg</code> from an extensionless endpoint, although the build emitted the files correctly. The lab uses <code>'ignore'</code> for that reason.</li>
+      </ul>
+      <p>
+        Each of these comes from one version of each browser on one device, in dark mode, so they are
+        observations rather than rules. Several Tor results were surprising and are due a rerun in a fresh
+        profile. Light mode, bookmarks, home-screen icons, installation, the head, language, manifest and
+        JSON-LD groups and most link-preview fields don't have results yet.
+      </p>
+
+      <h2>Write-up</h2>
+      <p>
+        A longer write-up of the findings, with what they mean for a starter's head, is being prepared for
+        the <a href={writeUp}>deadhead blog</a>.
+      </p>
+
+      <h2>Source and related tools</h2>
+      <p>
+        The cases, the renderer, the build checks and every result record are in the
+        <a href={repository}>astro-metadata-lab repository</a> on GitHub. To check your own pages for
+        deprecated, unnecessary or harmful head markup, use <a href="https://deadhead.cevdet.ch/">deadhead</a>,
+        an HTML linter whose rules link to researched explanations.
+      </p>
+    </main>
+    <footer>
+      <p>By <a href="https://cevdet.ch/">Cevdet</a> · <a href={repository}>Source</a></p>
+    </footer>
   </body>
 </html>
+
+<style>
+  footer { max-width: 78ch; margin-inline: auto; padding: 0 1.5rem 1.5rem; }
+</style>

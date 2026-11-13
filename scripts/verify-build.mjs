@@ -47,6 +47,7 @@ for (const definition of cases) {
     assert.ok(page.includes(`href="${resultsHref(definition, base)}"`), `${label}: results must be discoverable`);
   }
   assert.ok(comparison.includes('Fixture head'), `${label}: comparison view is missing`);
+  assert.ok(comparison.includes(`<iframe src="${base}cases/current/"`), `${label}: the comparison baseline is the current-page fixture`);
   assert.ok(index.includes(`href="${openHref(definition, base)}"`), `${label}: index must link to the test URL`);
   if (definition.options.redirect) {
     const html = await read(file(caseHref(definition, base)) + 'index.html');
@@ -74,9 +75,22 @@ for (const name of ['app.webmanifest', 'second.webmanifest']) {
 const expectedHostFiles = hostFiles(base);
 assert.equal(await read(join(output, '_headers')), expectedHostFiles.headers);
 assert.equal(await read(join(output, '_redirects')), expectedHostFiles.redirects);
+const current = await read(join(output, 'cases/current/index.html'));
+assert.ok(current.includes(`href="${base}favicon.ico"`), 'The baseline favicon must respect the mount point');
+assert.ok(current.includes(`content="${new URL(`${base}cases/current/`, origin).href}"`), 'The baseline must use the deployment origin');
 const home = await read(join(output, 'index.html'));
-assert.ok(home.includes(`href="${base}favicon.ico"`), 'The baseline favicon must respect the mount point');
-assert.ok(home.includes(`content="${new URL(base, origin).href}"`), 'The baseline must use the deployment origin');
+const homeUrl = new URL(base, origin).href;
+assert.ok(home.includes(`<link rel="canonical" href="${homeUrl}">`), 'The landing page must name itself as canonical');
+assert.ok(!home.includes('name="robots"'), 'The landing page is the indexable page');
+assert.match(home, /<title>Astro Metadata Lab: [^<]+<\/title>/);
+assert.match(home, /<meta property="og:image:alt" content="[^"]+"><meta name="twitter:card" content="summary_large_image">/, 'twitter:card follows the image tags');
+assert.ok(home.includes(`content="${new URL(`${base}og-image.png`, origin).href}"`), 'The landing page needs an absolute social image');
+await stat(join(output, 'og-image.png'));
+const website = JSON.parse(home.match(/<script type="application\/ld\+json">(.+?)<\/script>/)[1]);
+assert.equal(website['@type'], 'WebSite');
+assert.equal(website.url, homeUrl);
+assert.equal(website.publisher['@id'], 'https://cevdet.ch/#person');
+assert.ok(home.includes(`href="${base}cases/"`), 'The landing page must lead into the catalogue');
 assert.ok(!referenceHtml.includes('<script'), 'The ordinary fixture must not gain client scripts');
 assert.ok(!referenceHtml.includes('rel="stylesheet"'), 'Comparison UI styles must not leak into ordinary fixtures');
 
