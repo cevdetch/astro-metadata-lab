@@ -11,6 +11,10 @@ importers:
       astro:
         specifier: ^7.4.2
         version: 7.4.2(yaml@2.9.1)
+    devDependencies:
+      deadhead:
+        specifier: 0.3.1
+        version: 0.3.1(vite@8.3.5(yaml@2.9.1))
 
 packages:
 
@@ -620,6 +624,16 @@ packages:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
+  deadhead@0.3.1:
+    resolution: {integrity: sha512-nKRCIWuUaGY3I29sxEjHArpT4CYPG+22cTA7sIP/Xo0g/6aNoA1ludcCqNoVB7+yYfNWprwe8ENRSRCUCDcmBg==}
+    engines: {node: '>=24.8.0'}
+    hasBin: true
+    peerDependencies:
+      vite: ^8.0.0
+    peerDependenciesMeta:
+      vite:
+        optional: true
+
   defu@6.1.7:
     resolution: {integrity: sha512-7z22QmUWiQ/2d0KkdYmANbRUVABpZ9SNYyH5vx6PZ+nE5bcC0l7uFvEfHlyld/HcGBFTL536ClDt3DEcSlEJAQ==}
 
@@ -665,6 +679,10 @@ packages:
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
+
+  entities@9.0.0:
+    resolution: {integrity: sha512-oJFNDJg3kTPwAD1cNn2+WmUq4wFoo09npc3Ydf1D7ED4smRiWrsKnaLxykrTWgyGEcusc87P5dxlAleol9kpkg==}
+    engines: {node: '>=20.19.0'}
 
   es-module-lexer@3.0.4:
     resolution: {integrity: sha512-BldNY5mwkVu+cQ5Ymn3e6hB9Sx8XHx4ZevWbiUyZbfKxJxYO27Hf0wfzkxIaD5CAJMaGl3YspKELj0ff/7nCMA==}
@@ -916,6 +934,9 @@ packages:
 
   package-manager-detector@1.9.0:
     resolution: {integrity: sha512-zAMfbta9nPA8AKkA4WdmNAT8R8s6Dk0/xwPsqNnRidMFcLo1YkLuPDTgs2f64XdzS8vbLNnoJ+uUIkgbz7oRHA==}
+
+  parse5@8.1.1:
+    resolution: {integrity: sha512-EcR/6WDcU7b2N3vQSxKALCk9lXGtUMQxXio008OEMBE0kavu/7JLfBEeFPzi43nMqVDSbEn3QCK+BMCc9zO//w==}
 
   piccolore@0.1.3:
     resolution: {integrity: sha512-o8bTeDWjE086iwKrROaDf31K0qC/BENdm15/uH9usSC/uZjJOKb2YGiVHfLY4GhwsERiPI1jmwI2XrA7ACOxVw==}
@@ -1802,6 +1823,12 @@ snapshots:
     dependencies:
       css-tree: 2.2.1
 
+  deadhead@0.3.1(vite@8.3.5(yaml@2.9.1)):
+    dependencies:
+      parse5: 8.1.1
+    optionalDependencies:
+      vite: 8.3.5(yaml@2.9.1)
+
   defu@6.1.7: {}
 
   dequal@2.0.3: {}
@@ -1839,6 +1866,8 @@ snapshots:
   dset@3.1.4: {}
 
   entities@4.5.0: {}
+
+  entities@9.0.0: {}
 
   es-module-lexer@3.0.4: {}
 
@@ -2067,6 +2096,10 @@ snapshots:
   p-timeout@7.0.2: {}
 
   package-manager-detector@1.9.0: {}
+
+  parse5@8.1.1:
+    dependencies:
+      entities: 9.0.0
 
   piccolore@0.1.3: {}
 
