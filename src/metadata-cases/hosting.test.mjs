@@ -17,6 +17,14 @@ test('build URLs use an explicit origin, then the Cloudflare deployment URL, the
   assert.equal(originApi.buildOrigin({ CASE_ORIGIN: '', CF_PAGES_URL: 'https://abc.example.pages.dev' }), 'https://abc.example.pages.dev');
 });
 
+test('production builds pin the custom domain instead of the hashed deployment host', () => {
+  assert.ok(originApi, 'Build-origin selection has not been implemented');
+  const production = { CF_PAGES_BRANCH: 'main', CF_PAGES_URL: 'https://37d5d3ff.astro-metadata-lab.pages.dev' };
+  assert.equal(originApi.buildOrigin(production), 'https://astro-metadata-lab.cevdet.ch');
+  assert.equal(originApi.buildOrigin({ ...production, CASE_ORIGIN: 'https://custom.example' }), 'https://custom.example');
+  assert.equal(originApi.buildOrigin({ ...production, CF_PAGES_BRANCH: 'feat/preview' }), 'https://37d5d3ff.astro-metadata-lab.pages.dev');
+});
+
 test('a misconfigured origin fails instead of emitting broken or credential-bearing share URLs', () => {
   assert.ok(originApi, 'Build-origin validation has not been implemented');
   for (const value of ['example.com', 'file:///tmp/site', 'https://user:secret@example.com', 'https://example.com/project/', 'https://example.com/?query=1', 'https://example.com/#fragment']) {
@@ -65,4 +73,23 @@ test('Astro dev routes match the icon URLs emitted in the fixture head', async (
       assert.ok(caseRoute.pattern.test(url), `Astro dev rejects icon case ${caseHref(definition, base)}`);
     }
   }
+});
+
+test('robots.txt keeps search crawlers out of the cases but lets preview fetchers in', () => {
+  assert.ok(hostApi, 'Static host files have not been implemented');
+  for (const base of ['/', '/project/']) {
+    const files = hostApi.hostFiles(base, 'https://lab.example');
+    const groups = files.robots.trim().split('\n\n');
+    assert.equal(groups[0], `User-agent: *\nDisallow: ${base}cases/`);
+    assert.ok(cases.every(c => caseHref(c, base).startsWith(`${base}cases/`)));
+    for (const agent of ['Twitterbot', 'facebookexternalhit', 'LinkedInBot', 'Discordbot']) {
+      assert.ok(groups[1].split('\n').includes(`User-agent: ${agent}`), `${agent} must reach the social preview fixtures`);
+    }
+    assert.ok(groups[1].endsWith('\nAllow: /'));
+    assert.equal(groups[2], `Sitemap: https://lab.example${base}sitemap.xml`);
+    assert.equal(files.sitemap, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>https://lab.example${base}</loc></url>\n</urlset>\n`);
+  }
+  const local = hostApi.hostFiles('/');
+  assert.ok(!local.robots.includes('Sitemap:'), 'Without an origin there is no absolute sitemap URL');
+  assert.equal(local.sitemap, undefined);
 });

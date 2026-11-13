@@ -92,5 +92,26 @@ async function outputFiles(directory) {
 const files = await outputFiles(output);
 assert.ok(!files.some(path => /\.(?:js|mjs|cjs)$/.test(path)), 'The research build must not ship a client JS bundle or service worker');
 assert.ok(!files.some(path => path.endsWith('/_worker.js')), 'This lab deploys static assets without an adapter');
+
+// Search indexes get the landing page only; the fixtures stay byte-identical.
+const siteOrigin = values.origin ?? buildOrigin(process.env);
+const indexing = hostFiles(base, siteOrigin);
+const robots = await read(join(output, 'robots.txt'));
+assert.equal(robots, indexing.robots);
+assert.ok(robots.startsWith(`User-agent: *\nDisallow: ${base}cases/\n`), 'Search crawlers must skip every case, comparison, source and result');
+for (const definition of cases) {
+  for (const href of [caseHref(definition, base), compareHref(definition, base), sourceHref(definition, base), resultsHref(definition, base)]) {
+    assert.ok(href.startsWith(`${base}cases/`), `${href}: outside the disallowed prefix`);
+  }
+}
+if (siteOrigin) {
+  assert.ok(robots.endsWith(`\nSitemap: ${new URL(`${base}sitemap.xml`, siteOrigin).href}\n`), 'robots.txt must name the absolute sitemap URL');
+  const sitemap = await read(join(output, 'sitemap.xml'));
+  assert.equal(sitemap, indexing.sitemap);
+  assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]), [new URL(base, siteOrigin).href], 'The sitemap lists the landing page only');
+} else {
+  assert.ok(!robots.includes('Sitemap:'), 'A build without an origin cannot name an absolute sitemap');
+  await assert.rejects(stat(join(output, 'sitemap.xml')), { code: 'ENOENT' });
+}
 console.log(`Verified ${cases.length} fixtures, ${cases.length} comparison views, ${cases.length} result pages, ${assets.length} source assets, manifests and Cloudflare files.`);
 console.log(`Base: ${base} · Origin: ${origin} · No client JS bundle.`);
