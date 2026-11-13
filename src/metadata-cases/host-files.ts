@@ -4,8 +4,25 @@ import { cases, caseHref, normalizeBase } from './cases.ts';
 // robots.txt must still reach every case, or the social tests would fail.
 export const previewFetchers = ['Twitterbot', 'facebookexternalhit', 'LinkedInBot', 'Discordbot', 'WhatsApp'];
 
+/**
+ * robots.txt body, without the Sitemap line. Every case, comparison, source,
+ * result and asset lives under /cases/, kept out of search indexes without
+ * touching the fixtures' own HTML or headers; only the landing page is
+ * indexable. Preview fetchers that honour robots.txt still need the cases,
+ * so they get their own Allow group. src/pages/robots.txt.ts serves this and
+ * appends the sitemap once Astro.site is known.
+ */
+export function robotsRules(base = '/') {
+  const home = normalizeBase(base);
+  const groups = [
+    `User-agent: *\nDisallow: ${home}cases/`,
+    `${previewFetchers.map(agent => `User-agent: ${agent}`).join('\n')}\nAllow: /`,
+  ];
+  return `${groups.join('\n\n')}\n`;
+}
+
 // Host-specific files for the research site, not defaults for the future starter.
-export function hostFiles(base = '/', origin?: string) {
+export function hostFiles(base = '/') {
   const headers: string[] = [];
   const redirects: string[] = [];
   for (const definition of cases) {
@@ -22,28 +39,8 @@ export function hostFiles(base = '/', origin?: string) {
       for (const url of [path, path.slice(0, -1), `${path}index.html`]) redirects.push(`${url} ${target} ${options.status ?? 302}`);
     }
   }
-  // Every case, comparison, source, result and asset lives under /cases/. A
-  // robots.txt rule keeps them out of search indexes without touching the
-  // fixtures' own HTML or headers. Only the landing page is indexable.
-  const home = normalizeBase(base);
-  const robots = [
-    'User-agent: *',
-    `Disallow: ${home}cases/`,
-    '',
-    ...previewFetchers.map(agent => `User-agent: ${agent}`),
-    'Allow: /',
-    ...(origin ? ['', `Sitemap: ${new URL(`${home}sitemap.xml`, origin).href}`] : []),
-  ];
-  const sitemap = origin && [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    `  <url><loc>${new URL(home, origin).href}</loc></url>`,
-    '</urlset>',
-  ];
   return {
     headers: `${headers.join('\n\n')}\n`,
     redirects: `${redirects.join('\n')}\n`,
-    robots: `${robots.join('\n')}\n`,
-    sitemap: sitemap ? `${sitemap.join('\n')}\n` : undefined,
   };
 }
