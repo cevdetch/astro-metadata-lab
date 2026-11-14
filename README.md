@@ -153,8 +153,8 @@ image. Body text uses D so content scraping is distinguishable from metadata
 selection. Test title, description, image and card layout separately; one client
 may combine sources. The registered messaging observations cover only the lack
 of a visible theme-color accent change in Signal, WhatsApp, Discord and Instagram;
-client versions and message views remain unknown. Metadata precedence tests
-still need their own observations.
+client versions and message views remain unknown. The first five precedence cases now have observations in S005–S009; omission
+and failure controls still need separate reports.
 New observations go into the result tables; the older browser/social JSON files
 remain initial snapshots.
 
@@ -166,8 +166,124 @@ behavior. The catalogue displays these reports from
 
 The browser worksheet now also contains icon observations for B003–B006 and the
 seven original theming cases in a dark-environment batch. Tor showed light
-appearance throughout that theming report. The three new color-scheme controls
-remain untested; their fixture definitions do not establish a browser outcome.
+appearance throughout that initial theming report. Tor's separate five-case
+follow-up covers the new controls and reports matching native controls: the
+dual-scheme lists showed light, the dark-only case showed dark, and the two
+duplicate cases matched their first declaration. Brave, Firefox and Vanadium
+then reported dark appearance in all five cases. In the requested light-mode
+follow-up, Firefox and Vanadium reported light for both dual-scheme orders and
+dark for the dark-only case. Their responsive SVG icon stayed yellow-circle with
+no change reported. Exact settings were not restated; the icon behavior remains
+unresolved. No matching Brave light-mode result has been reported.
+
+In the mobile viewport report, the page without a viewport declaration showed
+desktop-like small text and allowed pinch zoom. The width-only reference and
+width-plus-initial-scale page looked normal. Horizontal overflow and the other
+pages' pinch behavior were not separately reported. All three charset controls
+then showed normal text and UTF-8 document encoding in all four browsers, with
+response Content-Type `text/html; charset=utf-8`. That HTTP charset prevents
+isolating HTML declaration position. Firefox and Brave then returned the expected
+`document.title` on the invalid-head case, with title, description, canonical and
+OG title all direct children of `body`. Other metadata and social-crawler behavior
+were not established. In Firefox's noscript comparison, the tab showed the URL
+with scripting enabled; with scripting disabled, the expected title appeared
+and title/description/canonical were recorded directly under head. Enabled
+parent locations remain unreported. The reported canonical uses the `37d5d3ff`
+deployment host rather than the enabled tab label's stable production alias;
+retain this for hosting review.
+
+The Firefox language batch reported normal text in all four cases. The Arabic
+page had explicit and computed RTL direction, with English text appearing on
+the right. The other pages computed LTR direction without a dir attribute;
+the mixed page retained the marked French passage's language. This batch did
+not test assistive technology or full bidirectional-text handling.
+
+In the Firefox JSON-LD report, the unsafe control produced a JSON SyntaxError,
+an extra image and a true runtime flag. Its leading 404 is interpreted as the
+image request status. The escaped control parsed successfully, retaining the
+markup-like text as a string; no extra image or matching Network request was
+reported, and the flag was undefined. Other browser environments remain untested.
+
+A subsequent all-fields Console report confirmed the document at the stable
+production alias but canonical, OG URL and both social image URLs at the
+`37d5d3ff` deployment host. B024 preserves that output. The production-origin
+change was deferred in favour of message previews on the current
+deployment. Retain that metadata-host context when recording results. The
+existing `CASE_ORIGIN` override remains available for a later hosting change.
+
+The first social-preview batch covers five precedence cases in WhatsApp, Molly,
+Discord, LinkedIn and Instagram. WhatsApp/Discord reported C with a green image
+without OG; Molly/Instagram reported A without an image. All four reported B/red
+with all fields present. Moving Twitter first changed Discord's text marker to
+C while its image remained red. Each letter was confirmed to apply to both
+title and description. LinkedIn returned an error for all five in its post
+composer; the cause remains unknown. Every image-bearing card in that first
+batch was large-image. A later Inspector run (S010) successfully extracted OG
+title/description B and a proxied image despite the differing canonical host.
+Its description-length warning did not prevent that preview. The expanded
+Inspector batch (S011) showed titles A/B/A/B/B, images none/red/none/red/red and
+no visible card descriptions, including the earlier inspection per a later
+correction. The pasted metadata panel's extracted description is separate from
+card visibility. The post-composer retry still failed (S012), so its cause
+remains unresolved. The LinkedIn DM follow-up also showed no preview for the lab
+or a deadhead.cevdet.ch control (S013). This weakens a lab-specific
+hostname explanation without identifying a cause. Defer LinkedIn diagnosis and
+continue with OG omission cases in the other clients.
+
+The OG-only omission batch (S014–S017) showed no HTML title/description fallback
+in Discord: no OG title produced no visible title or description, while no OG
+description removed the visible description. Molly and WhatsApp reported HTML
+A for the omitted text field and OG B for the retained field. A later correction
+covers LinkedIn Inspector's grouped description report: it still showed none, with
+A/B/B titles and red/red/no-image results. S017 records that correction.
+This supports explicit OG text tags generated from shared title/description
+inputs; it does not require duplicate developer configuration.
+
+The card-layout batch (S018–S021) reported summary layout in Discord for all three
+controls, with B/B text and red images. Molly, LinkedIn and Instagram retained
+the reported summary_large_image appearance. The Signal label was explicitly
+confirmed as Molly. Other fields and exact geometry remain unreported where
+not supplied; no official Signal result is inferred from this batch.
+
+The metadata comparison (S022–S026) reported no problems across Molly, Instagram,
+WhatsApp, Discord and LinkedIn Inspector for explicit OG, no OG type, no OG URL
+and no image dimensions, with fixture text and reported large-image layout.
+LinkedIn's earlier explicit no-description correction remains in force. This
+is a visual comparison, not proof of tag-source selection or behavior on
+untested consumers.
+
+The image batch (S027–S031) reported root-relative image success in four clients;
+WhatsApp cards appeared without main images in all three cases. Instagram showed
+the blue SVG, while LinkedIn/Molly/Discord did not show it as a main image.
+Missing-image results differed between absence and placeholders; Discord's
+placeholder said Image failed to load. WhatsApp showed a bottom-right favicon
+only for the SVG case; that is separate from the main image. The SVG fixture's
+size/artwork also differ from the reference, limiting format-only conclusions.
+
+The text batch (S032–S036) reported normal appearance across the five requested
+clients, with different title/description truncation. The Discord shortest/minimum
+example is saved without converting it into a global length limit. Exact
+character audits and other client cutoffs were not supplied. Preserve full input
+metadata with escaping and writing guidance rather than silent clipping.
+
+The noindex batch (S037–S041) retained cards across the five requested clients.
+With social-image metadata the reference appearance stayed; without it the
+cards had no images. This does not test search indexing or header-only rules.
+The earlier preference to skip automatic generation on noindex remains a design
+policy rather than a client-preview requirement established by these results.
+
+The canonical batch (S042–S046) reported fine cards for absent, relative and
+cross-origin canonicals in all five clients. LinkedIn displayed the deployment
+host; Molly/WhatsApp displayed the stable alias; Discord/Instagram displayed no
+domain. Destinations and Inspector URL fields remain unreported, so these cards
+do not establish a consumer's canonical-selection rule or search-engine behavior.
+
+H004 confirms the current redirect returns 302 with raw relative Location and
+the error route returns real 404 HTML with no-store. In S047–S051 redirect
+previews matched explicit-og; only Instagram showed a 404 title/description
+card. Raw headers are retained in results/http/h004-headers.txt. X and Facebook
+Messenger could not be tested this round; they remain untested, and the next
+step is a preliminary metadata design review with explicit coverage limits.
 
 A manual production route probe on 2026-10-24 confirmed the explicit-OG page,
 exact `.txt` source, SVG, PNG and manifest return 200 with the appropriate
@@ -177,9 +293,9 @@ URL was not reproduced; its cause remains unknown. Run
 `bash scripts/probe-deployment.sh` to repeat these GET checks without following
 redirects; an optional first argument selects another origin.
 
-The extended hosted HTTP checks, remaining browser combinations and client-specific
-previews in LinkedIn, Discord, X, WhatsApp, Instagram and Facebook direct messages
-still need reports. They need manual testing in a real browser or app.
+Extended hosted HTTP checks, remaining browser combinations and additional
+client-specific controls remain unmeasured. X/Facebook are unavailable this round.
+They need manual testing in a real browser or app.
 A clean dependency install has not been verified yet; the build and output
 checks have run with previously installed dependencies.
 
