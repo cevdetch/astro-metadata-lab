@@ -9,7 +9,7 @@ const site = buildOrigin(buildEnvironment);
 let base = '/';
 
 export default defineConfig({
-  ...(site ? { site } : {}),
+  site,
   // The research endpoint captures filenames with several extensions.
   // Match those exact file URLs as well as directory-style case page URLs.
   trailingSlash: 'ignore',
@@ -17,7 +17,8 @@ export default defineConfig({
     sitemap({
       // Every case, comparison, source and result page is deliberately
       // broken metadata; only the landing page belongs in search indexes.
-      filter: (page) => new URL(page).pathname === base,
+      // Astro may report the base without its trailing slash.
+      filter: (page) => new URL(page).pathname.replace(/\/$/, '') === base.replace(/\/$/, ''),
     }),
     {
       name: 'metadata-case-host-files',

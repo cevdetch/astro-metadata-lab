@@ -9,9 +9,10 @@ catch (error) { if (error.code !== 'ERR_MODULE_NOT_FOUND') throw error; }
 try { hostApi = await import('./host-files.ts'); }
 catch (error) { if (error.code !== 'ERR_MODULE_NOT_FOUND') throw error; }
 
-test('build URLs use an explicit origin, then the Cloudflare deployment URL, then local defaults', () => {
+test('build URLs use an explicit origin, then a preview deployment URL, then the custom domain', () => {
   assert.ok(originApi, 'Build-origin selection has not been implemented');
-  assert.equal(originApi.buildOrigin({}), undefined);
+  assert.equal(originApi.buildOrigin({}), 'https://astro-metadata-lab.cevdet.ch');
+  assert.equal(originApi.buildOrigin({ CASE_ORIGIN: ' ', CF_PAGES_URL: ' ' }), 'https://astro-metadata-lab.cevdet.ch');
   assert.equal(originApi.buildOrigin({ CF_PAGES_URL: 'https://abc.example.pages.dev/' }), 'https://abc.example.pages.dev');
   assert.equal(originApi.buildOrigin({ CASE_ORIGIN: 'https://custom.example/', CF_PAGES_URL: 'https://abc.example.pages.dev' }), 'https://custom.example');
   assert.equal(originApi.buildOrigin({ CASE_ORIGIN: '', CF_PAGES_URL: 'https://abc.example.pages.dev' }), 'https://abc.example.pages.dev');

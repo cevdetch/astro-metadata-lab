@@ -20,7 +20,8 @@ const reference = cases.find(c => c.group === 'metadata' && c.id === 'explicit-o
 const referenceHtml = await read(file(sourceHref(reference, base)));
 const observedUrl = referenceHtml.match(/property="og:url" content="([^"]+)"/)?.[1];
 assert.ok(observedUrl, 'Reference fixture must expose its built absolute URL');
-const origin = values.origin ?? buildOrigin(process.env) ?? new URL(observedUrl).origin;
+const origin = values.origin ?? buildOrigin(process.env);
+assert.equal(new URL(observedUrl).origin, origin, 'Fixtures must use the selected build origin');
 const index = await read(join(output, 'cases/index.html'));
 const resultsIndex = await read(join(output, 'cases/results/index.html'));
 assert.ok(resultsIndex.includes('name="robots" content="noindex"'), 'Results are observations, not indexable fixtures');
@@ -110,23 +111,17 @@ assert.ok(!files.some(path => path.endsWith('/_worker.js')), 'This lab deploys s
 // Search indexes get the landing page only; the fixtures stay byte-identical.
 // robots.txt is served by src/pages/robots.txt.ts and the sitemap by
 // @astrojs/sitemap, the same pattern deadhead and favseed use.
-const siteOrigin = values.origin ?? buildOrigin(process.env);
 const robots = await read(join(output, 'robots.txt'));
-assert.equal(robots, robotsRules(base) + (siteOrigin ? `\nSitemap: ${new URL('sitemap-index.xml', new URL(base, siteOrigin)).href}\n` : ''));
+assert.equal(robots, robotsRules(base) + `\nSitemap: ${new URL('sitemap-index.xml', new URL(base, origin)).href}\n`);
 assert.ok(robots.startsWith(`User-agent: *\nDisallow: ${base}cases/\n`), 'Search crawlers must skip every case, comparison, source and result');
 for (const definition of cases) {
   for (const href of [caseHref(definition, base), compareHref(definition, base), sourceHref(definition, base), resultsHref(definition, base)]) {
     assert.ok(href.startsWith(`${base}cases/`), `${href}: outside the disallowed prefix`);
   }
 }
-if (siteOrigin) {
-  const sitemapIndex = await read(join(output, 'sitemap-index.xml'));
-  assert.match(sitemapIndex, /<sitemap><loc>[^<]*\/sitemap-0\.xml<\/loc><\/sitemap>/, 'the sitemap index must name a child sitemap');
-  const sitemap = await read(join(output, 'sitemap-0.xml'));
-  assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]), [new URL(base, siteOrigin).href], 'The sitemap lists the landing page only');
-} else {
-  assert.ok(!robots.includes('Sitemap:'), 'A build without an origin cannot name an absolute sitemap');
-  await assert.rejects(stat(join(output, 'sitemap-index.xml')), { code: 'ENOENT' });
-}
+const sitemapIndex = await read(join(output, 'sitemap-index.xml'));
+assert.match(sitemapIndex, /<sitemap><loc>[^<]*\/sitemap-0\.xml<\/loc><\/sitemap>/, 'the sitemap index must name a child sitemap');
+const sitemap = await read(join(output, 'sitemap-0.xml'));
+assert.deepEqual([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]), [new URL(base, origin).href], 'The sitemap lists the landing page only');
 console.log(`Verified ${cases.length} fixtures, ${cases.length} comparison views, ${cases.length} result pages, ${assets.length} source assets, manifests and Cloudflare files.`);
 console.log(`Base: ${base} · Origin: ${origin} · No client JS bundle.`);

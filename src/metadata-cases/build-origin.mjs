@@ -5,14 +5,25 @@ export const PRODUCTION_BRANCH = 'main';
 
 /**
  * Choose URLs for this research deployment, independently of Astro's dev/prod mode.
+ * CASE_ORIGIN wins. Cloudflare preview deployments keep their own CF_PAGES_URL so
+ * social clients fetch that preview's fixtures and images. Every other build,
+ * including local ones, uses the custom domain.
  * @param {Record<string, string | undefined>} env
- * @returns {string | undefined}
+ * @returns {string}
  */
 export function buildOrigin(env) {
-  if (!env['CASE_ORIGIN']?.trim() && env['CF_PAGES_BRANCH'] === PRODUCTION_BRANCH) return PRODUCTION_ORIGIN;
-  const key = env['CASE_ORIGIN']?.trim() ? 'CASE_ORIGIN' : 'CF_PAGES_URL';
-  const value = env[key]?.trim();
-  if (!value) return undefined;
+  const explicit = env['CASE_ORIGIN']?.trim();
+  if (explicit) return parseOrigin('CASE_ORIGIN', explicit);
+  const preview = env['CF_PAGES_BRANCH'] !== PRODUCTION_BRANCH ? env['CF_PAGES_URL']?.trim() : undefined;
+  if (preview) return parseOrigin('CF_PAGES_URL', preview);
+  return PRODUCTION_ORIGIN;
+}
+
+/**
+ * @param {string} key
+ * @param {string} value
+ */
+function parseOrigin(key, value) {
   let url;
   try { url = new URL(value); }
   catch { throw new Error(`${key} must be an absolute HTTP(S) origin, such as https://project.pages.dev`); }

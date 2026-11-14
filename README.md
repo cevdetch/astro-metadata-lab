@@ -93,12 +93,12 @@ and [build image configuration](https://developers.cloudflare.com/pages/configur
 `astro.config.mjs` selects absolute metadata URLs in this order:
 
 1. `CASE_ORIGIN`, if you set it to an HTTP(S) origin such as `https://example.com`.
-2. Cloudflare's `CF_PAGES_URL`, which identifies the current deployment.
-3. Astro's local default when neither exists.
+2. Cloudflare's `CF_PAGES_URL` on preview deployments (any branch other than
+   `main`), so social clients fetch that preview's own fixtures and images.
+3. The custom domain `https://astro-metadata-lab.cevdet.ch` everywhere else,
+   including production and local builds.
 
-For a custom domain or stable production alias, set `CASE_ORIGIN` in the
-**production** environment. Leave it unset in previews to test each preview's own
-origin. Paths belong in Astro's `base`, not in `CASE_ORIGIN`. Cloudflare documents
+Leave `CASE_ORIGIN` unset in previews to test each preview's own origin. Paths belong in Astro's `base`, not in `CASE_ORIGIN`. Cloudflare documents
 `CF_PAGES_URL` in its [build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/).
 
 The build writes `_headers` for the HTTP-only noindex control and `_redirects`
