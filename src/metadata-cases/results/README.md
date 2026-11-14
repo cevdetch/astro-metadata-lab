@@ -1,12 +1,13 @@
 # Test results
 
-Tell me the browser or app and device once, then send case IDs and observations.
-I will register the test run and update the tables. You can report one case or a
-batch; you do not need to edit files or JSON.
+Register each test run once in [sessions.md](sessions.md), then add a row citing
+that run to each case record under `cases/<group>/<id>.md`. The root README's
+"Add an observation" section lists the steps.
 
 ## Fill-in matrices
 
-For hand entry, fill these files and return them:
+For hand entry in bulk, fill these worksheets, then copy the rows into the case
+records:
 
 - [browser-test-table.md](browser-test-table.md): browser rows and case columns,
   with separate light/dark theming matrices.
@@ -17,9 +18,8 @@ For hand entry, fill these files and return them:
 
 Names appear once in each file's key; the matrices use short IDs. Full browser
 versions and shared deployment details stay in `sessions.md`. Empty input/result
-cells contain exactly two spaces. Fill these worksheets once; when you return
-them, I will update the detailed records without asking you to copy values into
-each case file too. Preserve earlier observations when a rerun differs.
+cells contain exactly two spaces. Preserve earlier observations when a rerun
+differs.
 
 Each worksheet proposes a reporting standard beside its groups: what to observe,
 which fields/values to write and a clearly marked example. Examples describe
@@ -27,7 +27,7 @@ format only. Use the suggested labels when they fit; describe unexpected behavio
 in `note=...` rather than forcing it into an expected result. Blank means no
 report yet, `none` means checked but not visible, `not tested` means unperformed,
 and `unknown` means inconclusive. HTTP headers use `absent` only after a complete
-header capture. I can refine these conventions after the first filled batch.
+header capture.
 
 [Reporting shortcuts](reporting.md) defines the icon labels and copyable formats
 for each test group. Use `astro`, `blue-circle` or `red-square` for the first icon
@@ -246,7 +246,7 @@ the case URLs return their own pages rather than the custom 404.
 Keep B003–B006 and their recorded observations attached to their existing context.
 For this deployment, add a temporary row such as `B006/<new-short-SHA>` in the
 relevant worksheet table, reference B006's client setup and supply the full
-commit once. I will assign a new run ID when reconciling that batch. State any
+commit once. Assign a new run ID when reconciling that batch. State any
 profile, version or device changes; do not relabel an earlier result as a retest.
 
 The completed five-case comparison uses these controls:
@@ -297,7 +297,7 @@ The website exposes the same per-case tables at `/cases/results/` after a build.
 
 ## Start a browser run
 
-Send what you know; leave missing details unknown:
+Record what you know; leave missing details unknown:
 
 ```text
 Browser: Firefox, version ...
@@ -308,7 +308,7 @@ Profile: normal / fresh / private; extensions or overrides if relevant
 Surface: browser tab
 ```
 
-Then send results like this. These are format examples, not recorded observations:
+Then record results like this. These are format examples, not recorded observations:
 
 ```text
 icons/ico32-svg = blue-circle in the tab
@@ -316,8 +316,8 @@ icons/svg-ico32 = red-square in the tab
 icons/svg-responsive = blue-circle in light mode; yellow-circle in dark mode
 ```
 
-I will give the run a `B...` ID. You can use that ID in later messages instead of
-repeating the details. When the device, browser version or deployment changes,
+Register the run in `sessions.md` with the next free `B...` ID. Later rows cite
+that ID instead of repeating the details. When the device, browser version or deployment changes,
 start a new run. Record light/dark modes and different UI surfaces as separate
 rows within a run. Keep surprising reruns alongside the original observation.
 
