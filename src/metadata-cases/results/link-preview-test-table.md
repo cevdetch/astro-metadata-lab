@@ -26,7 +26,7 @@ matrices retain the original six-platform checklist.
 
 Use one client/device/surface per row. To test another client or surface, add a
 new row label here and in the relevant matrices. Keep composer, sent and received
-observations separate. We will assign S run IDs when recording the results.
+observations separate. I will assign S run IDs when recording the results.
 
 Write the app version and device/OS literally, or reference a known browser run.
 Use `composer`, `sent` or `received` for surface. For a native app, write `none`
@@ -200,8 +200,8 @@ there is no visible accent, or `unknown` if you cannot distinguish it. Record
 Observe the messaging card's accent separately from browser toolbar color.
 For a second appearance, copy the platform row with a mode suffix.
 
-Recorded runs: SG/S001, WA/S002, DC/S003 and IG/S004. The user reported no
-visible theme-color accent change in those clients; versions, device/OS,
+Recorded runs: SG/S001, WA/S002, DC/S003 and IG/S004. No visible
+theme-color accent change was observed in those clients; versions, device/OS,
 appearance, comparison reference and message views remain unknown. This does
 not establish that a card has no accent, nor does it report title/image/layout
 behavior. Shared run details live in `sessions.md`.

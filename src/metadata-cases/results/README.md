@@ -27,7 +27,7 @@ format only. Use the suggested labels when they fit; describe unexpected behavio
 in `note=...` rather than forcing it into an expected result. Blank means no
 report yet, `none` means checked but not visible, `not tested` means unperformed,
 and `unknown` means inconclusive. HTTP headers use `absent` only after a complete
-header capture. We can refine these conventions after the first filled batch.
+header capture. I can refine these conventions after the first filled batch.
 
 [Reporting shortcuts](reporting.md) defines the icon labels and copyable formats
 for each test group. Use `astro`, `blue-circle` or `red-square` for the first icon
@@ -200,7 +200,7 @@ rows are a coverage checklist; start with the five cases before expanding it.
 - `not shown`: the tested surface exposes no visible icon/field.
 - `no preview`: the app showed no card for the tested URL.
 - `unknown`: the supplied evidence does not identify a value or condition.
-- `reported`: a user supplied the observation; describe any supporting evidence.
+- `reported`: the observation was reported manually; describe any supporting evidence.
 
 A missing card does not tell us which tag a platform ignored. Record the exact
 shared URL, including query strings, and the deployment when known. A query

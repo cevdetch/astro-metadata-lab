@@ -232,7 +232,7 @@ Cloudflare preview deployments add noindex independently of the fixture. Use the
 production URL for isolated indexing checks. Neither the private source repository
 nor noindex provides access control for the published test pages.
 
-The user-reported route probe on 2026-10-24 returned 200 for the explicit-OG page,
+A manual route probe on 2026-10-24 returned 200 for the explicit-OG page,
 its exact `.txt` source, SVG, PNG and manifest, with the appropriate Content-Types.
 The extensionless and slash-suffixed source variants returned 404; the redirect
 returned 302 to the explicit-OG page. An earlier request to the exact `.txt` URL

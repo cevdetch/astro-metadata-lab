@@ -3,7 +3,7 @@
 Do browser selection and social-preview accent selection differ?
 
 The existing hint colors are light gray (`#eeeeee`) and dark gray (`#222222`).
-The user reported no visible browser UI or link-preview color change. Exact
+No visible browser UI or link-preview color change was observed. Exact
 browser chrome colors and a comparison reference were not supplied. The
 reported preview clients are Signal, WhatsApp, Discord and Instagram; versions,
 device/OS, appearance and message views remain unknown. The social rows record
@@ -24,10 +24,10 @@ forced-dark extensions or browser overrides in the run conditions.
 
 | Run | Browser / device | Mode | Page background / text | Native controls | Chrome / initial paint | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | dark environment; no emulation identified | dark appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; shared user report, 2026-10-24; see test-run registry for limits |
-| B004 | Firefox / Arch Linux | dark environment; no emulation identified | dark appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; shared user report, 2026-10-24; see test-run registry for limits |
-| B005 | Vanadium / Android 17 | dark environment; no emulation identified | dark appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; shared user report, 2026-10-24; see test-run registry for limits |
-| B006 | Tor Browser Alpha / Android 17 | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; shared user report, 2026-10-24; see test-run registry for limits; user reported Tor as light across these cases |
+| B003 | Brave Origin / Arch Linux | dark environment; no emulation identified | dark appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; manual observation, 2026-10-24; see test-run registry for limits |
+| B004 | Firefox / Arch Linux | dark environment; no emulation identified | dark appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; manual observation, 2026-10-24; see test-run registry for limits |
+| B005 | Vanadium / Android 17 | dark environment; no emulation identified | dark appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; manual observation, 2026-10-24; see test-run registry for limits |
+| B006 | Tor Browser Alpha / Android 17 | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | no visible browser UI color change reported; comparison reference unspecified; first paint unreported | reported; manual observation, 2026-10-24; see test-run registry for limits; Tor recorded as light across these cases |
 
 
 ## Social DM results

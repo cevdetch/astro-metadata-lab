@@ -15,7 +15,7 @@ forced-dark extensions or browser overrides in the run conditions.
 
 | Run | Browser / device | Mode | Page background / text | Native controls | Chrome / initial paint | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits |
-| B004 | Firefox / Arch Linux | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits |
-| B005 | Vanadium / Android 17 | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits |
-| B006 | Tor Browser Alpha / Android 17 | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; shared user report, 2026-10-24; see test-run registry for limits; user reported Tor as light across these cases |
+| B003 | Brave Origin / Arch Linux | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; manual observation, 2026-10-24; see test-run registry for limits |
+| B004 | Firefox / Arch Linux | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; manual observation, 2026-10-24; see test-run registry for limits |
+| B005 | Vanadium / Android 17 | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; manual observation, 2026-10-24; see test-run registry for limits |
+| B006 | Tor Browser Alpha / Android 17 | dark environment; no emulation identified | light appearance; exact colors not reported | not reported separately | not reported | reported; manual observation, 2026-10-24; see test-run registry for limits; Tor recorded as light across these cases |

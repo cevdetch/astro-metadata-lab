@@ -14,7 +14,7 @@ once here. Use GET without following redirects so the first response is visible.
 - Run ID: an assigned `H...` ID; leave blank for a new batch.
 - Origin: scheme and hostname, such as `https://astro-metadata-lab.pages.dev`.
 - Deployment: full commit SHA and build/deployment URL when known. Say
-  `user-reported commit` if the response itself does not identify the build.
+  `reported commit` if the response itself does not identify the build.
 - Date/time: include a timezone, such as `2026-10-24T14:30:00+02:00`.
 - Command/client: the exact command or script and client version. For curl,
   the first line of `curl --version` is enough. Include relevant options.

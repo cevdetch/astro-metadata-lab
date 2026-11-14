@@ -52,7 +52,7 @@ outputs, exact fixture HTML, asset bytes, manifest paths, host rules and absence
 of a client JS bundle. A production build does not replace a TypeScript checker,
 a browser accessibility review or live client testing.
 
-For development, follow `AGENTS.md`:
+For development, run the dev server in the background:
 
 ```sh
 pnpm astro dev --background
@@ -139,7 +139,7 @@ precedence cases per messaging app before expanding the matrix.
 result record for each of the 121 fixtures, a shared test-run registry and the
 reported HTTP probes. The catalogue and comparison views link to each case's
 Results page at `/cases/results/`. Report the browser/app and device once, then
-send case IDs and observations; we can fill the tables without editing the raw
+send case IDs and observations; I can fill the tables without editing the raw
 fixtures. Records separate 47 browser-observation cases, 84 social-relevant cases
 and six HTTP controls, with overlap where appropriate. Start with browser icons
 and theming, then move to messaging previews.
@@ -169,8 +169,8 @@ seven original theming cases in a dark-environment batch. Tor showed light
 appearance throughout that theming report. The three new color-scheme controls
 remain untested; their fixture definitions do not establish a browser outcome.
 
-The user-reported production route probe on 2026-10-24 confirmed the explicit-OG
-page, exact `.txt` source, SVG, PNG and manifest return 200 with the appropriate
+A manual production route probe on 2026-10-24 confirmed the explicit-OG page,
+exact `.txt` source, SVG, PNG and manifest return 200 with the appropriate
 Content-Types, and the redirect returns 302 to the reference page. The two
 nonexistent source URL variants return 404. An earlier 404 at the exact source
 URL was not reproduced; its cause remains unknown. Run
@@ -179,10 +179,9 @@ redirects; an optional first argument selects another origin.
 
 The extended hosted HTTP checks, remaining browser combinations and client-specific
 previews in LinkedIn, Discord, X, WhatsApp, Instagram and Facebook direct messages
-still need reports. The coding sandbox cannot reach the user-run localhost server
-or run the required browser UI.
-A clean dependency install also remains unverified here because npm DNS is blocked;
-the build and output checks have run with the existing installed dependencies.
+still need reports. They need manual testing in a real browser or app.
+A clean dependency install has not been verified yet; the build and output
+checks have run with previously installed dependencies.
 
 Keep the explicit-OG case as the reference until client results justify removing
 fields. Matching text in HTML and OG metadata does not establish that a client

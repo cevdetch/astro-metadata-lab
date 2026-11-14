@@ -16,9 +16,9 @@ responsive icons; note a fresh profile or cache change.
 
 | Run | Browser / device | Mode | Surface | Icon shown | Status | Notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| B001 | Brave; device unknown | unknown | browser tab icon | blue | reported | User report, 2026-10-23; versions and OS not supplied. |
-| B002 | Firefox; device unknown | unknown | browser tab icon | blue | reported | User report, 2026-10-23; versions and OS not supplied. |
-| B003 | Brave Origin / Arch Linux | dark environment | tab | blue-circle | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
-| B004 | Firefox / Arch Linux | dark environment | tab | blue-circle | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
-| B005 | Vanadium / Android 17 | dark environment | tab-switcher | red-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
-| B006 | Tor Browser Alpha / Android 17 | dark environment | tab-switcher | red-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B001 | Brave; device unknown | unknown | browser tab icon | blue | reported | Manual observation, 2026-10-23; versions and OS not supplied. |
+| B002 | Firefox; device unknown | unknown | browser tab icon | blue | reported | Manual observation, 2026-10-23; versions and OS not supplied. |
+| B003 | Brave Origin / Arch Linux | dark environment | tab | blue-circle | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B004 | Firefox / Arch Linux | dark environment | tab | blue-circle | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B005 | Vanadium / Android 17 | dark environment | tab-switcher | red-square | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. |
+| B006 | Tor Browser Alpha / Android 17 | dark environment | tab-switcher | red-square | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. |

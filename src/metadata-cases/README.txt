@@ -16,8 +16,8 @@ Run pnpm verify for Node tests, the Astro build, output checks and deadhead. The
 HTML lint covers the homepage and the catalogue, guide, result and comparison
 pages; the fixtures, 404.html and sources are broken on purpose and skipped.
 Start a new dev server only if needed, with pnpm astro dev --background. Do not
-interrupt an existing user-run server. See the root README.md for commands and
-Pages settings.
+interrupt a server that is already running. See the root README.md for commands
+and Pages settings.
 
 The build emits Cloudflare _headers and _redirects. Its robots.txt keeps search
 crawlers out of /cases/ while letting link-preview fetchers in, and sitemap.xml

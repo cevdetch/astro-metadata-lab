@@ -1,8 +1,8 @@
 # Starter design direction
 
-This file records the direction discussed so far. We still need to agree on the
-complete written design, scope boundaries, acceptance criteria and incremental
-implementation plan before implementing the starter.
+This file records the direction discussed so far. The complete written design,
+scope boundaries, acceptance criteria and incremental implementation plan still
+need to be settled before implementing the starter.
 
 ## Intended users and first scope
 

@@ -31,5 +31,5 @@ control document and cannot verify this response.
 
 | Run | Requested URL | Status | Content-Type | Robots / redirect | Notes / evidence |
 | --- | --- | --- | --- | --- | --- |
-| H002 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | User-pasted curl output, 2026-10-24; raw Location and robots headers not captured. |
-| H003 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | User-pasted post-push probe, 2026-10-24; reported commit 886fe8b; raw Location and robots headers not captured. |
+| H002 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | Manual curl output, 2026-10-24; raw Location and robots headers not captured. |
+| H003 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | Manual post-push probe, 2026-10-24; reported commit 886fe8b; raw Location and robots headers not captured. |

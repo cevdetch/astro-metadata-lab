@@ -8,7 +8,7 @@
       "cases": ["icons/ico32-svg", "icons/svg-ico32"],
       "surface": "browser tab icon",
       "observedColor": "blue in both cases",
-      "evidence": "User reported observation; not an automated test or screenshot.",
+      "evidence": "Observed manually; not an automated test or screenshot.",
       "limits": "No conclusion about all icon size/type combinations or other browser versions."
     },
     {
@@ -19,7 +19,7 @@
       "cases": ["icons/ico32-svg", "icons/svg-ico32"],
       "surface": "browser tab icon",
       "observedColor": "blue in both cases",
-      "evidence": "User reported observation; not an automated test or screenshot.",
+      "evidence": "Observed manually; not an automated test or screenshot.",
       "limits": "No conclusion about all icon size/type combinations or other browser versions."
     }
   ]

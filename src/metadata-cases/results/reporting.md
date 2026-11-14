@@ -4,7 +4,7 @@ Give the run ID once per batch, followed by the case and what you saw. Fill the
 browser, link-preview or HTTP worksheet in the
 [results folder](https://github.com/cevdetch/astro-metadata-lab/tree/main/src/metadata-cases/results),
 or send observations directly. Each worksheet proposes fields, values and examples
-beside its groups; you only need to enter a result once. We will update the
+beside its groups; you only need to enter a result once. I will update the
 detailed records from your report. The snippets below are reporting formats,
 not expected outcomes or recorded observations.
 
@@ -24,7 +24,7 @@ not expected outcomes or recorded observations.
 
 Use `astro`, `blue-circle` and `red-square` for the first four icon controls when
 those appearances occur. Extra labels cover the later cases. You can write
-spaces instead of hyphens. If you report only a color, we will keep the shape
+spaces instead of hyphens. If you report only a color, I will keep the shape
 unknown unless you define the shorthand for that batch.
 
 These are visual labels. Several fixtures share the red-square appearance, and
@@ -34,14 +34,14 @@ blue and yellow variants; record what the tested browser shows in each mode.
 
 ### Header for a batch
 
-Your registered browsers are B003 (Brave Origin / Arch Linux), B004 (Firefox /
+The registered browsers are B003 (Brave Origin / Arch Linux), B004 (Firefox /
 Arch Linux), B005 (Vanadium / Android 17) and B006 (Tor Browser Alpha / Android 17).
 Versions live in the test-run registry. Use a new run when the client version,
 device or deployment changes.
 
 For a new deployment, you may use a temporary label such as `B006/<short-SHA>`
 to reference the existing client setup; supply the full commit once for the
-batch. We will assign a new registered run ID. Preserve the earlier rows and
+batch. I will assign a new registered run ID. Preserve the earlier rows and
 state any settings changes rather than rewriting the earlier deployment context.
 
 ```text
@@ -73,7 +73,7 @@ You can group identical results, for example
 at once and list exceptions; identify the batch so its scope stays clear.
 
 Record changes as a sequence, for example `astro -> blue-circle after reload`.
-We will keep the initial appearance and rerun rather than replacing one with the
+I will keep the initial appearance and rerun rather than replacing one with the
 other. A downloaded image is a separate observation from a displayed tab icon.
 
 ### Theme reports
@@ -147,7 +147,7 @@ tested. An unset runtime flag alone does not establish that the JSON parsed.
 
 ### Direct-message preview reports
 
-Register the platform, app version, device/OS and surface once; we will assign
+Register the platform, app version, device/OS and surface once; I will assign
 an S run ID. The targets are LinkedIn, Discord, X, WhatsApp, Instagram and
 Facebook Messenger. A web app also needs the browser/run ID. Record the preview
 setting when known and identify first share versus retest.
@@ -184,7 +184,7 @@ Command or script: [what you ran]
 [paste complete status/header or probe output]
 ```
 
-We will register an H run and extract status, Content-Type, robots headers and
+I will register an H run and extract status, Content-Type, robots headers and
 redirect destination where the output supplies them. Missing headers in a short
 probe stay unknown. HTTP status is a separate observation from the page body.
 The HTTP worksheet keeps raw Location headers separate from the short probe's
@@ -210,5 +210,5 @@ reserved words, and use inline code for literal HTML/entity text. Add `note=...`
 or `evidence=<file or reference>` when useful. Keep examples outside result cells.
 
 You can report one case, a batch, a change after reload or a screenshot. Include
-the run/case when it is not already clear. We will ask one focused follow-up if
+the run/case when it is not already clear. I will ask one focused follow-up if
 a result needs clarification and keep the original observation alongside reruns.

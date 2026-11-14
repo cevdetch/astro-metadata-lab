@@ -1,8 +1,8 @@
 ## Hosted HTTP results
 
 Origin: `https://astro-metadata-lab.pages.dev`. Dates, client details and known
-limits live in `sessions.md`. These observations come from user-pasted curl
-output. Keep the earlier result when a later probe differs.
+limits live in `sessions.md`. These observations come from manual curl
+probes. Keep the earlier result when a later probe differs.
 
 | Run | Requested path | HTTP | Content-Type | Redirect / notes |
 | --- | --- | --- | --- | --- |
@@ -24,7 +24,7 @@ output. Keep the earlier result when a later probe differs.
 | H003 | /cases/assets/app.webmanifest | 200 | application/manifest+json | No redirect reported. |
 | H003 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ |
 
-H003 is the user's post-push probe associated with reported latest commit
+H003 is the post-push probe associated with reported latest commit
 `886fe8b63c31fe1915d1f9d7efbd90a0b50527f0`. It matches the eight H002 outcomes;
 the exact-source H001 404 remains a separate historical observation.
 

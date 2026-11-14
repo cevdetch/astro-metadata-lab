@@ -16,7 +16,7 @@ responsive icons; note a fresh profile or cache change.
 
 | Run | Browser / device | Mode | Surface | Icon shown | Status | Notes / evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | dark environment | tab | blue-circle | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
-| B004 | Firefox / Arch Linux | dark environment | tab | blue-circle | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
-| B005 | Vanadium / Android 17 | dark environment | tab-switcher | red-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
-| B006 | Tor Browser Alpha / Android 17 | dark environment | tab-switcher | red-square | reported | User-filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
+| B003 | Brave Origin / Arch Linux | dark environment | tab | blue-circle | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
+| B004 | Firefox / Arch Linux | dark environment | tab | blue-circle | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
+| B005 | Vanadium / Android 17 | dark environment | tab-switcher | red-square | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |
+| B006 | Tor Browser Alpha / Android 17 | dark environment | tab-switcher | red-square | reported | Manually filled browser worksheet; private profile; exact deployment unconfirmed. Tab/tab-switcher result only; home-screen action unreported. |

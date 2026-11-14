@@ -30,7 +30,7 @@ Use a semicolon between fields, keep a cell on one line, and escape a literal
 pipe as `\|`. Copy visible text exactly; quote text containing semicolons or a
 literal word such as "none". Use inline code for literal HTML/entity text so
 Markdown does not reinterpret it. Add `evidence=<file or reference>` for an
-optional screenshot. We will record observations without turning a negative
+optional screenshot. I will record observations without turning a negative
 control into a general pass/fail claim.
 
 Define the browsers once; the matrices use only their run IDs:
@@ -150,7 +150,7 @@ Group: `theming`.
 Use the [theme cell format](#theme-cell-format), with the OS/browser appearance
 set to dark. Record the colors you see, including a light page if that occurs.
 
-The seven original columns contain the user's 2026-10-24 group report. Tor's
+The seven original columns contain the 2026-10-24 group report. Tor's
 light appearance is the stated exception to the other browsers. Exact palettes,
 first paint and unreported control details remain unmeasured. The DevTools light
 switch was not assigned to a browser, so it does not fill the light-mode table.
