@@ -215,5 +215,14 @@ reproduces is kept in
 
 ## Licence
 
-No licence has been granted yet, so all rights are reserved until a `LICENSE`
-file is added.
+The research data and write-ups are licensed under
+[CC BY 4.0](LICENSE-DATA):
+
+- `src/metadata-cases/results/`: the result records, run registry, worksheets,
+  hosting notes and captured HTTP headers;
+- `src/metadata-cases/browser-observations.json`;
+- `src/metadata-cases/design-notes.md` and `src/metadata-cases/manual-tests.md`.
+
+Everything else, including the case definitions, fixtures and assets, the
+renderer and pages under `src/`, `scripts/` and the configuration, is licensed
+under the [MIT License](LICENSE).
