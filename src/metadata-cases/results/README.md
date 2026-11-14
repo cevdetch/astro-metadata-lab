@@ -231,10 +231,11 @@ to the minimal starter. The reported Article type remains tool output.
 Continue with remaining omission/failure pairs after this batch. X/Facebook
 first-round results remain unreported.
 
-The origin override remains an available later hosting change: set production
-`CASE_ORIGIN=https://astro-metadata-lab.cevdet.ch`, rebuild and reinspect. It is
-not a prerequisite for this requested observation round. No origin setting or
-fixture content was changed for this batch.
+Builds on `main` now use `https://astro-metadata-lab.cevdet.ch` as their origin
+without `CASE_ORIGIN` (see `build-origin.mjs`). B024 and the link-preview runs
+above predate that change and keep their recorded deployment-host context. A
+fresh all-fields inspection after the next production deployment would confirm
+the live canonical, OG URL and image URLs.
 
 When fixture HTML or assets change, push them before mobile testing. In
 Cloudflare Pages, wait for the production deployment to succeed and record its

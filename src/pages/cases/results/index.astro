@@ -3,10 +3,12 @@ import { cases, resultsHref, normalizeBase } from '../../../metadata-cases/cases
 import { Content as Sessions } from '../../../metadata-cases/results/sessions.md';
 import { Content as Hosting } from '../../../metadata-cases/results/hosting.md';
 import { Content as Reporting } from '../../../metadata-cases/results/reporting.md';
+import { labCoverage } from '../../../metadata-cases/lab-coverage';
 import '../../../metadata-cases/ui.css';
 
 const base = import.meta.env.BASE_URL;
 const groups = [...new Set(cases.map(c => c.group))];
+const untested = new Set(labCoverage.groups.flatMap(g => g.untested.map(id => `${g.group}/${id}`)));
 ---
 <!doctype html>
 <html lang="en">
@@ -27,13 +29,14 @@ const groups = [...new Set(cases.map(c => c.group))];
       <pre><code>Run: B003 | mode=[light/dark] | surface=[tab/tab-switcher]{ '\n' }icons/ico32-svg = [label]{ '\n' }icons/svg-ico32 = [label]</code></pre>
       <p>This is a reporting example. Start with browser icons, then theming, mobile head/language and online installation. Next, use the five precedence cases in each messaging app before expanding the social matrix.</p>
       <p>Case records contain the relevant tables. Untested differs from no visible result. These pages display repository records; updates appear after rebuilding and deploying. Share the fixture URL when testing a preview.</p>
+      <p>{labCoverage.observed} of {cases.length} cases have at least one recorded observation; {labCoverage.untested} are marked below as not tested yet. This count is computed from the records at build time.</p>
       <nav aria-label="Result groups">
         <ul class="group-links">{groups.map(group => <li><a href={`#${group}`}>{group}</a></li>)}</ul>
       </nav>
       {groups.map(group => (
         <section aria-labelledby={group}>
           <h2 id={group}>{group}</h2>
-          <ul>{cases.filter(c => c.group === group).map(c => <li><a href={resultsHref(c, base)}>{c.id}</a></li>)}</ul>
+          <ul>{cases.filter(c => c.group === group).map(c => <li><a href={resultsHref(c, base)}>{c.id}</a>{untested.has(`${c.group}/${c.id}`) && ' (not tested yet)'}</li>)}</ul>
         </section>
       ))}
       <Reporting />

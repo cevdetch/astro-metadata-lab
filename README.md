@@ -12,6 +12,42 @@ This repository contains the research site. The production starter and possible
 i18n, blog or portfolio variants still need their agreed design. The social images
 here are fixed local PNG fixtures; the automatic image generator is future work.
 
+## Coverage
+
+<!-- coverage:start -->
+71 of 121 cases have at least one recorded observation; 50 have none yet.
+The run registry holds 23 browser, 51 link-preview and 4 HTTP runs, recorded on 2026-10-23 and 2026-10-24.
+
+- Browsers: Brave, Brave Origin, Firefox, Tor Browser Alpha and Vanadium.
+- Link previews: Discord, Instagram, LinkedIn, LinkedIn Post Inspector, Molly, Signal and WhatsApp.
+- HTTP: curl.
+
+| Group | Cases | Observed | Clients with observations |
+| --- | ---: | ---: | --- |
+| metadata | 33 | 10 | Discord, Instagram, LinkedIn Post Inspector, Molly, WhatsApp, curl |
+| precedence | 29 | 11 | Discord, Instagram, LinkedIn, LinkedIn Post Inspector, Molly, WhatsApp |
+| canonical | 7 | 3 | Discord, Instagram, LinkedIn Post Inspector, Molly, WhatsApp |
+| icons | 20 | 20 | Brave, Brave Origin, Firefox, Tor Browser Alpha, Vanadium |
+| head | 7 | 7 | Brave Origin, Firefox, Tor Browser Alpha, Vanadium |
+| theming | 10 | 10 | Brave Origin, Firefox, Tor Browser Alpha, Vanadium, Discord, Instagram, Signal, WhatsApp |
+| manifest | 4 | 0 | — |
+| json-ld | 2 | 2 | Firefox |
+| language | 4 | 4 | Firefox |
+| indexing | 5 | 4 | Discord, Instagram, LinkedIn Post Inspector, Molly, WhatsApp, curl |
+| **Total** | **121** | **71** | |
+
+Cases with no recorded observation yet:
+
+- metadata: `html-only`, `html-plus-og-image`, `no-og-title`, `no-og-description`, `no-description`, `no-image`, `empty-og-title`, `whitespace-og-title`, `conflicting-titles`, `duplicate-og-title`, `twitter-before-og`, `twitter-after-og`, `duplicate-twitter-values`, `no-twitter-card`, `summary-card`, `image-without-alt`, `image-alt-twitter`, `image-secure-url-duplicate`, `image-two-candidates`, `image-fallback-candidate`, `title-with-site-suffix`, `og-locale-fr`, `redundant-index-follow`
+- precedence: `no-twitter-title`, `no-twitter-description`, `no-twitter-image`, `no-og-title`, `no-og-description`, `no-og-image`, `no-social-title`, `no-social-description`, `no-social-image`, `twitter-no-title`, `twitter-no-description`, `twitter-no-image`, `empty-twitter-title`, `empty-twitter-description`, `empty-twitter-image`, `missing-twitter-image`, `missing-og-image`, `empty-og-description`
+- canonical: `canonical-duplicate`, `base-element`, `tracking-query`, `canonical-clean`
+- manifest: `manifest-disabled`, `manifest-enabled`, `manifest-relative`, `manifest-duplicate`
+- indexing: `http-noindex`
+<!-- coverage:end -->
+
+`pnpm coverage` rewrites this block from the result records, and `pnpm verify`
+fails when it is out of date.
+
 ## Cases
 
 Each definition has an independent page, a side-by-side comparison with the
@@ -46,8 +82,8 @@ pnpm install --frozen-lockfile
 pnpm verify
 ```
 
-`verify` runs 19 Node tests, including Astro dev route matching, builds Astro,
-then checks all case/source/comparison
+`verify` runs the Node tests, including Astro dev route matching, checks the
+README coverage block, builds Astro, then checks all case/source/comparison
 outputs, exact fixture HTML, asset bytes, manifest paths, host rules and absence
 of a client JS bundle. A production build does not replace a TypeScript checker,
 a browser accessibility review or live client testing.

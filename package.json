@@ -10,10 +10,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "test:cases": "node src/metadata-cases/cases.test.mjs && node src/metadata-cases/hosting.test.mjs",
+    "test": "node src/metadata-cases/cases.test.mjs && node src/metadata-cases/hosting.test.mjs && node src/metadata-cases/coverage.test.mjs",
+    "coverage": "node scripts/coverage.mjs --write",
+    "check:coverage": "node scripts/coverage.mjs --check",
     "verify:build": "node scripts/verify-build.mjs",
     "lint:html": "deadhead dist/index.html dist/cases/index.html dist/cases/testing dist/cases/results dist/cases/compare",
-    "verify": "pnpm test:cases && pnpm build && pnpm verify:build && pnpm lint:html",
+    "verify": "pnpm test && pnpm check:coverage && pnpm build && pnpm verify:build && pnpm lint:html",
     "preview": "astro preview",
     "astro": "astro"
   },
