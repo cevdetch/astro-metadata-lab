@@ -22,3 +22,8 @@ after tapping. A missing preview does not identify an ignored field.
 | — | WhatsApp | — | — | — | — | — | not tested |
 | — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
+| S027 | LinkedIn | inspector | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; reported label image-missing-missing mapped to requested case; actual shared URL not restated |
+| S028 | Molly | not restated | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; reported label image-missing-missing mapped to requested case; actual shared URL not restated |
+| S029 | Discord | not restated | unreported | unreported | placeholder: Image failed to load | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; reported label image-missing-missing mapped to requested case; actual shared URL not restated |
+| S030 | Instagram | not restated | unreported | unreported | placeholder; text not reported | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; reported label image-missing-missing mapped to requested case; actual shared URL not restated |
+| S031 | WhatsApp | not restated | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; reported label image-missing-missing mapped to requested case; actual shared URL not restated; favicon=not shown; clarified: card appeared but main image absent |

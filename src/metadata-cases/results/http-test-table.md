@@ -4,7 +4,11 @@ Use this file for one deployment/probe batch, independently of browser UI tests.
 Each empty input/result cell contains two spaces. Keep prior recorded probes in
 [hosting.md](hosting.md). Shared deployment details live in
 [sessions.md](sessions.md). A new probe can receive a new H run ID after you return
-it; do not overwrite the historical H001-H003 records.
+it; do not overwrite the historical H001–H004 records.
+
+H004 now records the redirect and error-404 header captures in hosting.md, with
+raw evidence in http/h004-headers.txt. Keep those results there; the blank
+worksheet below remains available for a new batch.
 
 ## Probe context
 

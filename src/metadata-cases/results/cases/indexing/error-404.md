@@ -22,6 +22,12 @@ after tapping. A missing preview does not identify an ignored field.
 | — | WhatsApp | — | — | — | — | — | not tested |
 | — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
+| S047 | LinkedIn | requested inspector; not restated | no card | no card | no card | no card / destination unreported | preview=none; H004 separately confirms 404; reason for missing card not established |
+| S048 | Molly | not restated | no card | no card | no card | no card / destination unreported | preview=none; H004 separately confirms 404; reason for missing card not established |
+| S049 | Discord | not restated | no card | no card | no card | no card / destination unreported | preview=none; H004 separately confirms 404; reason for missing card not established |
+| S050 | Instagram | not restated | present; not quoted | present; not quoted | unreported | layout unreported / destination unreported | preview=card; H004 separately confirms 404; displayed strings/image not supplied |
+| S051 | WhatsApp | not restated | no card | no card | no card | no card / destination unreported | preview=none; H004 separately confirms 404; reason for missing card not established |
+
 
 ## HTTP results
 
@@ -32,3 +38,4 @@ control document and cannot verify this response.
 | Run | Requested URL | Status | Content-Type | Robots / Location | Notes / evidence |
 | --- | --- | --- | --- | --- | --- |
 | — | — | — | — | — | not tested |
+| H004 | https://astro-metadata-lab.pages.dev/cases/indexing/error-404/ | 404 | text/html; charset=utf-8 | Location and X-Robots-Tag absent in supplied headers | Cache-Control no-store; Date 2026-10-24 15:35:15 GMT; body not captured; evidence http/h004-headers.txt |

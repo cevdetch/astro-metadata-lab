@@ -1,0 +1,31 @@
+Requested context: GET without following redirects; curl version unknown.
+URLs assigned from the requested command order; deployed commit unconfirmed.
+
+URL: https://astro-metadata-lab.pages.dev/cases/indexing/redirect/
+HTTP/2 302
+date: Sat, 24 Oct 2026 15:35:15 GMT
+content-type: text/plain;charset=UTF-8
+content-length: 43
+location: /cases/metadata/explicit-og/
+access-control-allow-origin: *
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=osQJguwDgWHOmLztWsbvXKVr%2BDQnkFH%2F66BQ3GBiC0%2FRsxIkUxEfHF4t4vZv4EqVJqWHJuB%2FbasLGEvH1P48Td19U6DGy5Ictn3%2Bl%2BRXrU6Crq4OCwmoViAvhjqEksCBTFxmr1endFR%2FWJGaiOGH"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+cf-ray: a4fa0ce23e67e63c-ZRH
+alt-svc: h3=":443"; ma=86400
+
+URL: https://astro-metadata-lab.pages.dev/cases/indexing/error-404/
+HTTP/2 404
+date: Sat, 24 Oct 2026 15:35:15 GMT
+content-type: text/html; charset=utf-8
+access-control-allow-origin: *
+cache-control: no-store
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Z94oDKtP199U%2BZg1GbAs6QvPJTu2251yVU%2FA2v%2BJ8DoQ900OLAyfGHnhgkhRU%2FVibkBvdkIrUdvtF%2FAm%2FsmaqZszA%2FOk5pZmQoIaSdHUV9IWh0UXThvqrJy4lRNL8kufjQix8BXxLt4ndFL5fA5%2F"}]}
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+cf-ray: a4fa0ce2cd5bf79f-ZRH
+alt-svc: h3=":443"; ma=86400

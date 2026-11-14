@@ -22,3 +22,8 @@ after tapping. A missing preview does not identify an ignored field.
 | — | WhatsApp | — | — | — | — | — | not tested |
 | — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
+| S027 | LinkedIn | inspector | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S028 | Molly | not restated | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S029 | Discord | not restated | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S030 | Instagram | not restated | unreported | unreported | blue-circle SVG | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S031 | WhatsApp | not restated | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; favicon=bottom right; clarified: card appeared but main image absent |

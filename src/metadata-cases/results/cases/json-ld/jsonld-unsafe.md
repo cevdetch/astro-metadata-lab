@@ -20,3 +20,18 @@ eligibility or full site security.
 | B004 | Firefox / Arch Linux | unknown | — | — | not tested |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
+| B023 | Firefox / Arch Linux; inherited requested context from B004 | requested enabled context; not restated | invalid; SyntaxError: JSON.parse: unterminated string literal at line 1 column 60 of the JSON data | extra image: present (true); request: 404 interpreted from leading report field; fixtureInjection: true (probe string "true") | reported; exact URL/build unconfirmed; 404 is not the JSON parse result or an established HTML page status |
+
+### Raw reported output
+
+```text
+jsonld-unsafe: json=404; ncaught SyntaxError: JSON.parse: unterminated string literal at line 1 column 60 of the JSON data
+    <anonymous> debugger eval code:1
+
+debugger eval code:1:6
+    <anonymous> debugger eval code:1
+'{"extraImage":true,"flag":"true"}'
+```
+
+The leading 404 is interpreted as the unintended image request's status in the
+requested Network check. The separate SyntaxError establishes the parse failure.

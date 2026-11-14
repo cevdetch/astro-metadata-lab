@@ -20,3 +20,4 @@ and disabled separately. A normal-looking page does not establish conformance.
 | B004 | Firefox / Arch Linux | unknown | — | — | not tested |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
+| B014 | Vanadium / Android 17; inherited requested context | mobile viewport batch; orientation and settings not restated | desktop-like layout with small text; zoom: pinch zoom works; horizontal overflow unreported | not inspected | reported; mobile response to the requested Vanadium batch; viewport comparison only; tested URL/build unconfirmed |

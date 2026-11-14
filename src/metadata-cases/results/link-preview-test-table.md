@@ -18,8 +18,10 @@ Define platform labels once; these are not assigned S test-run IDs:
 | IG | Instagram |
 | FB | Facebook Messenger |
 | SG | Signal |
+| MO | Molly |
 
-Signal is an additional reported client for the theme-color case; the other
+Signal is an additional reported client for the theme-color case. Molly has its
+own first-round precedence report and is not merged with Signal. Unreported
 matrices retain the original six-platform checklist.
 
 ## Client settings
@@ -45,6 +47,53 @@ and results separate from `WA/sent`.
 | IG |  |  |  |  |  |
 | FB |  |  |  |  |  |
 | SG |  |  |  |  |  |
+| WA/S005 | WhatsApp 2.26.40.77 | unknown | requested sent; not restated | unknown | cache/settings unknown; current deployment requested; B024 context |
+| MO/S006 | im.molly.app v8.19.2-4 | unknown | unreported | unknown | cache/settings unknown; current deployment requested; B024 context |
+| DC/S007 | discord.com; version unknown | unknown | unreported | unknown | cache/settings unknown; current deployment requested; B024 context |
+| LI/S008 | linkedin.com; version unknown | unknown | post composer; confirmed | unknown | cache/settings unknown; current deployment requested; B024 context |
+| IG/S009 | instagram.com; version unknown | unknown | unreported | unknown | cache/settings unknown; current deployment requested; B024 context |
+| LI/S010 | LinkedIn Post Inspector; web | unknown | inspector | unknown | fresh scrape reported; other cache/settings unknown; see all-fields record |
+| LI/S011 | LinkedIn Post Inspector /inspect/; web | unknown | inspector | unknown | five-case report; no card descriptions; other cache/settings unknown |
+| LI/S012 | linkedin.com; version unknown; inherited S008 | unknown | post composer | unknown | retry after Inspector success; other cache/settings unknown |
+| LI/S013 | LinkedIn; version unknown | unknown | DM; sent/received/draft not restated | unknown | no preview for lab or deadhead control; wait/settings unknown |
+| DC/S014 | discord.com; version unknown; inherited from S007 | unknown | not restated | unknown | omission batch; unchanged fields confirmed; cache/settings unknown |
+| MO/S015 | Molly; v8.19.2-4 inherited from S006 | unknown | not restated | unknown | omission batch; unchanged fields confirmed; cache/settings unknown |
+| WA/S016 | WhatsApp; 2.26.40.77 inherited from S005 | unknown | not restated | unknown | omission batch; unchanged fields confirmed; cache/settings unknown |
+| LI/S017 | LinkedIn Post Inspector; web | unknown | inspector | unknown | omission batch; unchanged fields confirmed; cache/settings unknown |
+| DC/S018 | Discord; version unknown; inherited S007 | unknown | not restated | unknown | card-layout batch; cache/settings unknown |
+| MO/S019 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | card-layout batch; cache/settings unknown |
+| LI/S020 | LinkedIn; requested Inspector context from S017 | unknown | requested inspector; not restated | unknown | card-layout batch; cache/settings unknown |
+| IG/S021 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | card-layout batch; cache/settings unknown |
+| MO/S022 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | metadata type/URL/dimensions comparison; settings/cache unknown |
+| IG/S023 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | metadata type/URL/dimensions comparison; settings/cache unknown |
+| WA/S024 | WhatsApp; 2.26.40.77 inherited S005 | unknown | not restated | unknown | metadata type/URL/dimensions comparison; settings/cache unknown |
+| DC/S025 | discord.com; version unknown; inherited S007 | unknown | not restated | unknown | metadata type/URL/dimensions comparison; settings/cache unknown |
+| LI/S026 | LinkedIn Post Inspector; web | unknown | inspector | unknown | metadata type/URL/dimensions comparison; settings/cache unknown |
+| LI/S027 | LinkedIn Post Inspector; web | unknown | inspector | unknown | image-case batch; actual URL/cache/settings unknown |
+| MO/S028 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | image-case batch; actual URL/cache/settings unknown |
+| DC/S029 | Discord; version unknown; inherited S007 | unknown | not restated | unknown | image-case batch; actual URL/cache/settings unknown |
+| IG/S030 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | image-case batch; actual URL/cache/settings unknown |
+| WA/S031 | WhatsApp; 2.26.40.77 inherited S005 | unknown | not restated | unknown | image-case batch; actual URL/cache/settings unknown |
+| LI/S032 | LinkedIn Post Inspector; web; inherited S027 | unknown | requested inspector; not restated | unknown | text batch; individual cutoffs, settings/cache unknown |
+| MO/S033 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | text batch; individual cutoffs, settings/cache unknown |
+| DC/S034 | discord.com; version unknown; inherited S007 | unknown | not restated | unknown | text batch; individual cutoffs, settings/cache unknown |
+| IG/S035 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | text batch; individual cutoffs, settings/cache unknown |
+| WA/S036 | WhatsApp; 2.26.40.77 inherited S005 | unknown | not restated | unknown | text batch; individual cutoffs, settings/cache unknown |
+| LI/S037 | LinkedIn Post Inspector; web; inherited S032 | unknown | requested inspector; not restated | unknown | noindex sharing batch; exact text/layout/cache/settings unknown |
+| MO/S038 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | noindex sharing batch; exact text/layout/cache/settings unknown |
+| DC/S039 | discord.com; version unknown; inherited S007 | unknown | not restated | unknown | noindex sharing batch; exact text/layout/cache/settings unknown |
+| IG/S040 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | noindex sharing batch; exact text/layout/cache/settings unknown |
+| WA/S041 | WhatsApp; 2.26.40.77 inherited S005 | unknown | not restated | unknown | noindex sharing batch; exact text/layout/cache/settings unknown |
+| LI/S042 | LinkedIn; inherited Inspector context from S037 | unknown | requested inspector; not restated | unknown | canonical batch; domains recorded, destinations/settings/cache unknown |
+| MO/S043 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | canonical batch; domains recorded, destinations/settings/cache unknown |
+| WA/S044 | WhatsApp; 2.26.40.77 inherited S005 | unknown | not restated | unknown | canonical batch; domains recorded, destinations/settings/cache unknown |
+| DC/S045 | Discord; version unknown; inherited S007 | unknown | not restated | unknown | canonical batch; domains recorded, destinations/settings/cache unknown |
+| IG/S046 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | canonical batch; domains recorded, destinations/settings/cache unknown |
+| LI/S047 | LinkedIn; inherited Inspector context from S042 | unknown | requested inspector; not restated | unknown | redirect/404 batch; H004 header evidence separate; settings/cache unknown |
+| MO/S048 | Molly; v8.19.2-4 inherited S006 | unknown | not restated | unknown | redirect/404 batch; H004 header evidence separate; settings/cache unknown |
+| DC/S049 | Discord; version unknown; inherited S007 | unknown | not restated | unknown | redirect/404 batch; H004 header evidence separate; settings/cache unknown |
+| IG/S050 | Instagram; version unknown; inherited S009 | unknown | not restated | unknown | redirect/404 batch; H004 header evidence separate; settings/cache unknown |
+| WA/S051 | WhatsApp; 2.26.40.77 inherited S005 | unknown | not restated | unknown | redirect/404 batch; H004 header evidence separate; settings/cache unknown |
 
 ## Proposed output standard
 
@@ -79,6 +128,76 @@ other than the catalogue's Open link, add `shared-url=<exact URL>`.
 Start with the five precedence controls html-only, og-vs-html, twitter-vs-html,
 all-fields and twitter-first, then expand to the remaining columns.
 
+First-round results are now recorded as WA/S005, MO/S006, DC/S007, LI/S008
+and IG/S009 in Field precedence. All reported image-bearing cards were large.
+A follow-up confirmed that each supplied letter applies to both title and
+description; both fields are recorded independently with the same marker. Earlier theme-color runs and unfilled rows keep
+their own context. A clarification placed LinkedIn's S008 errors in
+the post composer, not a DM. S010 is the detailed successful Inspector result;
+S011 covers all five Inspector previews. Their descriptions were absent from
+the cards, including S010 per the later correction. Extracted metadata and
+visible card text are recorded separately.
+
+The post-composer retry still failed (S012). The DM check also showed no card
+(S013), including a deadhead.cevdet.ch control; precise DM surface and wait were
+not restated. Defer further LinkedIn retries and keep the cause unresolved.
+
+The OG-only omission results are now recorded as DC/S014, MO/S015, WA/S016 and
+LI/S017. A follow-up confirmed both text fields and images. Instagram's omission
+results remain unreported. LI/S017's grouped description values were later retracted
+and corrected to none; titles/images remain. Keep the correction
+history and the distinction between extraction and visible card fields.
+
+The card-layout batch is recorded as DC/S018, MO/S019, LI/S020 and IG/S021.
+Discord reported summary with B/B/red; the others reported unchanged large-card
+appearance, with other fields left unreported except LinkedIn's absent
+description. The Signal label was confirmed to mean Molly. WhatsApp's card batch
+remains unreported.
+
+The metadata comparison is recorded as MO/S022, IG/S023, WA/S024, DC/S025 and
+LI/S026: no reported problem in reference/type/URL/dimension variants, supplied
+texts and reported large layout. LinkedIn's earlier no-description correction
+remains in force. These equal-text controls do not identify a fallback source.
+
+The image cases are recorded as LI/S027, MO/S028, DC/S029, IG/S030 and WA/S031.
+LinkedIn/Molly had no SVG/missing main images; Instagram displayed the blue SVG;
+Discord and Instagram used missing-image placeholders. WhatsApp's clarified
+result is a card with no main image in all three cases; its SVG-only favicon is
+separate from the main image.
+The reported image-missing-missing label maps to the requested image-missing
+control, but exact shared URLs were not restated.
+
+The text batch is recorded as LI/S032, MO/S033, DC/S034, IG/S035 and WA/S036:
+all works fine, with different truncation lengths. The reported Discord example
+is saved in its long-title record; other cutoffs and exact character audits were
+not supplied. LinkedIn's explicit description absence remains in force.
+
+The noindex sharing batch is recorded as LI/S037, MO/S038, DC/S039, IG/S040 and
+WA/S041. Both cases still showed cards; the with-preview case matched reference
+appearance, and noindex-no-image had no image. This supplies no search-indexing
+or header-only noindex result. The earlier noindex/generation preference remains
+a design policy, unchanged by this test.
+
+The canonical batch is recorded as LI/S042, MO/S043, WA/S044, DC/S045 and IG/S046.
+Cards were fine in all three variants. LinkedIn displayed the deployment host;
+Molly/WhatsApp displayed the stable alias; Discord/Instagram displayed no domain.
+Destinations and Inspector URL details remain unreported.
+
+The redirect/404 batch is recorded as LI/S047, MO/S048, DC/S049, IG/S050 and
+WA/S051, paired with H004 headers. Redirect matched explicit-og in all five;
+404 produced no card except Instagram, which showed title and description.
+Clicked destinations remain unreported.
+
+X and Facebook Messenger were unavailable for this round and remain
+untested. The current next step is a preliminary metadata design review; the
+remaining blank cells are not an instruction to test every negative control
+before that review.
+
+This round ran on the current deployment without changing origin
+configuration. B024 observed all-fields on the stable alias with metadata URLs
+at `37d5d3ff.astro-metadata-lab.pages.dev`; retain that context. A missing card or
+image alone does not identify field selection or its cause.
+
 ## Field precedence
 
 Group: `precedence`.
@@ -99,6 +218,23 @@ Matching or missing text alone does not establish which metadata was used.
 | WA |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | IG |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | FB |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WA/S005 | preview=card; title=A; description=A; image=none | preview=card; title=B; description=B; image=red; layout=large-image |  | preview=card; title=C; description=C; image=green; layout=large-image | preview=card; title=B; description=B; image=red; layout=large-image | preview=card; title=B; description=B; image=red; layout=large-image |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| MO/S006 | preview=card; title=A; description=A; image=none | preview=card; title=B; description=B; image=red; layout=large-image |  | preview=card; title=A; description=A; image=none | preview=card; title=B; description=B; image=red; layout=large-image | preview=card; title=B; description=B; image=red; layout=large-image |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DC/S007 | preview=card; title=A; description=A; image=none | preview=card; title=B; description=B; image=red; layout=large-image |  | preview=card; title=C; description=C; image=green; layout=large-image | preview=card; title=B; description=B; image=red; layout=large-image | preview=card; title=C; description=C; image=red; layout=large-image |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S008 | preview=error; note=Cannot display preview. You can post as is, or try another link. | preview=error; note=Cannot display preview. You can post as is, or try another link. |  | preview=error; note=Cannot display preview. You can post as is, or try another link. | preview=error; note=Cannot display preview. You can post as is, or try another link. | preview=error; note=Cannot display preview. You can post as is, or try another link. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| IG/S009 | preview=card; title=A; description=A; image=none | preview=card; title=B; description=B; image=red; layout=large-image |  | preview=card; title=A; description=A; image=none | preview=card; title=B; description=B; image=red; layout=large-image | preview=card; title=B; description=B; image=red; layout=large-image |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S010 |  |  |  |  | preview=card; title=B; description=none; extracted-description=B; image=LinkedIn proxy, color unreported; note=description length warning; inspector surface |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S011 | preview=card; title=A; description=none; image=none; note=inspector; displayed domain 37d5d3ff.astro-metadata-lab.pages.dev | preview=card; title=B; description=none; image=red; note=inspector; displayed domain 37d5d3ff.astro-metadata-lab.pages.dev |  | preview=card; title=A; description=none; image=none; note=inspector; displayed domain 37d5d3ff.astro-metadata-lab.pages.dev | preview=card; title=B; description=none; image=red; note=inspector; displayed domain 37d5d3ff.astro-metadata-lab.pages.dev | preview=card; title=B; description=none; image=red; note=inspector; displayed domain 37d5d3ff.astro-metadata-lab.pages.dev |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S012 |  |  |  |  | preview=error; note=Cannot display preview. You can post as is, or try another link.; surface=post-composer; retry after Inspector |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S013 |  |  |  |  | preview=none; note=DM; exact surface/wait unreported; deadhead control also no preview |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DC/S014 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=none; description=none; image=red | preview=card; title=B; description=none; image=red | preview=card; title=B; description=B; image=none |  |  |  |  |  |  |  |  |  |  |  |
+| MO/S015 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=A; description=B; image=red | preview=card; title=B; description=A; image=red | preview=card; title=B; description=B; image=none |  |  |  |  |  |  |  |  |  |  |  |
+| WA/S016 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=A; description=B; image=red | preview=card; title=B; description=A; image=red | preview=card; title=B; description=B; image=none |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S017 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=A; description=none; image=red | preview=card; title=B; description=none; image=red | preview=card; title=B; description=none; image=none |  |  |  |  |  |  |  |  |  |  |  |
+| DC/S018 |  |  | preview=card; layout=reported summary; title=B; description=B; image=red |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; layout=reported summary; title=B; description=B; image=red | preview=card; layout=reported summary; title=B; description=B; image=red |
+| MO/S019 |  |  | preview=card; layout=reported summary_large_image |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; layout=reported summary_large_image | preview=card; layout=reported summary_large_image |
+| LI/S020 |  |  | preview=card; layout=reported summary_large_image; description=none |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; layout=reported summary_large_image; description=none | preview=card; layout=reported summary_large_image; description=none |
+| IG/S021 |  |  | preview=card; layout=reported summary_large_image |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; layout=reported summary_large_image | preview=card; layout=reported summary_large_image |
 
 ## Metadata
 
@@ -125,6 +261,21 @@ A field absent from the card does not prove that the platform ignored its tag.
 | WA |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | IG |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | FB |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| MO/S022 |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| IG/S023 |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WA/S024 |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DC/S025 |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=fixture text; description=fixture text; image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S026 |  |  | preview=card; title=fixture text; description=none (prior explicit correction); image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=none (prior explicit correction); image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem | preview=card; title=fixture text; description=none (prior explicit correction); image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; title=fixture text; description=none (prior explicit correction); image=reference appearance, color not restated; layout=reported summary_large_image; note=no reported problem |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S027 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | image=works; color not restated; description=none (group report) | image=none; description=none (group report) | image=none; description=none (group report) |  |  |  |  |  |  |  |  |  |  |  |
+| MO/S028 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | image=works; color not restated; description=none (group report) | image=none; description=none (group report) | image=none; description=none (group report) |  |  |  |  |  |  |  |  |  |  |  |
+| DC/S029 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | image=works; color not restated | image=none | image=placeholder: Image failed to load |  |  |  |  |  |  |  |  |  |  |  |
+| IG/S030 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | image=works; color not restated | image=blue-circle SVG | image=placeholder; text not reported |  |  |  |  |  |  |  |  |  |  |  |
+| WA/S031 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | preview=card; image=none; favicon=not shown | preview=card; image=none; favicon=bottom right | preview=card; image=none; favicon=not shown |  |  |  |  |  |  |  |  |  |  |  |
+| LI/S032 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | text=normal appearance reported; note=general success, literal characters not supplied; description=none (prior explicit correction) | text=normal appearance reported; note=general success, literal characters not supplied; description=none (prior explicit correction) | text=normal appearance reported; note=general success, literal characters not supplied; description=none (prior explicit correction); truncation=client-dependent, cutoff unreported |  |  |  |  |  |  |  |  |
+| MO/S033 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied; truncation=client-dependent, cutoff unreported |  |  |  |  |  |  |  |  |
+| DC/S034 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied; truncation=client-dependent, cutoff unreported; example=`A long but valid descriptive title A long but valid descriptive tit...` (reported shortest/minimum) |  |  |  |  |  |  |  |  |
+| IG/S035 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied; truncation=client-dependent, cutoff unreported |  |  |  |  |  |  |  |  |
+| WA/S036 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied | text=normal appearance reported; note=general success, literal characters not supplied; truncation=client-dependent, cutoff unreported |  |  |  |  |  |  |  |  |
 
 ## Canonical URLs
 
@@ -147,6 +298,11 @@ Use the catalogue's query-bearing Open link for `tracking-query`.
 | WA |  |  |  |  |  |  |  |
 | IG |  |  |  |  |  |  |  |
 | FB |  |  |  |  |  |  |  |
+| LI/S042 | preview=card; note=no reported problem; displayed-domain=37d5d3ff.astro-metadata-lab.pages.dev; destination=unreported; description=none (prior explicit correction) | preview=card; note=no reported problem; displayed-domain=37d5d3ff.astro-metadata-lab.pages.dev; destination=unreported; description=none (prior explicit correction) | preview=card; note=no reported problem; displayed-domain=37d5d3ff.astro-metadata-lab.pages.dev; destination=unreported; description=none (prior explicit correction) |  |  |  |  |
+| MO/S043 | preview=card; note=no reported problem; displayed-domain=astro-metadata-lab.pages.dev; destination=unreported | preview=card; note=no reported problem; displayed-domain=astro-metadata-lab.pages.dev; destination=unreported | preview=card; note=no reported problem; displayed-domain=astro-metadata-lab.pages.dev; destination=unreported |  |  |  |  |
+| WA/S044 | preview=card; note=no reported problem; displayed-domain=astro-metadata-lab.pages.dev; destination=unreported | preview=card; note=no reported problem; displayed-domain=astro-metadata-lab.pages.dev; destination=unreported | preview=card; note=no reported problem; displayed-domain=astro-metadata-lab.pages.dev; destination=unreported |  |  |  |  |
+| DC/S045 | preview=card; note=no reported problem; displayed-domain=none shown; destination=unreported | preview=card; note=no reported problem; displayed-domain=none shown; destination=unreported | preview=card; note=no reported problem; displayed-domain=none shown; destination=unreported |  |  |  |  |
+| IG/S046 | preview=card; note=no reported problem; displayed-domain=none shown; destination=unreported | preview=card; note=no reported problem; displayed-domain=none shown; destination=unreported | preview=card; note=no reported problem; displayed-domain=none shown; destination=unreported |  |  |  |  |
 
 ## Head parsing
 
@@ -239,6 +395,16 @@ indexing behavior.
 | WA |  |  |  |  |  |
 | IG |  |  |  |  |  |
 | FB |  |  |  |  |  |
+| LI/S037 | preview=card; image=reference appearance, color not restated; layout=same as reference; description=none (prior explicit correction) | preview=card; image=none; layout=not separately restated; description=none (prior explicit correction) |  |  |  |
+| MO/S038 | preview=card; image=reference appearance, color not restated; layout=same as reference | preview=card; image=none; layout=not separately restated |  |  |  |
+| DC/S039 | preview=card; image=reference appearance, color not restated; layout=same as reference | preview=card; image=none; layout=not separately restated |  |  |  |
+| IG/S040 | preview=card; image=reference appearance, color not restated; layout=same as reference | preview=card; image=none; layout=not separately restated |  |  |  |
+| WA/S041 | preview=card; image=reference appearance, color not restated; layout=same as reference | preview=card; image=none; layout=not separately restated |  |  |  |
+| LI/S047 |  |  |  | preview=none | preview=card; note=same as explicit-og; destination=unreported |
+| MO/S048 |  |  |  | preview=none | preview=card; note=same as explicit-og; destination=unreported |
+| DC/S049 |  |  |  | preview=none | preview=card; note=same as explicit-og; destination=unreported |
+| IG/S050 |  |  |  | preview=card; title=present, not quoted; description=present, not quoted; image=unreported | preview=card; note=same as explicit-og; destination=unreported |
+| WA/S051 |  |  |  | preview=none | preview=card; note=same as explicit-og; destination=unreported |
 
 Return this file after a batch. I will update the detailed records; you only
 need to enter each observation here once.

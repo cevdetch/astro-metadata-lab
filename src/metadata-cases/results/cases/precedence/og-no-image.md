@@ -25,3 +25,11 @@ identification markers, not expected platform choices.
 | — | WhatsApp | — | — | — | — | — | not tested |
 | — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
+| S014 | Discord | not restated | B | B | none | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
+| S015 | Molly | not restated | B | B | none | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
+| S016 | WhatsApp | not restated | B | B | none | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
+| S017 | LinkedIn | inspector | B | none | none | layout unreported / destination not tested | corrected: LinkedIn still shows no visible description; title/image retained; exact URL/build and layout unreported |
+
+S017 correction: the grouped description claim for LinkedIn was retracted.
+Its preview showed no visible description; the title and image observations
+remain. Extracted metadata and visible card text are separate fields.

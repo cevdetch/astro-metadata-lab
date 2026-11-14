@@ -25,3 +25,20 @@ identification markers, not expected platform choices.
 | — | WhatsApp | — | — | — | — | — | not tested |
 | — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
+| S005 | WhatsApp | requested sent; not restated | C | C | green | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev; favicon bottom right, appearance not identified |
+| S006 | Molly | not reported | A | A | none | layout unreported / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev |
+| S007 | Discord | not reported | C | C | green | large-image / destination not tested | reported; marker confirmed for both title and description |
+| S008 | LinkedIn | post composer; confirmed in follow-up | unreported | unreported | unreported | unreported / destination not tested | preview error: Cannot display preview. You can post as is, or try another link.; cause unknown |
+| S009 | Instagram | not reported | A | A | none | layout unreported / destination not tested | reported; marker confirmed for both title and description |
+
+## LinkedIn Post Inspector batch (S011)
+
+This is an Inspector result, separate from S008's post-composer errors.
+
+| Run | Visible title | Visible description | Image | Displayed domain | Layout |
+| --- | --- | --- | --- | --- | --- |
+| S011 | A | none | none | 37d5d3ff.astro-metadata-lab.pages.dev | unreported |
+
+The letter identifies the title only; no visible description was
+explicitly reported in any Inspector preview. The suggested connection to the
+100-character warning is untested; no length comparison was performed.
