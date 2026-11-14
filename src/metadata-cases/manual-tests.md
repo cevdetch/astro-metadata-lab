@@ -127,8 +127,8 @@ those appearances. Report a color without a shape if you cannot identify it.
 Keep unknown details marked unknown. Record DM surface, displayed title,
 description, image, card layout and click target separately. Keep an absent
 preview as an observation; it does not prove the client ignored a particular tag.
-The older browser/social JSON files remain initial snapshots; new reports go in
-the result tables.
+The older browser JSON file keeps the early reports; new reports go in the
+result tables.
 
 For a quick report, copy this for each case (or group cases with the same device
 and app details):

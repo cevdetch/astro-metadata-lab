@@ -34,10 +34,9 @@ Comparison iframes cannot establish tab icons, first paint or installed-app UI.
 manual-tests.md describes actual browser, mobile and social-DM checks and is
 published at /cases/testing/ with links for the first round. The 29 precedence
 cases distinguish HTML A, OG B/red, Twitter C/green and body D values.
-browser-observations.json contains the reported Brave/Firefox observations.
-social-observations.json retains the initial empty snapshot.
+browser-observations.json contains the early Brave/Firefox observations.
 New reports belong in results/cases/<group>/<id>.md, with shared run details in
-results/sessions.md. The older JSON files retain the initial reports. The website
+results/sessions.md. The older JSON file retains the early reports. The website
 publishes per-case tables at /cases/results/, linked beside each catalogue case.
 results/reporting.md defines visual labels and reporting formats; the testing
 and results index pages render the same guide under #reporting-shortcuts.

@@ -411,8 +411,8 @@ changes and screenshots as evidence without turning them into universal rules.
 ## Files and updates
 
 The Markdown tables in this folder hold new observations. The older
-`browser-observations.json` and `social-observations.json` remain as the initial
-snapshot files; the catalogue labels the former as early reports. The two early
+`browser-observations.json` remains as the initial snapshot; the catalogue
+labels it as early reports. The two early
 Brave/Firefox reports and the supplied HTTP probe have been transcribed here
 with their missing versions, devices and deployment commits marked unknown.
 
