@@ -3,6 +3,7 @@
 // here is now the /cases/current/ fixture; nothing below is an experiment.
 import { cases, normalizeBase } from '../metadata-cases/cases';
 import { labCoverage } from '../metadata-cases/lab-coverage';
+import { graph, serializeJsonLd, websiteNode } from '../lib/structured-data';
 import '../metadata-cases/ui.css';
 
 const home = normalizeBase(import.meta.env.BASE_URL);
@@ -14,14 +15,7 @@ const image = new URL(`${home}og-image.png`, Astro.url.origin).href;
 const repository = 'https://github.com/cevdetch/astro-metadata-lab';
 // Replace with the post's own URL once the write-up is published.
 const writeUp = 'https://deadhead.cevdet.ch/blog';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name,
-  url,
-  description,
-  publisher: { '@type': 'Person', '@id': 'https://cevdet.ch/#person', name: 'Cevdet', url: 'https://cevdet.ch/' },
-};
+const jsonLd = graph(websiteNode({ url, name, description, inLanguage: 'en' }));
 const groups = [
   ['metadata', 'Metadata', 'HTML fallbacks, missing or empty Open Graph fields, Twitter card fields and their order, conflicting, escaped and very long text, and missing, relative, SVG or multiple social images.'],
   ['precedence', 'Precedence', 'HTML, Open Graph, Twitter and body text carry different markers (A, B, C, D) and different image colours, so a preview shows which source each field came from.'],
@@ -57,7 +51,7 @@ const { observed, untested, dates } = labCoverage;
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content={`Astro Metadata Lab: ${cases.length} test pages with metadata broken on purpose`} />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+    <script type="application/ld+json" is:inline set:html={serializeJsonLd(jsonLd)} />
   </head>
   <body>
     <main>
@@ -184,7 +178,7 @@ const { observed, untested, dates } = labCoverage;
       </p>
     </main>
     <footer>
-      <p>By <a href="https://cevdet.ch/">Cevdet</a> · <a href={repository}>Source</a></p>
+      <p>By <a href="https://cevdet.ch/">Cevdet Haran</a> · <a href={repository}>Source</a></p>
     </footer>
   </body>
 </html>
