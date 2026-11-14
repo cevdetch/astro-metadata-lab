@@ -25,6 +25,7 @@
     "astro": "^7.4.2"
   },
   "devDependencies": {
-    "deadhead": "0.3.1"
+    "deadhead": "0.3.1",
+    "schema-dts": "2.1.0"
   }
 }
