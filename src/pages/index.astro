@@ -13,8 +13,6 @@ const title = `${name}: how real clients read broken head metadata`;
 const description = `${cases.length} deliberately broken test pages for titles, Open Graph, favicons, canonicals and colour schemes, with results from browsers on Linux and Android and from link previews in messaging apps.`;
 const image = new URL(`${home}og-image.png`, Astro.url.origin).href;
 const repository = 'https://github.com/cevdetch/astro-metadata-lab';
-// Replace with the post's own URL once the write-up is published.
-const writeUp = 'https://deadhead.cevdet.ch/blog';
 const jsonLd = graph(websiteNode({ url, name, description, inLanguage: 'en' }));
 const groups = [
   ['metadata', 'Metadata', 'HTML fallbacks, missing or empty Open Graph fields, Twitter card fields and their order, conflicting, escaped and very long text, and missing, relative, SVG or multiple social images.'],
@@ -161,12 +159,6 @@ const { observed, untested, dates } = labCoverage;
         mode, bookmarks, home-screen icons, installation, the manifest cases, X, Facebook Messenger and the
         header-only <code>noindex</code> case don't have results yet, and {untested} cases in total are still
         marked not tested on the <a href={`${home}cases/results/`}>results index</a>.
-      </p>
-
-      <h2>Write-up</h2>
-      <p>
-        A longer write-up of the findings, with what they mean for a starter's head, is being prepared for
-        the <a href={writeUp}>deadhead blog</a>.
       </p>
 
       <h2>Source and related tools</h2>
