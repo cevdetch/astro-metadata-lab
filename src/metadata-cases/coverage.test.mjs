@@ -14,7 +14,7 @@ test('registry entries reduce to short client names', () => {
   assert.equal(clientName('LinkedIn Post Inspector /inspect/; web'), 'LinkedIn Post Inspector');
   assert.equal(clientName('discord.com; version unknown'), 'Discord');
   assert.equal(clientName('LinkedIn; inherited Inspector context from S037'), 'LinkedIn Post Inspector');
-  assert.equal(clientName('LinkedIn; version unknown; requested context from S008'), 'LinkedIn');
+  assert.equal(clientName('LinkedIn; version unknown; inherited from S008'), 'LinkedIn');
 });
 
 test('placeholder rows marked not tested are not observations', () => {

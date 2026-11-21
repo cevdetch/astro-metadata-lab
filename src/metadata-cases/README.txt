@@ -41,7 +41,7 @@ publishes per-case tables at /cases/results/, linked beside each catalogue case.
 results/reporting.md defines visual labels and reporting formats; the testing
 and results index pages render the same guide under #reporting-shortcuts.
 For hand entry, fill results/browser-test-table.md,
-results/link-preview-test-table.md or results/http-test-table.md and return it.
+results/link-preview-test-table.md or results/http-test-table.md.
 The matrices use short row IDs; detailed case records can be updated from them.
 design-notes.md separates the spike from the future starter design.
 The old research/ and deploy/ archives remain local and are excluded from Git.

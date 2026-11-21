@@ -1,5 +1,5 @@
-Requested context: GET without following redirects; curl version unknown.
-URLs assigned from the requested command order; deployed commit unconfirmed.
+Context: GET without following redirects; curl version unknown.
+URLs assigned in command order; deployed commit unconfirmed.
 
 URL: https://astro-metadata-lab.pages.dev/cases/indexing/redirect/
 HTTP/2 302

@@ -1,14 +1,15 @@
 # Browser test table
 
-Fill this file and return it. Each empty input/result cell contains two spaces.
+Fill a batch here, then copy the rows into the case records. Each empty
+input/result cell contains two spaces.
 Shared versions and the target deployment live in [sessions.md](sessions.md);
 labels and result formats live in [reporting.md](reporting.md). Use the
 [catalogue](https://astro-metadata-lab.pages.dev/cases/) to open each test page.
 Section names identify the case group; column names identify its case IDs.
 
 After a deployment change, preserve the existing rows. Add a temporary row such
-as `B006/<new-short-SHA>` for the new batch and give the full commit once;
-I will register a new run ID using B006's client setup and any stated changes.
+as `B006/<new-short-SHA>` for the new batch and give the full commit once,
+then register a new run ID using B006's client setup and any changes.
 Do not overwrite an earlier deployment's observation. The
 [next-batch checklist](README.md#next-deployment-and-test-batch) lists the priorities.
 
@@ -18,7 +19,7 @@ Keep one observation per cell. Icons accept a visual label; other groups use
 `key=value; key=value`. The fields and examples appear beside each group below.
 All examples illustrate syntax only; they are not expected or recorded results.
 
-- Blank: no result supplied yet. Keep an untouched cell's two spaces.
+- Blank: no result recorded yet. Keep an untouched cell's two spaces.
 - `none`: you checked and the named surface/field showed nothing.
 - `not tested`: you did not perform that particular check.
 - `unknown`: you checked but cannot identify the value.
@@ -30,8 +31,8 @@ Use a semicolon between fields, keep a cell on one line, and escape a literal
 pipe as `\|`. Copy visible text exactly; quote text containing semicolons or a
 literal word such as "none". Use inline code for literal HTML/entity text so
 Markdown does not reinterpret it. Add `evidence=<file or reference>` for an
-optional screenshot. I will record observations without turning a negative
-control into a general pass/fail claim.
+optional screenshot. Record observations without turning a negative control
+into a general pass/fail claim.
 
 Define the browsers once; the matrices use only their run IDs:
 
@@ -68,8 +69,8 @@ or scripting-on/off fields within a cell are described in the relevant groups.
 Group: `icons`.
 
 B012 and B013 are the Firefox/Vanadium light-mode follow-up. Only the responsive
-SVG was reported in those rows: always yellow-circle, no change. The exact icon
-surface and cause were not restated; keep the observation separate from the
+SVG was recorded in those rows: always yellow-circle, no change. The exact icon
+surface and cause were not recorded; keep the observation separate from the
 page's light appearance and leave the other icon cells unreported.
 
 **Write:** `astro`, `blue-circle`, `red-square`, `green-square`, `blue-square`,
@@ -101,9 +102,9 @@ Group: `theming`.
 
 ### Theme cell format
 
-B012 and B013 record the requested Firefox/Vanadium light-mode follow-up for
-three meta-only cases. The response did not restate the exact settings
-or native control appearance. Blank cells in those rows remain unreported.
+B012 and B013 record the Firefox/Vanadium light-mode follow-up for three
+meta-only cases. I did not record the exact settings or native control
+appearance. Blank cells in those rows remain unreported.
 
 Observe the page and native input/button separately from browser chrome.
 Use `page-bg=<color>; text=<color>; controls=<appearance>; toolbar=<color>;
@@ -200,9 +201,9 @@ earlier records or establish a completed light-mode run.
 
 Group: `head`.
 
-B014 records the mobile viewport response: the absent declaration produced
+B014 records the mobile viewport batch: the absent declaration produced
 desktop-like small text with working pinch zoom; the width-only and
-initial-scale pages looked normal. Other zoom/overflow details were not supplied.
+initial-scale pages looked normal. Other zoom/overflow details were not recorded.
 The `charset-first` cell is a viewport reference observation, not a charset test.
 
 B015–B018 record all three charset pages in Brave, Firefox, Vanadium and Tor:
@@ -315,11 +316,11 @@ changes. These observations cover online launch.
 
 Group: `json-ld`.
 
-B023 records the requested Firefox scripting-enabled comparison. Unsafe JSON
+B023 records the Firefox scripting-enabled comparison. Unsafe JSON
 failed to parse, created an extra image and set the flag; the leading reported
 404 is interpreted as the image request status. Escaped JSON parsed, with no
-extra image, matching Network request or flag value. Exact supplied output and
-the request-status interpretation are retained in the case records.
+extra image, matching Network request or flag value. The exact output and the
+request-status interpretation are kept in the case records.
 
 These are DevTools checks. Write `js=<on/off>; json=<valid/invalid>;
 extra-img=<present/absent>; request=<seen/not seen>; flag=<runtime value>`.
@@ -353,5 +354,5 @@ Mobile browsers without inspection tools can leave this group `not tested`.
 | B006 |  |  |
 | B023 | js=requested on; json=invalid; extra-img=present; request=seen; status=404 (interpreted); flag=true; error=SyntaxError, unterminated string literal at line 1 column 60 | js=requested on; json=valid; extra-img=absent; request=not seen; flag=undefined |
 
-Edit these matrices once. When you return them, I will reconcile the observations
-with the detailed case records; you do not need to copy results into both places.
+Edit these matrices once, then reconcile the observations with the detailed
+case records.

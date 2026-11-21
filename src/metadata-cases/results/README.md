@@ -37,23 +37,23 @@ names describe appearance, not the selected file or format.
 ## Next deployment and test batch
 
 The five-case appearance comparison is recorded for Tor (B008), Brave (B009),
-Firefox (B010) and Vanadium (B011). The requested light-mode follow-up is recorded
+Firefox (B010) and Vanadium (B011). The light-mode follow-up is recorded
 for Firefox (B012) and Vanadium (B013): light for both dual-scheme orders, dark
 for dark-only, and an unchanged yellow-circle responsive icon. A matching Brave
-light-mode report is unreported. Keep the icon behavior unresolved and defer
+light-mode run is not recorded yet. Keep the icon behavior unresolved and defer
 further theme/icon diagnosis. Continue comparing the same fixture
 version; saving observations does not change the fixture HTML.
 
 The mobile viewport batch is recorded as B014. Without the declaration, the
 page looked desktop-like with small text, and pinch zoom worked. The width-only
 reference and width-plus-initial-scale page looked normal. Horizontal overflow
-and pinch behavior on those two pages were not separately reported. This was
+and pinch behavior on those two pages were not recorded separately. This was
 a viewport comparison, not an encoding or parsed-DOM test.
 
 The three charset cases are recorded for all four browsers as B015–B018:
 normal text, UTF-8 document encoding, and Content-Type
-`text/html; charset=utf-8`. This confirms the reported deployed decoding; it does
-not isolate a late declaration when the HTTP header already supplies UTF-8.
+`text/html; charset=utf-8`. This confirms the observed deployed decoding; it does
+not isolate a late declaration when the HTTP header already declares UTF-8.
 
 The invalid-head case is recorded for Firefox (B019) and Brave Origin (B020).
 Both returned the expected `document.title`; the inspected title, description,
@@ -61,21 +61,21 @@ canonical and OG title were direct children of `body`. This does not establish
 where every other metadata element landed or whether social crawlers use them.
 
 The Firefox noscript comparison is recorded as B021. With scripting enabled,
-the tab showed the production-alias URL; element parents were not reported.
+the tab showed the production-alias URL; element parents were not recorded.
 With scripting disabled, the expected title appeared, and
 title/description/canonical were recorded as direct children of head. The canonical
 href used the `37d5d3ff` deployment host; retain that value for the hosting review
 without assuming a redirect or a particular cause.
 
-The four language pages are recorded as B022 in the requested Firefox context.
+The four language pages are recorded as B022 in the B004 Firefox context.
 All text looked normal. Document languages and computed directions matched the
-reported Console JSON, including the French passage in the mixed page. English
+Console JSON, including the French passage in the mixed page. English
 text appeared on the right in the Arabic RTL page. Assistive technology and full
 bidirectional-text handling were not tested.
 
-The JSON-LD comparison is recorded as B023 in the requested Firefox context.
+The JSON-LD comparison is recorded as B023 in the same Firefox context.
 Unsafe JSON failed to parse, created an image element and set the runtime flag.
-The leading reported 404 is interpreted as the image request status. Escaped
+The leading 404 in the output is interpreted as the image request status. Escaped
 JSON parsed with the full markup-like name retained as a string, with
 no matching request, image element or runtime flag value. These are observed
 fixture behaviors, not a general security or structured-data eligibility audit.
@@ -86,28 +86,28 @@ host. The exact JSON is retained in the case record; image reachability and HTTP
 headers were not checked. Local origin selection explains how this can occur
 when the build uses `CF_PAGES_URL`; the live variable values are unconfirmed.
 
-Testing proceeded directly to message previews on the current
+I went directly to message previews on the current
 deployment, deferring the production-origin change and reinspection. B024's
 metadata-host observation remains part of the test context. It is not a reason
 to label a missing card or image as a field-precedence result.
 
 The first five precedence cases are recorded for WhatsApp (S005), Molly
 (S006), Discord (S007), LinkedIn (S008) and Instagram (S009). WhatsApp and
-Discord reported C/green without OG tags; Molly and Instagram reported A/no
+Discord showed C/green without OG tags; Molly and Instagram showed A/no
 image there. With all fields present, all four returned B/red. Twitter-first
 changed Discord's text marker to C while its image stayed red; the other three
-returned B/red. A follow-up confirmed that each marker describes both title and
+returned B/red. A later note confirmed that each marker describes both title and
 description. All image-bearing cards were large-image. LinkedIn returned the
 same error for all five; these were confirmed as post-composer attempts.
 The cause remains unconfirmed.
 
 LinkedIn Post Inspector then succeeded for all-fields (S010): title B in the
 preview, description B in extracted metadata, a LinkedIn-proxied image and the
-deployment-specific canonical. The tool reported 200 Success for the fetched
+deployment-specific canonical. The tool showed 200 Success for the fetched
 stable-alias URL. It warned about a description shorter than 100 characters but
 still produced the preview. A later correction confirmed that no description was
 visible on the preview card, including this earlier inspection. S010's image
-color/layout were not supplied. This does not reproduce or resolve the earlier composer
+color/layout were not recorded. This does not reproduce or resolve the earlier composer
 failure, nor establish a DM result.
 
 The full Inspector batch (S011) returned visible titles A/B/A/B/B and images
@@ -116,9 +116,9 @@ none displayed a description. Letters identify titles only in this batch.
 The warning's role in omitting descriptions is an untested hypothesis; extracted
 metadata and visible card fields are separate observations.
 
-The requested post-composer retry still failed (S012). LinkedIn DMs also
+A post-composer retry still failed (S012). LinkedIn DMs also
 showed no preview (S013), including a deadhead.cevdet.ch control.
-The precise DM surface, wait and settings were not restated. The control and
+The precise DM surface, wait and settings were not recorded. The control and
 Inspector successes weaken a lab-specific hostname explanation without proving
 a cause. Defer further LinkedIn retries and continue in the other clients.
 
@@ -128,32 +128,32 @@ fallback. Molly and WhatsApp fell back to A for each omitted text field. A later
 correction for LinkedIn: it still had no visible descriptions; retain its A/B/B titles
 and red/red/no-image results. This retracts the grouped description claim.
 
-The card-layout batch is recorded as S018–S021. Discord reported summary layout
-with B/B/red for og-without-twitter, no-card and summary-card. Molly (explicitly
-confirmed as the Signal label), LinkedIn and Instagram reported unchanged
+The card-layout batch is recorded as S018–S021. Discord showed summary layout
+with B/B/red for og-without-twitter, no-card and summary-card. Molly (the client
+behind my Signal label), LinkedIn and Instagram showed unchanged
 summary_large_image appearance. Geometry and their other text/image fields were
-not restated, apart from the LinkedIn description correction. WhatsApp's layout
+not recorded, apart from the LinkedIn description correction. WhatsApp's layout
 batch remains unreported. This supports explicit OG text and a large-image card
-hint for the reported Discord behavior; it does not require duplicated inputs.
+hint for the observed Discord behavior; it does not require duplicated inputs.
 
 The next comparison is now recorded as S022–S026 for Molly, Instagram,
 WhatsApp, Discord and LinkedIn Inspector. The reference and omissions of OG type,
 OG URL and image dimensions had no reported problem, fixture text and large-card
-appearance. Image color/domain were not separately restated. Keep LinkedIn's
-explicit no-description correction; this general report does not reverse it.
+appearance. Image color/domain were not recorded separately. Keep LinkedIn's
+explicit no-description correction; this general result does not reverse it.
 These equal-text cases do not identify which fallback tags a client used or
 establish equivalence on untested platforms.
 
 The image batch is recorded as S027–S031. Root-relative images worked in
-LinkedIn Inspector, Molly, Discord and Instagram; color was not restated. SVG
+LinkedIn Inspector, Molly, Discord and Instagram; color was not recorded. SVG
 appeared as a blue circle in Instagram and not as a main image in LinkedIn,
 Molly or Discord. Missing images were absent in LinkedIn/Molly and placeholders
 in Discord/Instagram; Discord's literal message was Image failed to load.
-LinkedIn/Molly's grouped report also states no descriptions. Other text/layout
-fields remain unreported. The image-missing-missing report label is mapped to
-the requested image-missing case; exact URLs were not restated.
+My grouped LinkedIn/Molly note also states no descriptions. Other text/layout
+fields remain unreported. The image-missing-missing label in my notes maps to
+the image-missing case; exact URLs were not recorded.
 
-A clarification of WhatsApp's result: all three cards appeared, with no main
+I later clarified WhatsApp's result: all three cards appeared, with no main
 images. A bottom-right favicon appeared only on the SVG case. Keep that favicon
 separate from the main preview image. The SVG
 control differs in artwork/size too, so its failures do not isolate format alone.
@@ -163,7 +163,7 @@ The text batch is now recorded as S032–S036. All cases were reported to work
 fine, with different title/description cutoffs across clients. The Discord
 long-title example is preserved as a reported shortest/minimum visible string;
 it is not a fixed supported character limit. Exact cutoffs for the other clients
-and literal character audits were not supplied. LinkedIn's earlier explicit
+and literal character audits were not recorded. LinkedIn's earlier explicit
 description absence remains in force.
 
 This supports preserving full input text, correct escaping and concise-writing
@@ -172,7 +172,7 @@ guidance rather than automatic clipping to a universal title/description length.
 The noindex batch is recorded as S037–S041. All five clients still showed
 cards: noindex-with-preview retained the reference appearance, while
 noindex-no-image had no image. Exact text, image color and layout details were
-not separately restated. Search indexing and header-only noindex were not tested.
+not recorded separately. Search indexing and header-only noindex were not tested.
 The earlier preference to skip automatic image generation for noindex remains
 recorded; it is a starter policy choice, not a requirement observed here.
 The no-image case also removes the card hint, so layout is not isolated to image
@@ -182,10 +182,10 @@ The canonical batch is recorded as S042–S046. All three cases produced cards
 without reported problems. LinkedIn displayed the deployment-specific domain;
 Molly/WhatsApp displayed the stable production alias; Discord/Instagram displayed
 no domain. Clicked destinations and Inspector fetched/canonical URL details were
-not supplied. These observations do not establish canonical selection, fallback
+not recorded. These observations do not establish canonical selection, fallback
 source or search-engine handling. Keep the earlier LinkedIn description absence.
 
-The response batch is now recorded as H004 and S047–S051. Current supplied
+The response batch is now recorded as H004 and S047–S051. Current captured
 headers confirm 302 with raw Location /cases/metadata/explicit-og/ and a real
 404 HTML response with Cache-Control no-store. The server Date is 2026-10-24
 15:35:15 GMT. Neither header block includes X-Robots-Tag. Raw evidence is saved
@@ -194,7 +194,7 @@ under http/h004-headers.txt; older probes retain their own contexts.
 Redirect previews matched explicit-og in all five clients. The 404 produced no
 card in LinkedIn Inspector, Molly, Discord or WhatsApp; Instagram still showed
 a title/description card. Exact Instagram strings/image/layout and clicked final
-destinations were not supplied. A status code and missing OG identity are not a
+destinations were not recorded. A status code and missing OG identity are not a
 guarantee that every tested client will omit a card.
 
 X and Facebook Messenger were unavailable for this round.
@@ -221,12 +221,12 @@ The description-length warning is advisory in this observation: it did not
 prevent S010's preview. Keep the short A/B/C/D markers and avoid imposing an
 arbitrary 100-character minimum based on the warning. The author suggestion
 (`<meta name="author" content="[Author name here]">`) and lack of a publication
-date alternative are recorded as tool guidance. Recommend optional author/date
-metadata for real authored content, without inventing values. Open Graph's
+date alternative are recorded as tool guidance. The starter should offer
+optional author/date metadata for real authored content, without inventing values. Open Graph's
 [article publication time](https://ogp.me/#type_article) and Schema.org's
 [datePublished](https://schema.org/datePublished) are candidates for a later
 article recipe; this does not establish LinkedIn's support or approve additions
-to the minimal starter. The reported Article type remains tool output.
+to the minimal starter. The Article type remains tool output.
 
 Continue with remaining omission/failure pairs after this batch. X/Facebook
 first-round results remain unreported.
@@ -245,7 +245,7 @@ the case URLs return their own pages rather than the custom 404.
 
 Keep B003–B006 and their recorded observations attached to their existing context.
 For this deployment, add a temporary row such as `B006/<new-short-SHA>` in the
-relevant worksheet table, reference B006's client setup and supply the full
+relevant worksheet table, reference B006's client setup and give the full
 commit once. Assign a new run ID when reconciling that batch. State any
 profile, version or device changes; do not relabel an earlier result as a retest.
 
@@ -271,7 +271,7 @@ The remaining coverage is:
 | Group | Already reported | What remains / how to test |
 | --- | --- | --- |
 | Icons | Twenty tab/tab-switcher results per browser; Firefox/Vanadium light-mode follow-up kept the responsive icon yellow-circle | Defer investigation of the unchanged icon and surprising Tor results. Saved/bookmark/home-screen icons need separate actions; an Apple home-screen result remains unobserved. |
-| Theming | Initial cases, all four five-case comparisons, and the requested Firefox/Vanadium light-mode follow-up | Move to head/viewport checks. Brave light-mode coverage, exact palettes, native control details and first paint remain incomplete where unreported. |
+| Theming | Initial cases, all four five-case comparisons, and the Firefox/Vanadium light-mode follow-up | Move to head/viewport checks. Brave light-mode coverage, exact palettes, native control details and first paint remain incomplete where unreported. |
 | Head / viewport | Mobile viewport comparison recorded; all three charset controls showed normal text and UTF-8 encoding in all four browsers with an explicit UTF-8 HTTP charset | Invalid-head DOM placement recorded for Firefox/Brave: all four inspected elements were direct children of body. Firefox noscript comparison recorded: URL tab label with scripting on, expected title and three metadata elements under head with scripting off. Enabled parent locations and header-free charset behavior remain unreported. |
 | Language | Four Firefox reports: normal text; document languages/directions and mixed French passage inspected; English text on right in RTL page | Other browser environments, screen readers, keyboard behavior and full bidirectional text were not reported. |
 | Manifest / saved icons | No installation or launch reports | Try bookmark, add-to-home-screen or install actions where offered; launch the saved entry. Record icon, name, URL, display mode and prior installations. Use separate rows per action; these are online checks. |
@@ -280,7 +280,7 @@ The remaining coverage is:
 | HTTP / hosting | Earlier eight-request probes plus H004 current redirect/404 headers | Header-only noindex, remaining URL variants, arbitrary missing-page response and production-origin refinement remain unmeasured or deferred. Do not attach H004 to a full commit without evidence. |
 
 The three worksheets hold the field formats; `manual-tests.md` explains the
-actions. Return the filled sections or raw HTTP output once. A blank does not
+actions. Fill each section, or keep the raw HTTP output, once. A blank does not
 require an immediate exhaustive run: finish the color-scheme comparison first,
 then take one remaining group at a time. Signal currently adds only its reported
 theme-color case; the full preview checklist still targets the original six apps.
@@ -398,10 +398,10 @@ start with the five cases before expanding it.
 
 ## Record uncertainty
 
-- `not tested`: nobody has reported this combination.
+- `not tested`: no run has recorded this combination.
 - `not shown`: the tested surface exposes no visible icon/field.
 - `no preview`: the app showed no card for the tested URL.
-- `unknown`: the supplied evidence does not identify a value or condition.
+- `unknown`: the recorded evidence does not identify a value or condition.
 - `reported`: the observation was reported manually; describe any supporting evidence.
 
 A missing card does not tell us which tag a platform ignored. Record the exact
@@ -414,7 +414,7 @@ changes and screenshots as evidence without turning them into universal rules.
 The Markdown tables in this folder hold new observations. The older
 `browser-observations.json` remains as the initial snapshot; the catalogue
 labels it as early reports. The two early
-Brave/Firefox reports and the supplied HTTP probe have been transcribed here
+Brave/Firefox reports and the early HTTP probe have been transcribed here
 with their missing versions, devices and deployment commits marked unknown.
 
 Keep observations in result pages rather than changing fixture HTML. Website

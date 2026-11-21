@@ -19,4 +19,4 @@ and disabled separately. A normal-looking page does not establish conformance.
 | B003 | Brave Origin / Arch Linux | unknown | — | — | not tested |
 | B004 | Firefox / Arch Linux | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
-| B014 | Vanadium / Android 17; inherited requested context | mobile viewport batch; orientation and settings not restated | normal appearance; zoom: not reported; horizontal overflow unreported | not inspected | reported; mobile response to the requested Vanadium batch; viewport comparison only; tested URL/build unconfirmed |
+| B014 | Vanadium / Android 17; inherited context | mobile viewport batch; orientation and settings not recorded | normal appearance; zoom: not reported; horizontal overflow unreported | not inspected | reported; Vanadium mobile batch; viewport comparison only; tested URL/build unconfirmed |

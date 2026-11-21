@@ -20,7 +20,7 @@ after tapping. A missing preview does not identify an ignored field.
 | — | X | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
 | S027 | LinkedIn | inspector | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S028 | Molly | not restated | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S029 | Discord | not restated | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S030 | Instagram | not restated | unreported | unreported | blue-circle SVG | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S031 | WhatsApp | not restated | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; favicon=bottom right; clarified: card appeared but main image absent |
+| S028 | Molly | not recorded | unreported | none; grouped report | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S029 | Discord | not recorded | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S030 | Instagram | not recorded | unreported | unreported | blue-circle SVG | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S031 | WhatsApp | not recorded | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; favicon=bottom right; clarified: card appeared but main image absent |

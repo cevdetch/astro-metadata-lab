@@ -19,11 +19,11 @@ eligibility or full site security.
 | B003 | Brave Origin / Arch Linux | unknown | — | — | not tested |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
-| B023 | Firefox / Arch Linux; inherited requested context from B004 | requested enabled context; not restated | valid; returned object with @context, @type and complete name string | extra image: absent (false); request: not seen in Network; fixtureInjection: undefined (probe string "undefined") | reported; exact URL/build unconfirmed; successful JSON parsing is not structured-data eligibility validation |
+| B023 | Firefox / Arch Linux; inherited from B004 | enabled (planned); not confirmed | valid; returned object with @context, @type and complete name string | extra image: absent (false); request: not seen in Network; fixtureInjection: undefined (probe string "undefined") | reported; exact URL/build unconfirmed; successful JSON parsing is not structured-data eligibility validation |
 
 ### Reported parsed object and state
 
-The report showed no `unintended-request.png` in Network and a parsed object
+Network showed no `unintended-request.png`, and the Console showed a parsed object
 with these fields (normalized from the expanded Console object):
 
 ```json

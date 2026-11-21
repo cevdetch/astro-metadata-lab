@@ -23,8 +23,8 @@ probes. Keep the earlier result when a later probe differs.
 | H003 | /cases/assets/social-red.png | 200 | image/png | No redirect reported. |
 | H003 | /cases/assets/app.webmanifest | 200 | application/manifest+json | No redirect reported. |
 | H003 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ |
-| H004 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Raw Location: /cases/metadata/explicit-og/; X-Robots-Tag absent from supplied headers. |
-| H004 | /cases/indexing/error-404/ | 404 | text/html; charset=utf-8 | Cache-Control no-store; Location and X-Robots-Tag absent from supplied headers. |
+| H004 | /cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Raw Location: /cases/metadata/explicit-og/; X-Robots-Tag absent from captured headers. |
+| H004 | /cases/indexing/error-404/ | 404 | text/html; charset=utf-8 | Cache-Control no-store; Location and X-Robots-Tag absent from captured headers. |
 
 H003 is the post-push probe associated with reported latest commit
 `886fe8b63c31fe1915d1f9d7efbd90a0b50527f0`. It matches the eight H002 outcomes;
@@ -68,25 +68,25 @@ observation as test context; no dashboard change or redeployment is confirmed.
 
 A successful Inspector preview was recorded for stable-alias all-fields, with
 a 200 Success entry in its URL trail, and the same deployment-specific canonical
-seen in B024. Inspector extracted OG title/description B and supplied a LinkedIn
+seen in B024. Inspector extracted OG title/description B and returned a LinkedIn
 image URL. This evidence is separate from curl probes and does not establish raw
 headers or an HTTP status for the original image URL. It shows the differing
 canonical did not block this Inspector run; S008's post-composer error cause
 remains unknown. No origin change or redeployment is reported.
 
 The expanded S011 Inspector batch displayed the deployment-specific domain in
-all five previews and supplied no new HTTP trail/header evidence. Keep the
-single S010 200 entry scoped to its all-fields report. A later clarification
-confirmed that no Inspector card displayed a description, including the earlier S010 preview;
+all five previews and gave no new HTTP trail/header evidence. Keep the
+single S010 200 entry scoped to its all-fields report. A later note
+clarified that no Inspector card displayed a description, including the earlier S010 preview;
 the pasted metadata extraction table and visible card are separate evidence.
 
 ### Header capture H004 — 2026-10-24
 
-[Supplied headers](http/h004-headers.txt) preserve both responses in requested
-command order. Server Date is 2026-10-24 15:35:15 GMT. The raw redirect Location
-is relative; resolving it against the requested production origin yields
+[Captured headers](http/h004-headers.txt) preserve both responses in command
+order. Server Date is 2026-10-24 15:35:15 GMT. The raw redirect Location
+is relative; resolving it against the probed production origin yields
 `https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/`. That absolute
 target is derived, not a followed-request or clicked-destination observation.
-No body or curl version was supplied. The deployed commit remains unconfirmed.
+I did not capture a body or record the curl version. The deployed commit remains unconfirmed.
 S047–S051 separately record previews; Instagram showed a 404 title/description
 card despite the status, while the other four reported no card.

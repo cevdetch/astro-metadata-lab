@@ -23,9 +23,9 @@ identification markers, not expected platform choices.
 | — | X | — | — | — | — | — | not tested |
 | — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S014 | Discord | not restated | none | none | red | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
-| S015 | Molly | not restated | A | B | red | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
-| S016 | WhatsApp | not restated | A | B | red | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
+| S014 | Discord | not recorded | none | none | red | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
+| S015 | Molly | not recorded | A | B | red | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
+| S016 | WhatsApp | not recorded | A | B | red | layout unreported / destination not tested | reported; title, description and image separately confirmed; exact URL/build and layout unreported |
 | S017 | LinkedIn | inspector | A | none | red | layout unreported / destination not tested | corrected: LinkedIn still shows no visible description; title/image retained; exact URL/build and layout unreported |
 
 S017 correction: the grouped description claim for LinkedIn was retracted.

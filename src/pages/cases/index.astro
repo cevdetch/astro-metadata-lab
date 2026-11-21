@@ -19,7 +19,7 @@ const groups = [...new Set(cases.map(c => c.group))];
       <h1>Metadata comparisons</h1>
       <p><a href={`${normalizeBase(base)}cases/current/`}>Your current page</a> · {cases.length} experimental cases · <a href={normalizeBase(base)}>About the lab</a></p>
       <p><a href={`${normalizeBase(base)}cases/testing/`}>How to test on phones and in messaging apps</a> — start with a small set of cases and copy the result format.</p>
-      <p><a href={`${normalizeBase(base)}cases/results/`}>Result tables for every case</a> — tell me the browser/app once, then the case IDs and what you saw.</p>
+      <p><a href={`${normalizeBase(base)}cases/results/`}>Result tables for every case</a> — each run registers the browser/app once, then lists case IDs and what it showed.</p>
       <p>Open a case in its own tab to check favicons. Compare shows it beside your current page and displays the fixture head. HTML opens the complete fixture as plain text.</p>
       <p>These include deliberately invalid controls. Automated checks verify the fixtures; browser and social-app behavior needs observation. The build includes Cloudflare Pages rules for HTTP headers, redirects and a real 404.</p>
       <p>Use the production deployment URL when comparing indexing headers: Cloudflare adds its own noindex header to preview deployments. Share each case's own URL when testing link previews.</p>

@@ -19,11 +19,11 @@ after tapping. A missing preview does not identify an ignored field.
 | — | LinkedIn | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S047 | LinkedIn | requested inspector; not restated | same as explicit-og; not quoted | none; prior explicit LinkedIn correction retained | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
-| S048 | Molly | not restated | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
-| S049 | Discord | not restated | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
-| S050 | Instagram | not restated | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
-| S051 | WhatsApp | not restated | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
+| S047 | LinkedIn | inspector | same as explicit-og; not quoted | none; prior explicit LinkedIn correction retained | same as explicit-og; color not recorded | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not recorded |
+| S048 | Molly | not recorded | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not recorded | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not recorded |
+| S049 | Discord | not recorded | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not recorded | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not recorded |
+| S050 | Instagram | not recorded | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not recorded | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not recorded |
+| S051 | WhatsApp | not recorded | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not recorded | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not recorded |
 
 
 ## HTTP results
@@ -36,4 +36,4 @@ control document and cannot verify this response.
 | --- | --- | --- | --- | --- | --- |
 | H002 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | Manual curl output, 2026-10-24; raw Location and robots headers not captured. |
 | H003 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | Resolved redirect URL: https://astro-metadata-lab.pages.dev/cases/metadata/explicit-og/ | Manual post-push probe, 2026-10-24; reported commit 886fe8b; raw Location and robots headers not captured. |
-| H004 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | raw Location: /cases/metadata/explicit-og/; X-Robots-Tag absent in supplied headers | Manual header capture; Date 2026-10-24 15:35:15 GMT; no redirect follow/body; evidence http/h004-headers.txt |
+| H004 | https://astro-metadata-lab.pages.dev/cases/indexing/redirect/ | 302 | text/plain;charset=UTF-8 | raw Location: /cases/metadata/explicit-og/; X-Robots-Tag absent in captured headers | Manual header capture; Date 2026-10-24 15:35:15 GMT; no redirect follow/body; evidence http/h004-headers.txt |

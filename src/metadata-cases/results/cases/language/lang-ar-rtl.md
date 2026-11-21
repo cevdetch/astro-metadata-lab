@@ -18,7 +18,7 @@ leave assistive-technology behavior unknown when it was not tested.
 | B003 | Brave Origin / Arch Linux | — | — | unknown | not tested |
 | B005 | Vanadium / Android 17 | — | — | unknown | not tested |
 | B006 | Tor Browser Alpha / Android 17 | — | — | unknown | not tested |
-| B022 | Firefox / Arch Linux; inherited requested context from B004 | normal text; computed direction: rtl; English text appeared on right side of page | document=ar; dir attribute=rtl | not reported | reported; Console JSON and visual report; tested URL/build unconfirmed; no main [lang] matches |
+| B022 | Firefox / Arch Linux; inherited from B004 | normal text; computed direction: rtl; English text appeared on right side of page | document=ar; dir attribute=rtl | not reported | reported; Console JSON and visual report; tested URL/build unconfirmed; no main [lang] matches |
 
 
 ### Reported Console output

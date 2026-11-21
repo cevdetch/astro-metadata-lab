@@ -18,7 +18,7 @@ were not reconfirmed.
 
 | Run | Browser / device | Mode | Page background / text | Native controls | Chrome / initial paint | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| B008 | Tor Browser Alpha / Android 17 | not reconfirmed | dark appearance; exact colors unreported | dark; input and button match the page | not reported | reported; Tor follow-up; mode, emulation and tested deployment not supplied; see test-run registry |
-| B009 | Brave Origin / Arch Linux | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B003; mode and tested deployment not supplied |
-| B010 | Firefox / Arch Linux | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B004; mode and tested deployment not supplied |
-| B011 | Vanadium / Android 17 | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B005; mode and tested deployment not supplied |
+| B008 | Tor Browser Alpha / Android 17 | not reconfirmed | dark appearance; exact colors unreported | dark; input and button match the page | not reported | reported; Tor follow-up; mode, emulation and tested deployment not recorded; see test-run registry |
+| B009 | Brave Origin / Arch Linux | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B003; mode and tested deployment not recorded |
+| B010 | Firefox / Arch Linux | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B004; mode and tested deployment not recorded |
+| B011 | Vanadium / Android 17 | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B005; mode and tested deployment not recorded |

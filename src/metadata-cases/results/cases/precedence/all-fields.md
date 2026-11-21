@@ -21,18 +21,18 @@ identification markers, not expected platform choices.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | — | X | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S005 | WhatsApp | requested sent; not restated | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev; favicon bottom right, appearance not identified |
+| S005 | WhatsApp | sent (planned); not confirmed | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev; favicon bottom right, appearance not identified |
 | S006 | Molly | not reported | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev |
 | S007 | Discord | not reported | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description |
 | S008 | LinkedIn | post composer; confirmed in follow-up | unreported | unreported | unreported | unreported / destination not tested | preview error: Cannot display preview. You can post as is, or try another link.; cause unknown |
 | S009 | Instagram | not reported | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description |
-| S012 | LinkedIn | post composer; retry after Inspector | unreported | unreported | unreported | unreported / destination not tested | preview error: Cannot display preview. You can post as is, or try another link.; cause unknown; requested all-fields retest |
-| S013 | LinkedIn | direct message; sent/received/draft not restated | unreported | unreported | unreported | no card / destination not tested | preview=none; deadhead.cevdet.ch control also had no preview; wait/settings unknown; cause unresolved |
+| S012 | LinkedIn | post composer; retry after Inspector | unreported | unreported | unreported | unreported / destination not tested | preview error: Cannot display preview. You can post as is, or try another link.; cause unknown; all-fields retest |
+| S013 | LinkedIn | direct message; sent/received/draft not recorded | unreported | unreported | unreported | no card / destination not tested | preview=none; deadhead.cevdet.ch control also had no preview; wait/settings unknown; cause unresolved |
 
 ## Browser metadata inspection
 
 B024 is a browser Console inspection, not a social-DM preview observation.
-The requested Firefox check returned this exact JSON:
+The Firefox check returned this exact JSON:
 
 ```json
 {"page":"https://astro-metadata-lab.pages.dev/cases/precedence/all-fields/","canonical":"https://37d5d3ff.astro-metadata-lab.pages.dev/cases/precedence/all-fields/","ogUrl":"https://37d5d3ff.astro-metadata-lab.pages.dev/cases/precedence/all-fields/","ogImage":"https://37d5d3ff.astro-metadata-lab.pages.dev/cases/assets/social-red.png","twitterImage":"https://37d5d3ff.astro-metadata-lab.pages.dev/cases/assets/social-green.png"}
@@ -45,12 +45,12 @@ Keep this observation when retesting after the production-origin setting changes
 
 ## LinkedIn Post Inspector result (S010)
 
-The report showed a successful preview and the following ingestion information.
+Inspector showed a successful preview and the following ingestion information.
 This is a separate Inspector surface from S008's failed post-composer attempts.
 Title B was visible in the preview; description B was extracted in the metadata
-panel. A later clarification confirmed that the preview card showed no description,
-including in this earlier inspection. The image URL was present; visual color
-and card layout were not identified in the S010 report.
+panel. A later note clarified that the preview card showed no description,
+including in this earlier inspection. The image URL was present; I did not note
+the visual color or card layout for S010.
 
 ```json
 {

@@ -16,10 +16,10 @@ and disabled separately. A normal-looking page does not establish conformance.
 
 | Run | Browser / device | Scripting / viewport conditions | Displayed text / layout | Parsed DOM / encoding | Status / notes |
 | --- | --- | --- | --- | --- | --- |
-| B015 | Brave Origin / Arch Linux; inherited from B003 | settings not restated; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
-| B016 | Firefox / Arch Linux; inherited from B004 | settings not restated; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
-| B017 | Vanadium / Android 17; inherited from B005 | settings not restated; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
-| B018 | Tor Browser Alpha / Android 17; inherited from B006 | settings not restated; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
+| B015 | Brave Origin / Arch Linux; inherited from B003 | settings not recorded; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
+| B016 | Firefox / Arch Linux; inherited from B004 | settings not recorded; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
+| B017 | Vanadium / Android 17; inherited from B005 | settings not recorded; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
+| B018 | Tor Browser Alpha / Android 17; inherited from B006 | settings not recorded; HTTP Content-Type: text/html; charset=utf-8 | normal text | document encoding: UTF-8; DOM placement not inspected | reported; all-browser charset batch; tested URL/build unconfirmed; HTTP charset prevents isolating HTML declaration position |
 
 
 ## Social DM results

@@ -23,7 +23,7 @@ identification markers, not expected platform choices.
 | — | X | — | — | — | — | — | not tested |
 | — | WhatsApp | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S018 | Discord | not restated | B | B | red | reported summary / destination not tested | reported layout label; exact geometry, settings and build unreported |
-| S019 | Molly | not restated | unreported | unreported | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported; Signal label explicitly identified as Molly |
-| S020 | LinkedIn | requested inspector; not restated | unreported | none | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported |
-| S021 | Instagram | not restated | unreported | unreported | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported |
+| S018 | Discord | not recorded | B | B | red | reported summary / destination not tested | reported layout label; exact geometry, settings and build unreported |
+| S019 | Molly | not recorded | unreported | unreported | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported; Signal label explicitly identified as Molly |
+| S020 | LinkedIn | inspector | unreported | none | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported |
+| S021 | Instagram | not recorded | unreported | unreported | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported |

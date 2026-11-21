@@ -4,7 +4,7 @@ Do browser selection and social-preview accent selection differ?
 
 The existing hint colors are light gray (`#eeeeee`) and dark gray (`#222222`).
 No visible browser UI or link-preview color change was observed. Exact
-browser chrome colors and a comparison reference were not supplied. The
+browser chrome colors and a comparison reference were not recorded. The
 reported preview clients are Signal, WhatsApp, Discord and Instagram; versions,
 device/OS, appearance and message views remain unknown. The social rows record
 only the reported lack of a visible accent change. Page color-scheme behavior

@@ -19,11 +19,11 @@ after tapping. A missing preview does not identify an ignored field.
 | — | LinkedIn | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S037 | LinkedIn | requested inspector; not restated | not separately restated | none; prior explicit LinkedIn correction retained | reference appearance; color not restated | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
-| S038 | Molly | not restated | not separately restated | not separately restated | reference appearance; color not restated | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
-| S039 | Discord | not restated | not separately restated | not separately restated | reference appearance; color not restated | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
-| S040 | Instagram | not restated | not separately restated | not separately restated | reference appearance; color not restated | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
-| S041 | WhatsApp | not restated | not separately restated | not separately restated | reference appearance; color not restated | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
+| S037 | LinkedIn | inspector | not recorded separately | none; prior explicit LinkedIn correction retained | reference appearance; color not recorded | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
+| S038 | Molly | not recorded | not recorded separately | not recorded separately | reference appearance; color not recorded | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
+| S039 | Discord | not recorded | not recorded separately | not recorded separately | reference appearance; color not recorded | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
+| S040 | Instagram | not recorded | not recorded separately | not recorded separately | reference appearance; color not recorded | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
+| S041 | WhatsApp | not recorded | not recorded separately | not recorded separately | reference appearance; color not recorded | same appearance as reference / destination not tested | preview=card; grouped manual report; no search-indexing or HTTP-header conclusion |
 
 
 ## HTTP results

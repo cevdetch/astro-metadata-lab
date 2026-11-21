@@ -3,10 +3,10 @@
 Give the run ID once per batch, followed by the case and what you saw. Fill the
 browser, link-preview or HTTP worksheet in the
 [results folder](https://github.com/cevdetch/astro-metadata-lab/tree/main/src/metadata-cases/results),
-or send observations directly. Each worksheet proposes fields, values and examples
-beside its groups; you only need to enter a result once. I will update the
-detailed records from your report. The snippets below are reporting formats,
-not expected outcomes or recorded observations.
+or note observations directly. Each worksheet proposes fields, values and examples
+beside its groups; enter a result once, then copy it into the detailed records.
+The snippets below are recording formats, not expected outcomes or recorded
+observations.
 
 ### Icon labels
 
@@ -24,8 +24,8 @@ not expected outcomes or recorded observations.
 
 Use `astro`, `blue-circle` and `red-square` for the first four icon controls when
 those appearances occur. Extra labels cover the later cases. You can write
-spaces instead of hyphens. If you report only a color, I will keep the shape
-unknown unless you define the shorthand for that batch.
+spaces instead of hyphens. A color on its own leaves the shape unknown unless
+the batch defines that shorthand.
 
 These are visual labels. Several fixtures share the red-square appearance, and
 the SVG and manifest images both include blue circles. Appearance alone does not
@@ -40,8 +40,8 @@ Versions live in the test-run registry. Use a new run when the client version,
 device or deployment changes.
 
 For a new deployment, you may use a temporary label such as `B006/<short-SHA>`
-to reference the existing client setup; supply the full commit once for the
-batch. I will assign a new registered run ID. Preserve the earlier rows and
+to reference the existing client setup; give the full commit once for the
+batch, then assign a new registered run ID. Preserve the earlier rows and
 state any settings changes rather than rewriting the earlier deployment context.
 
 ```text
@@ -51,8 +51,8 @@ Profile/settings: [normal/fresh/private, overrides if relevant; unknown is OK]
 ```
 
 Report Tor's security level if known. Name the actual visible surface on Android.
-Within one unchanged run, you can send just `B003` and the case results. State
-mode or surface changes with the next batch. The run ID preserves the supplied
+Within one unchanged run, `B003` and the case results are enough. State
+mode or surface changes with the next batch. The run ID preserves the recorded
 setup; missing details stay unknown.
 
 ### Icon reports
@@ -73,8 +73,8 @@ You can group identical results, for example
 at once and list exceptions; identify the batch so its scope stays clear.
 
 Record changes as a sequence, for example `astro -> blue-circle after reload`.
-I will keep the initial appearance and rerun rather than replacing one with the
-other. A downloaded image is a separate observation from a displayed tab icon.
+The record keeps the initial appearance and the rerun rather than replacing one
+with the other. A downloaded image is a separate observation from a displayed tab icon.
 
 ### Theme reports
 
@@ -147,8 +147,8 @@ tested. An unset runtime flag alone does not establish that the JSON parsed.
 
 ### Direct-message preview reports
 
-Register the platform, app version, device/OS and surface once; I will assign
-an S run ID. The targets are LinkedIn, Discord, X, WhatsApp, Instagram and
+Register the platform, app version, device/OS and surface once under an S run
+ID. The targets are LinkedIn, Discord, X, WhatsApp, Instagram and
 Facebook Messenger. A web app also needs the browser/run ID. Record the preview
 setting when known and identify first share versus retest.
 
@@ -166,8 +166,8 @@ destination=[URL after tapping, or not tested]
 In precedence cases, you may use `html`/`A`, `og`/`B`, `twitter`/`C` or `body`/`D`
 for a title or description only when its visible marker identifies that value.
 Keep title and description independent. Record truncation, and copy actual text
-for other cases or uncertain source selection. Matching HTML/OG text cannot tell
-us which field supplied it.
+for other cases or uncertain source selection. Matching HTML/OG text cannot show
+which field the client used.
 
 Use `image=red` and `image=green` for the large social images; those are separate
 from the favicon labels. Color alone does not identify the metadata format: some
@@ -184,8 +184,8 @@ Command or script: [what you ran]
 [paste complete status/header or probe output]
 ```
 
-I will register an H run and extract status, Content-Type, robots headers and
-redirect destination where the output supplies them. Missing headers in a short
+Register an H run and extract status, Content-Type, robots headers and
+redirect destination where the output includes them. Missing headers in a short
 probe stay unknown. HTTP status is a separate observation from the page body.
 The HTTP worksheet keeps raw Location headers separate from the short probe's
 resolved redirect destination; see the
@@ -195,7 +195,7 @@ resolved redirect destination; see the
 
 | Write | Meaning |
 | --- | --- |
-| blank | No result supplied yet; worksheet input/result cells start with two spaces |
+| blank | No result recorded yet; worksheet input/result cells start with two spaces |
 | `none` | You checked the named surface/field and it showed no value |
 | `not tested` | You have not performed that check |
 | `unknown` | The observation does not identify the value |
@@ -209,6 +209,6 @@ line; escape literal pipes as `\|`. Quote visible text containing semicolons or
 reserved words, and use inline code for literal HTML/entity text. Add `note=...`
 or `evidence=<file or reference>` when useful. Keep examples outside result cells.
 
-You can report one case, a batch, a change after reload or a screenshot. Include
-the run/case when it is not already clear. I will ask one focused follow-up if
-a result needs clarification and keep the original observation alongside reruns.
+A report can cover one case, a batch, a change after reload or a screenshot.
+Include the run/case when it is not already clear. Re-check a result that is
+unclear, and keep the original observation alongside reruns.

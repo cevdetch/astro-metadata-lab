@@ -19,8 +19,8 @@ after tapping. A missing preview does not identify an ignored field.
 | — | LinkedIn | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S027 | LinkedIn | inspector | unreported | none; grouped report | works; color not restated | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S028 | Molly | not restated | unreported | none; grouped report | works; color not restated | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S029 | Discord | not restated | unreported | unreported | works; color not restated | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S030 | Instagram | not restated | unreported | unreported | works; color not restated | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
-| S031 | WhatsApp | not restated | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; favicon=not shown; clarified: card appeared but main image absent |
+| S027 | LinkedIn | inspector | unreported | none; grouped report | works; color not recorded | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S028 | Molly | not recorded | unreported | none; grouped report | works; color not recorded | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S029 | Discord | not recorded | unreported | unreported | works; color not recorded | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S030 | Instagram | not recorded | unreported | unreported | works; color not recorded | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
+| S031 | WhatsApp | not recorded | unreported | unreported | none | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed; favicon=not shown; clarified: card appeared but main image absent |

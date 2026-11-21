@@ -18,13 +18,13 @@ and disabled separately. A normal-looking page does not establish conformance.
 | --- | --- | --- | --- | --- | --- |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
-| B019 | Firefox / Arch Linux; inherited from B004 | Console inspection; settings not restated | document.title: HTML title — metadata-after-invalid-head-element; visual tab title not separately reported | title=body; description=body; canonical=body; og-title=body (direct parents) | reported; pasted Console JSON; tested URL/build unconfirmed; other metadata elements and crawler behavior not inspected |
-| B020 | Brave Origin / Arch Linux; inherited from B003 | Console inspection; settings not restated | document.title: HTML title — metadata-after-invalid-head-element; visual tab title not separately reported | title=body; description=body; canonical=body; og-title=body (direct parents) | reported; pasted Console JSON; tested URL/build unconfirmed; other metadata elements and crawler behavior not inspected |
+| B019 | Firefox / Arch Linux; inherited from B004 | Console inspection; settings not recorded | document.title: HTML title — metadata-after-invalid-head-element; visual tab title not separately reported | title=body; description=body; canonical=body; og-title=body (direct parents) | reported; pasted Console JSON; tested URL/build unconfirmed; other metadata elements and crawler behavior not inspected |
+| B020 | Brave Origin / Arch Linux; inherited from B003 | Console inspection; settings not recorded | document.title: HTML title — metadata-after-invalid-head-element; visual tab title not separately reported | title=body; description=body; canonical=body; og-title=body (direct parents) | reported; pasted Console JSON; tested URL/build unconfirmed; other metadata elements and crawler behavior not inspected |
 
 
 ### Reported Console output
 
-Firefox (B019) and Brave Origin (B020) supplied the same JSON:
+Firefox (B019) and Brave Origin (B020) returned the same JSON:
 
 ```json
 {"title":"HTML title — metadata-after-invalid-head-element","parents":{"title":"body","description":"body","canonical":"body","og-title":"body"}}

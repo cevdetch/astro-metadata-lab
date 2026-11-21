@@ -21,7 +21,7 @@ identification markers, not expected platform choices.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | — | X | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
-| S005 | WhatsApp | requested sent; not restated | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev; favicon bottom right, appearance not identified |
+| S005 | WhatsApp | sent (planned); not confirmed | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev; favicon bottom right, appearance not identified |
 | S006 | Molly | not reported | B | B | red | large-image / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev |
 | S007 | Discord | not reported | C | C | red | large-image / destination not tested | reported; marker confirmed for both title and description |
 | S008 | LinkedIn | post composer; confirmed in follow-up | unreported | unreported | unreported | unreported / destination not tested | preview error: Cannot display preview. You can post as is, or try another link.; cause unknown |

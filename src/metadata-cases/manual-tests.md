@@ -115,11 +115,11 @@ For each observation, record:
 - What you saw, a screenshot, and the HTTP response if it affects the result.
 - Cache/profile conditions and whether you opened a fresh URL or reused one.
 
-Send the browser/app and device details once, then case IDs and observations.
-I will register the run in `results/sessions.md` and append rows to the per-case
-tables in `results/cases/<group>/<id>.md`. The website publishes those tables at
+Register the browser/app and device details once as a run in
+`results/sessions.md`, then append rows citing it to the per-case tables in
+`results/cases/<group>/<id>.md`. The website publishes those tables at
 `/cases/results/`; every catalogue entry has a Results link. The results folder's
-README explains the testing order. `results/reporting.md` supplies icon labels
+README explains the testing order. `results/reporting.md` lists icon labels
 and copyable formats for each group; both hosted guides include those shortcuts.
 For the first icon batch, use `astro`, `blue-circle` or `red-square` when you see
 those appearances. Report a color without a shape if you cannot identify it.
@@ -201,7 +201,7 @@ choose to show no preview. Documentation alone cannot establish DM behavior.
 4. Test missing images, relative URLs, SVG images, multiple image candidates,
    image dimensions/alt, escaped text, Unicode and long titles. Record truncation
    separately from value selection.
-5. Test the canonical group, including the tracking-query link supplied by the
+5. Test the canonical group, including the tracking-query link in the
    catalogue. Record both the preview's displayed identity and its click target.
 6. Test noindex cases, the HTTP-only noindex case, redirect and missing-page case
    after confirming their hosted status/headers.

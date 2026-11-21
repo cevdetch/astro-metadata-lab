@@ -3,8 +3,8 @@
 Use this file for one deployment/probe batch, independently of browser UI tests.
 Each empty input/result cell contains two spaces. Keep prior recorded probes in
 [hosting.md](hosting.md). Shared deployment details live in
-[sessions.md](sessions.md). A new probe can receive a new H run ID after you return
-it; do not overwrite the historical H001–H004 records.
+[sessions.md](sessions.md). A new probe gets a new H run ID once it is recorded;
+do not overwrite the historical H001–H004 records.
 
 H004 now records the redirect and error-404 header captures in hosting.md, with
 raw evidence in http/h004-headers.txt. Keep those results there; the blank
@@ -64,7 +64,7 @@ script requests; the other paths extend the host-control checks.
 ### Proposed output standard
 
 Fill each row with its actual value, without a `key=` prefix. Blank means no
-result supplied yet; preserve its two spaces. Use `not tested` for an unperformed
+result recorded yet; preserve its two spaces. Use `not tested` for an unperformed
 check, `unknown` for a value the output does not establish, and `absent` for a
 header confirmed missing from a complete header capture. A short probe omitting
 a header does not establish absence. Examples below illustrate format only.
@@ -115,5 +115,5 @@ status such as the deliberate 404 controls.
 | Resolved redirect URL |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | Notes / evidence |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 
-Return this file or paste raw probe output. I will reconcile it with the HTTP
-records, so you do not need to maintain both formats manually.
+Keep the raw probe output with the filled table, then reconcile both with the
+HTTP records.
