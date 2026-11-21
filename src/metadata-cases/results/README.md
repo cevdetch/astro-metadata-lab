@@ -392,8 +392,9 @@ That is another format example. A client can combine sources, so copy the title,
 description and image independently. The D marker identifies body text. After
 the first round, use the omissions/empty/broken-image pairs from the testing
 guide, then the other metadata, canonical, language and indexing cases.
-The 84 social-relevant records include a row for each target platform. Those
-rows are a coverage checklist; start with the five cases before expanding it.
+Each of the 84 social-relevant records lists every target platform, either as a
+recorded run or as a `not tested` row. Those rows are a coverage checklist;
+start with the five cases before expanding it.
 
 ## Record uncertainty
 

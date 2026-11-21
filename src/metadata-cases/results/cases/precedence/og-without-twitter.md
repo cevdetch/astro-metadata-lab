@@ -20,10 +20,8 @@ identification markers, not expected platform choices.
 | Run | Platform | Surface | Title | Description | Image | Layout / destination | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | — | LinkedIn | — | — | — | — | — | not tested |
-| — | Discord | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
 | — | WhatsApp | — | — | — | — | — | not tested |
-| — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
 | S018 | Discord | not restated | B | B | red | reported summary / destination not tested | reported layout label; exact geometry, settings and build unreported |
 | S019 | Molly | not restated | unreported | unreported | unreported | reported summary_large_image / destination not tested | reported layout label; exact geometry, settings and build unreported; Signal label explicitly identified as Molly |

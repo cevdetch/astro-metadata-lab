@@ -17,7 +17,6 @@ and disabled separately. A normal-looking page does not establish conformance.
 | Run | Browser / device | Scripting / viewport conditions | Displayed text / layout | Parsed DOM / encoding | Status / notes |
 | --- | --- | --- | --- | --- | --- |
 | B003 | Brave Origin / Arch Linux | unknown | — | — | not tested |
-| B004 | Firefox / Arch Linux | unknown | — | — | not tested |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
 | B021 | Firefox / Arch Linux; inherited from B004 | scripting enabled | tab label: https://astro-metadata-lab.pages.dev/cases/head/metadata-in-noscript/ | title/description/canonical parents unreported | reported; submitted parent fields were placeholders; missing DOM elements not established |

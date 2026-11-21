@@ -17,7 +17,6 @@ eligibility or full site security.
 | Run | Browser / device | Scripting | JSON parses | Extra image / request / fixtureInjection | Status / notes |
 | --- | --- | --- | --- | --- | --- |
 | B003 | Brave Origin / Arch Linux | unknown | — | — | not tested |
-| B004 | Firefox / Arch Linux | unknown | — | — | not tested |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
 | B023 | Firefox / Arch Linux; inherited requested context from B004 | requested enabled context; not restated | invalid; SyntaxError: JSON.parse: unterminated string literal at line 1 column 60 of the JSON data | extra image: present (true); request: 404 interpreted from leading report field; fixtureInjection: true (probe string "true") | reported; exact URL/build unconfirmed; 404 is not the JSON parse result or an established HTML page status |

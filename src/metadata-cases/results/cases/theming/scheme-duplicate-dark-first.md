@@ -18,10 +18,6 @@ were not reconfirmed.
 
 | Run | Browser / device | Mode | Page background / text | Native controls | Chrome / initial paint | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | unknown | — | — | — | not tested |
-| B004 | Firefox / Arch Linux | unknown | — | — | — | not tested |
-| B005 | Vanadium / Android 17 | unknown | — | — | — | not tested |
-| B006 | Tor Browser Alpha / Android 17 | unknown | — | — | — | not tested |
 | B008 | Tor Browser Alpha / Android 17 | not reconfirmed | dark appearance; exact colors unreported | dark; input and button match the page | not reported | reported; Tor follow-up; mode, emulation and tested deployment not supplied; see test-run registry |
 | B009 | Brave Origin / Arch Linux | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B003; mode and tested deployment not supplied |
 | B010 | Firefox / Arch Linux | not reconfirmed | dark appearance; exact colors unreported | not reported separately | not reported | reported; five-case follow-up; client setup inherited from B004; mode and tested deployment not supplied |

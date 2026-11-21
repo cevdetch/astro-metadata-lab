@@ -19,11 +19,7 @@ identification markers, not expected platform choices.
 
 | Run | Platform | Surface | Title | Description | Image | Layout / destination | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| — | LinkedIn | — | — | — | — | — | not tested |
-| — | Discord | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
-| — | WhatsApp | — | — | — | — | — | not tested |
-| — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
 | S005 | WhatsApp | requested sent; not restated | A | A | none | layout unreported / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev; favicon bottom right, appearance not identified |
 | S006 | Molly | not reported | A | A | none | layout unreported / destination not tested | reported; marker confirmed for both title and description; displayed domain astro-metadata-lab.pages.dev |

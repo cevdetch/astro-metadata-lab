@@ -17,10 +17,7 @@ after tapping. A missing preview does not identify an ignored field.
 | Run | Platform | Surface | Title | Description | Image | Layout / destination | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | — | LinkedIn | — | — | — | — | — | not tested |
-| — | Discord | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
-| — | WhatsApp | — | — | — | — | — | not tested |
-| — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
 | S042 | LinkedIn | requested inspector; not restated | no reported problem; text not quoted | none; prior explicit LinkedIn correction retained | no reported problem; not separately described | layout unreported / destination unreported | preview=card; displayed domain=37d5d3ff.astro-metadata-lab.pages.dev; exact build/settings and URL-selection mechanism unreported |
 | S043 | Molly | not restated | no reported problem; text not quoted | not separately restated | no reported problem; not separately described | layout unreported / destination unreported | preview=card; displayed domain=astro-metadata-lab.pages.dev; exact build/settings and URL-selection mechanism unreported |

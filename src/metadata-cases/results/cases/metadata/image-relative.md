@@ -17,10 +17,7 @@ after tapping. A missing preview does not identify an ignored field.
 | Run | Platform | Surface | Title | Description | Image | Layout / destination | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | — | LinkedIn | — | — | — | — | — | not tested |
-| — | Discord | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
-| — | WhatsApp | — | — | — | — | — | not tested |
-| — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
 | S027 | LinkedIn | inspector | unreported | none; grouped report | works; color not restated | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |
 | S028 | Molly | not restated | unreported | none; grouped report | works; color not restated | layout unreported / destination not tested | reported; image layout, title and exact URL/build unconfirmed |

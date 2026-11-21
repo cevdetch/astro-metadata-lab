@@ -16,8 +16,6 @@ and disabled separately. A normal-looking page does not establish conformance.
 
 | Run | Browser / device | Scripting / viewport conditions | Displayed text / layout | Parsed DOM / encoding | Status / notes |
 | --- | --- | --- | --- | --- | --- |
-| B003 | Brave Origin / Arch Linux | unknown | — | — | not tested |
-| B004 | Firefox / Arch Linux | unknown | — | — | not tested |
 | B005 | Vanadium / Android 17 | unknown | — | — | not tested |
 | B006 | Tor Browser Alpha / Android 17 | unknown | — | — | not tested |
 | B019 | Firefox / Arch Linux; inherited from B004 | Console inspection; settings not restated | document.title: HTML title — metadata-after-invalid-head-element; visual tab title not separately reported | title=body; description=body; canonical=body; og-title=body (direct parents) | reported; pasted Console JSON; tested URL/build unconfirmed; other metadata elements and crawler behavior not inspected |

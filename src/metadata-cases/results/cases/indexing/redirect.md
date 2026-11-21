@@ -17,10 +17,7 @@ after tapping. A missing preview does not identify an ignored field.
 | Run | Platform | Surface | Title | Description | Image | Layout / destination | Status / notes |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | — | LinkedIn | — | — | — | — | — | not tested |
-| — | Discord | — | — | — | — | — | not tested |
 | — | X | — | — | — | — | — | not tested |
-| — | WhatsApp | — | — | — | — | — | not tested |
-| — | Instagram | — | — | — | — | — | not tested |
 | — | Facebook Messenger | — | — | — | — | — | not tested |
 | S047 | LinkedIn | requested inspector; not restated | same as explicit-og; not quoted | none; prior explicit LinkedIn correction retained | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
 | S048 | Molly | not restated | same as explicit-og; not quoted | same as reference; not quoted | same as explicit-og; color not restated | reference appearance / clicked destination unreported | preview=card; H004 separately confirms initial 302; final fetch/click URL not supplied |
